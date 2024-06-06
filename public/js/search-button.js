@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const formulario = document.getElementById('formulario-busqueda'); // Asegúrate de que este ID sea correcto y único.
+    const formulario = document.getElementById('formulario-busqueda'); 
     formulario.addEventListener('submit', function(event) {
-        event.preventDefault();  // Previene la recarga de la página
+        event.preventDefault();  
         const origen = document.getElementById('buscar-desde').value.trim();
         const destino = document.getElementById('buscar-hasta').value.trim();
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayResults(data) {
         const resultadosDiv = document.getElementById('resultados');
-        resultadosDiv.innerHTML = ''; // Limpiar resultados anteriores
+        resultadosDiv.innerHTML = ''; 
         data.forEach(horario => {
             const p = document.createElement('p');
             p.textContent = `Hora de salida: ${horario.hora_salida}, Duración: ${horario.duracion_viaje}`;
