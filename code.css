@@ -1,0 +1,540 @@
+menu con bordes de colores
+.menu-navegacion a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #1AA1E9;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Ancho fijo para cada enlace */
+    text-align: center; /* Asegura que el texto esté centrado en el botón */
+    transition: opacity 0.3s; /* Transición suave de la opacidad */
+    }
+    .menu-navegacion {
+        display: flex;
+        gap: 20px;
+        border-radius: 10px;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    diseño de ola para pie de pagina
+    <div class="wave-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#e7008a" fill-opacity="1" d="M0,32L48,42.7C96,53,192,75,288,112C384,149,480,203,576,186.7C672,171,768,85,864,80C960,75,1056,149,1152,181.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+  </div>
+
+
+
+  estilo para cada servicio::after /* Estilo para el ícono de cada servicio */
+  #como-funciona .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+  }
+  
+  .descripcion-gris {
+      color: #757575; /* Un tono de gris mediano */
+  }
+  
+  #como-funciona h2 {
+      color: black;
+      font-size: 30px;
+      margin-bottom: 20px;  /* Asegura espacio suficiente entre el título y los iconos */
+  }
+  
+  #como-funciona p {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 20px;  /* Asegura espacio suficiente antes de los iconos */
+  }
+  .iconos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; /* Ajusta para que los iconos se distribuyan uniformemente */
+      align-items: center;
+  }
+  
+  .icono {
+      flex: 1 1 45%; /* Ajusta el flex basis para que dos iconos quepan por fila */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: 30px; /* Espacio entre las filas de iconos */
+      margin-right: 30px;
+      border-radius: 15px;
+      background-color: #f5f5f5;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .icono img {
+      width: 80px;  /* Tamaño del icono ajustable según necesidades */
+      height: auto;
+      margin-bottom: 10px;
+  }
+
+
+  /* Colores específicos para cada icono */
+  .icono.morado {
+      background-color: #8975E8;
+  }
+
+  .icono.naranja {
+      background-color: #ff8c00;
+  }
+
+  .icono.celeste {
+      background-color: #1AA1E9;
+  }
+
+  .icono.verde {
+      background-color: #FE829A;
+  }
+      
+  <section id="como-funciona">
+  <div class="container">
+      <h2>¿Cómo funciona NicaBuses?</h2>
+      <p class="descripcion-gris">NicaBuses busca horario de buses y terminales en distintas ciudades, municipios y departamentos en Nicaragua.</p>
+      <div class="iconos-container"> <!-- Contenedor específico para los iconos -->
+          <div class="icono morado">
+              <img src="imagenes/iconos/icono-horarios.png" alt="Encuentra horarios de buses">
+              <p>Encuentra horarios de buses</p>
+          </div>
+          <div class="icono naranja">
+              <img src="imagenes/iconos/add-package.png" alt="Agrega nuevos horarios de buses">
+              <p>Agrega nuevos horarios de buses</p>
+          </div>
+          <div class="icono celeste">
+              <img src="imagenes/iconos/icono-terminales.png" alt="Encuentra terminales">
+              <p>Encuentra terminales</p>
+          </div>
+          <div class="icono verde">
+              <img src="imagenes/iconos/icono-califica.png" alt="Califica horarios de buses en Nicaragua">
+              <p>Califica horarios de buses en Nicaragua</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: none; /* No background color */
+    border-bottom: 1px solid transparent; /* No border */
+
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo-nicabuses {
+    max-height: 60px;
+}
+
+.menu-navegacion {
+    display: flex;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.menu-navegacion a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+}
+
+.menu-navegacion a:hover {
+    background-color: #7b4d8b;
+    color: white;
+    border-radius: 10px;
+}
+
+
+
+<main>
+<div class="homepage-content">
+    <div class="text-content">
+        <h1>Bienvenido a NicaBuses</h1>
+        <p>Encuentra terminales y horarios de transporte público en Nicaragua.</p>
+    </div>
+    <div class="image-content">
+        <img class="right-image" src="imagenes/city-bus.jpg" alt="City Bus">
+    </div>
+</div>
+</main>
+
+
+main -> buen diseño con el formuario de busqueda
+<main>
+<div class="homepage-content">
+    <img class="left-image" src="imagenes/bus-station.png" alt="City Bus">
+    <div class="formulario-busqueda" id="formulario-busqueda">
+        <div class="campos-busqueda">
+            <div class="par-busqueda">
+                <span class="encabezado-autocompletar">Viaje desde</span>
+                <input type="text" id="buscar-desde" placeholder="Ciudad de origen">
+            </div>
+            <div class="icono-intercambio" id="intercambiar">
+                <span>⇄</span>
+            </div>
+            <div class="par-busqueda">
+                <span class="encabezado-autocompletar">Hasta</span>
+                <input type="text" id="buscar-hasta" placeholder="Ciudad de destino">
+            </div>
+        </div>
+        <div class="boton-busqueda">
+            <button id="buscar-transporte">Ver todas las opciones</button>
+        </div>
+    </div>
+</div>
+</main>
+
+
+ultima actualizacion
+
+    /* archivo: css-code/index.css */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'arial';         
+        background-color: white
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: none; /* No background color */
+        border-bottom: 1px solid transparent; /* No border */
+    }
+
+    .logo-container {
+        flex: 1;
+    }
+
+    .logo-nicabuses {
+        max-height: 60px;
+    }
+
+    .menu-navegacion {
+        display: flex;
+        gap: 20px;
+        border-radius: 10px;
+
+    }
+
+    .menu-navegacion a {
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 10px;
+
+    }
+
+    .menu-navegacion a:hover {
+        background-color: #7b4d8b;
+        color: white;
+        border-radius: 10px;
+    }
+    .homepage-content {
+        display: flex; 
+        justify-content: flex-start; /* Alinear elementos al inicio (izquierda) */
+        align-items: center; 
+        height: calc(100vh - 70px); /* Ajustar la altura considerando el encabezado */
+        margin: 0 auto; /* Centrar el contenido horizontalmente */
+        padding-left: 20px; /* Agregar un relleno a la izquierda */
+    }
+    
+    .left-image {
+        width: 45%; /* Ajustar el ancho de la imagen a un tamaño moderado */
+        height: auto; /* Ajustar la altura automáticamente */
+        display: block; /* Mostrar como un bloque */
+        box-shadow: none; 
+    }
+    
+    .formulario-busqueda {
+        width: 100%; /* Ajustar el ancho del formulario para ocupar todo el contenedor */
+        display: flex; /* Usar flexbox para alinear los elementos del formulario */
+        flex-direction: column; /* Alinear los campos de búsqueda verticalmente */
+        align-items: flex-start; /* Alinear los elementos al inicio */
+    }
+    
+    .campos-busqueda {
+        width: 115%;
+        display: flex;
+        margin-bottom: 10px;
+        flex-direction: column; /* Alinear los campos de búsqueda verticalmente */
+        align-items: flex-start;
+    }
+    
+    .par-busqueda {
+        margin-bottom: 10px; /* Añadir margen inferior para separación */
+        width: 82%; 
+        font-size: 18px;
+    }
+    
+    .icono-intercambio {
+        margin: 10px 0; 
+    }
+    
+    .boton-busqueda {
+        text-align: center;
+        width: 80%; /* Ajustar el ancho del botón */
+        margin-top: 10px; /* Añadir margen superior para separación */    }
+    
+    .encabezado-autocompletar {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button {
+        width: 100%; /* Hacer que el botón ocupe todo el ancho */
+        padding: 10px 20px;
+        border: none;
+        background-color: #de007b;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    
+    button:hover {
+        background-color: #65397b;
+    }
+    
+    .formulario-container {
+        width: 25%; /* Ajustar el ancho del contenedor del formulario */
+        margin-right: 20px;
+        margin-left: 20px; /* Añadir un margen a la izquierda para separar del lado de la imagen */
+        background-color: #f8f9fa; /* Color de fondo del contenedor */
+        padding: 20px; /* Añadir relleno al contenedor */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+        display: flex; /* Usar flexbox para alinear el contenido */
+        justify-content: flex-start; /* Alinear el contenido al inicio */
+        align-items: center; /* Centrar el contenido verticalmente */
+        min-height: 300px; /* Ajustar la altura mínima del contenedor */
+    }
+
+
+    
+    
+    codigo antes del uso de G R I d
+
+    .homepage-content {
+        display: flex; 
+        justify-content: flex-start; /* Alinear elementos al inicio (izquierda) */
+        align-items: center; 
+        height: calc(80vh - 70px); /* Ajustar la altura considerando el encabezado */
+        margin: 0 auto; /* Centrar el contenido horizontalmente */
+        padding-left: 20px; /* Agregar un relleno a la izquierda */
+    }
+    
+    .left-image {
+        width: 45%; /* Ajustar el ancho de la imagen a un tamaño moderado */
+        height: auto; /* Ajustar la altura automáticamente */
+        display: block; /* Mostrar como un bloque */
+        box-shadow: none; 
+    }
+    
+    .formulario-container {
+        width: 25%; /* Ajustar el ancho del contenedor del formulario */
+        margin: 0 20px; /* Añadir márgenes a los lados */
+        background-color: rgb(250, 250, 250); /* Color de fondo del contenedor */
+        padding: 32px; /* Añadir relleno al contenedor */
+        border-radius: 8px; /* Bordes redondeados */
+        box-sizing: border-box; /* Incluir padding y border en el ancho y alto */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+        display: flex; /* Usar flexbox para alinear el contenido */
+        flex-direction: column; /* Alinear los elementos verticalmente */
+        justify-content: center; /* Centrar el contenido horizontalmente */
+        align-items: center; /* Centrar el contenido verticalmente */
+        min-height: 328px; /* Ajustar la altura mínima del contenedor */
+        position: relative; /* Posicionamiento relativo */
+    }
+    
+    .formulario-busqueda {
+        width: 100%; /* Ajustar el ancho del formulario para ocupar todo el contenedor */
+        display: flex; /* Usar flexbox para alinear los elementos del formulario */
+        flex-direction: column; /* Alinear los campos de búsqueda verticalmente */
+        align-items: flex-start; /* Alinear los elementos al inicio */
+        box-sizing: border-box; /* Incluir padding y border en el ancho y alto */
+    }
+    
+    .campos-busqueda {
+        width: 100%; /* Asegurarse de que los campos ocupen todo el ancho */
+        display: flex;
+        flex-direction: column; /* Alinear los campos de búsqueda verticalmente */
+        align-items: flex-start; /* Alinear los elementos al inicio */
+        margin-bottom: 5px;
+        }
+    
+    .par-busqueda {
+        width: 100%; /* Ajustar el ancho de los campos de búsqueda */
+        margin-bottom: 5px;/* Añadir margen inferior para separación */
+        font-size: 18px;
+    }
+    
+    .contenedor-principal{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Ajusta el ancho del contenedor del icono */
+        height: 100%; /* Ajusta la altura del contenedor del icono */
+    }
+    
+    .icono-intercambio {
+        display: flex;
+        justify-content: center;
+        align-items: center;            
+        background-color: pink; /* Fondo blanco */
+        border-radius: 50%; /* Hace que el div sea circular */
+
+    }
+    .icono-intercambio img {
+        width: 24px; /* Ajustar el tamaño del icono */
+        height: 24px; /* Ajustar el tamaño del icono */
+    }
+    
+    .button {
+        display: flex; /* Usar flexbox para alinear el botón */
+        justify-content: center; /* Centrar el botón */
+        width: 100%; /* Asegurarse de que el contenedor del botón ocupe todo el ancho */
+        margin-bottom: 5px; /* Añadir margen superior para separación */
+    }
+    
+    button {
+        width: auto; /* Ajustar el ancho del botón */
+        padding: 8px;
+        border: none;
+        background-color: #de007b;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold; /* Hacer que el contenido esté en negrita */
+        font-family: arial;
+        box-sizing: border-box; /* Incluir padding y border en el ancho y alto */
+    }
+    
+    button:hover {
+        background-color: #65397b;
+    }
+    
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box; /* Incluir padding y border en el ancho y alto */
+        margin-bottom: 10px; /* Añadir margen inferior para separación */
+    }
+    
+    .encabezado-autocompletar {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .titulo-central {
+        text-align: center;
+        width: 100%; /* Asegura que el encabezado ocupe el ancho completo */
+        margin: 20px 0; /* Agrega espacio antes y después del encabezado */
+        font-size: 24px; /* Ajusta el tamaño de la fuente según necesidades de diseño */
+        color: #333; /* Color oscuro para el texto */
+        font-family: 'Open Sans', sans-serif; /* Usa la fuente importada */
+    }
+    
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>NicaBuses</title>
+    <link rel="stylesheet" href="css-code/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img class="logo-nicabuses" src="imagenes/logo-test.png" alt="Logo NicaBuses">
+        </div>
+        <nav class="menu-navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#terminales">Terminales</a>
+            <a href="#horario">Horario</a>
+            <a href="#departamentos">Departamentos</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="titulo-central">Descubre cómo viajar en bus en Nicaragua</h1>
+        <div class="homepage-content">
+            <img class="left-image" src="imagenes/bus-station.png" alt="City Bus">
+            <div class="formulario-container">
+                <div class="formulario-busqueda" id="formulario-busqueda">
+                    <div class="campos-busqueda">
+                        <div class="par-busqueda">
+                            <span class="encabezado-autocompletar">Viaje desde</span>
+                            <input type="text" id="buscar-desde" placeholder="Ciudad de origen">
+                        </div>
+                        <div class="contenedor-principal">
+                            <div class="icono-intercambio" id="intercambiar">
+                                <img src="imagenes/exchange.png" alt="Icono de intercambio">
+                            </div>
+                        </div>                       
+                        <div class="par-busqueda">
+                            <span class="encabezado-autocompletar">Hasta</span>
+                            <input type="text" id="buscar-hasta" placeholder="Ciudad de destino">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button id="buscar-transporte">Ver todas las opciones</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>    
+    
+</body>
+
+</html>

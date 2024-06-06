@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Horarios - Nica Buses</title>
+    <link rel="stylesheet" href="css-code/index.css"> <!-- Solo si index.css incluye estilos generales que no afectan el contenido -->
+    <link rel="stylesheet" href="css-code/horarios.css"> <!-- Estilos específicos para la página de horarios -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img class="logo-nicabuses" src="css-code/imagenes/logo-test.png" alt="Logo NicaBuses">
+        </div>
+        <nav class="menu-navegacion">
+            <a href="index.html"><img src="css-code/imagenes/iconos/home-page.png" alt="Inicio Icon" class="nav-icon">Inicio</a>
+            <a href="terminales.html"><img src="css-code/imagenes/iconos/terminales-menu-icono.png" alt="Terminales Icon" class="nav-icon">Terminales</a>
+            <a href="horarios.html"><img src="css-code/imagenes/iconos/horario.png" alt="Horario Icon" class="nav-icon">Horario</a>
+        </nav>
+    </header>
+    <main>
+        <h2 class="h2-titulo">Crear Nuevo Horario de Bus</h2>
+        <form class="form-horarios" action="#" method="POST">
+            <label for="ciudad_origen">Ciudad de Origen:</label>
+            <input type="text" id="ciudad_origen" name="ciudad_origen" required>
+            
+            <label for="ciudad_destino">Ciudad de Destino:</label>
+            <input type="text" id="ciudad_destino" name="ciudad_destino" required>
+            
+            <label for="terminal_origen">Terminal de Origen:</label>
+            <input type="text" id="terminal_origen" name="terminal_origen" required>
+            
+            <label for="terminal_destino">Terminal de Destino:</label>
+            <input type="text" id="terminal_destino" name="terminal_destino" required>
+            
+            <label for="hora_salida">Hora de Salida:</label>
+            <input type="time" id="hora_salida" name="hora_salida" required>
+            
+            <label for="duracion_viaje">Duración Aproximada del Viaje:</label>
+            <input type="text" id="duracion_viaje" name="duracion_viaje" placeholder="Ej: 2 horas" required>
+            
+            <button type="submit">Agregar Horario</button>
+        </form>
+    </main>
+    <script src="js/formHandler.js"></script>
+</body>
+</html>
