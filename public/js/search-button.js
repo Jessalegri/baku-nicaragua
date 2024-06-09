@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const formulario = document.getElementById('formulario-busqueda'); 
-    formulario.addEventListener('submit', function(event) {
+    const botonBuscar = document.getElementById('buscar-transporte'); 
+    botonBuscar.addEventListener('click', function(event) {
         event.preventDefault();  
         const origen = document.getElementById('buscar-desde').value.trim();
         const destino = document.getElementById('buscar-hasta').value.trim();

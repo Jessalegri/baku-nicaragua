@@ -3,13 +3,13 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Middleware para parsear el cuerpo de las solicitudes en formato JSON
+// Middleware to parse the body of requests in JSON format
 app.use(express.json());
 
-// Servir archivos estáticos desde la carpeta 'public'
+// Serve static files from 'public' folder
 app.use(express.static('public'));
 
-const mysql = require('mysql');
+const mysql = require('mysql2'); // Cambiado de 'mysql' a 'mysql2'
 const pool = mysql.createPool({
     connectionLimit: 10,
     host: process.env.DB_HOST,
@@ -18,9 +18,9 @@ const pool = mysql.createPool({
     database: process.env.DB_DATABASE
 });
 
-// Ruta para manejar la página inicial
+// Path to handle the home page
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html'); // Asegúrate de que este path sea correcto
+    res.sendFile(__dirname + '/public/index.html'); 
 });
 
 app.post('/buscar-horarios', (req, res) => {
