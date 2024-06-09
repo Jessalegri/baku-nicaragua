@@ -538,3 +538,177 @@ ultima actualizacion
 </body>
 
 </html>
+
+
+// Esto es index funcionando con sql: 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>NicaBuses</title>
+    <link rel="stylesheet" href="css-code/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img class="logo-nicabuses" src="css-code/imagenes/logo-test.png" alt="Logo NicaBuses">
+        </div>
+        <nav class="menu-navegacion">
+            <a href="#inicio"><img src="css-code/imagenes/iconos/home-page.png" alt="Terminales Icon" class="nav-icon">Inicio</a>
+            <a href="terminales.html"><img src="css-code/imagenes/iconos/terminales-menu-icono.png" alt="Terminales Icon" class="nav-icon">Terminales</a>
+            <a href="horarios.html"><img src="css-code/imagenes/iconos/horario.png" alt="Horario Icon" class="nav-icon">Horario</a>
+        </nav>
+    </header>
+    <main>
+        <div class="homepage-content">
+            <img class="left-image" src="css-code/imagenes/bus-station.png" alt="City Bus">
+            <div>
+                <h1 class="titulo-central">Descubre cómo viajar en bus en Nicaragua</h1>
+                <h2 class="subtitulo">Busca las terminales y horario de buses:</h2>
+
+                <div class="formulario-container">
+                    <div class="formulario-busqueda" id="formulario-busqueda">
+                        <div class="campos-busqueda">
+                            <div class="par-busqueda">
+                                <span class="encabezado-autocompletar">Viaje desde</span>
+                                <input type="text" id="buscar-desde" placeholder="Ciudad de origen">
+                            </div>
+                            <div class="contenedor-principal">
+                                <div class="icono-intercambio" id="intercambiar">
+                                    <img src="css-code/imagenes/exchange.png" alt="Icono de intercambio">
+                                </div>
+                            </div>                       
+                            <div class="par-busqueda">
+                                <span class="encabezado-autocompletar">Hasta</span>
+                                <input type="text" id="buscar-hasta" placeholder="Ciudad de destino">
+                            </div>
+                        </div>
+                        <div class="button">
+                            <button type="button" id="buscar-transporte">
+                                <img src="css-code/imagenes/lupa.png" alt="Icon" class="button-icon">Ver todas las opciones
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Aquí es donde se mostrarán los resultados de la búsqueda -->
+        <div id="resultados"></div>
+    </main>
+    <section id="como-funciona">
+        <div class="container">
+            <h2>¿Cómo funciona NicaBuses?</h2>
+            <p class="descripcion-gris">NicaBuses busca horario de buses y terminales en distintas ciudades, municipios y departamentos en Nicaragua.</p>
+            <div class="iconos-container">
+                <div class="icono morado">
+                    <div class="icono-background">
+                        <img src="css-code/imagenes/iconos/icono-horarios.png" alt="Encuentra horarios de buses">
+                    </div>
+                    <p>Encuentra horarios de buses</p>
+                </div>
+                <div class="icono naranja">
+                    <div class="icono-background">
+                        <img src="css-code/imagenes/iconos/add-package.png" alt="Agrega nuevos horarios de buses">
+                    </div>
+                    <p>Agrega nuevos horarios de buses</p>
+                </div>
+                <div class="icono celeste">
+                    <div class="icono-background">
+                        <img src="css-code/imagenes/iconos/icono-terminales.png" alt="Encuentra terminales">
+                    </div>
+                    <p>Encuentra terminales</p>
+                </div>
+                <div class="icono verde">
+                    <div class="icono-background">
+                        <img src="css-code/imagenes/iconos/icono-califica.png" alt="Califica horarios de buses en Nicaragua">
+                    </div>
+                    <p>Califica horarios de buses en Nicaragua</p>
+                </div>
+            </div>
+        </div>
+      </section>
+      <section class="gallery" id="departamentos">
+        <div class="contenedor">
+            <h2 class="subtitulo">Departamentos</h2>
+            <div class="contenedor-galeria">
+                <img src="css-code/imagenes/leon.jpg" alt="Granada" class="img-galeria">
+                <img src="css-code/imagenes/granada.jpg" alt="León" class="img-galeria">
+                <img src="css-code/imagenes/leon.jpg" alt="Masaya" class="img-galeria">
+                <img src="css-code/imagenes/granada.jpg" alt="Rivas" class="img-galeria">
+                <img src="css-code/imagenes/granada.jpg" alt="Matagalpa" class="img-galeria">
+                <img src="css-code/imagenes/granada.jpg" alt="Estelí" class="img-galeria">
+            </div>
+        </div>
+    </section>
+      <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-text">
+                <h3>Nica Buses</h3>
+                <p>Encuentra y califica los horarios de buses en Nicaragua, explorando ciudades, municipios y departamentos de manera eficiente.</p>
+            </div>
+            <div class="social-media">
+                <a href="https://www.facebook.com/nicabuses" target="_blank"><img src="css-code/imagenes/iconos/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/nicabuses" target="_blank"><img src="css-code/imagenes/iconos/instagram.png" alt="Instagram"></a>
+                <a href="https://github.com/nicabuses" target="_blank"><img src="css-code/imagenes/iconos/github.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/search-button.js"></script>
+</body>
+</html>
+
+
+Esto es server.js funcionando con sql
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3001;
+
+// Middleware to parse the body of requests in JSON format
+app.use(express.json());
+
+// Serve static files from 'public' folder
+app.use(express.static('public'));
+
+const mysql = require('mysql2'); // Asegúrate de que estás utilizando 'mysql2'
+const pool = mysql.createPool({
+    connectionLimit: 10,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+});
+
+// Path to handle the home page
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html'); 
+});
+
+app.post('/buscar-horarios', (req, res) => {
+    const { ciudadOrigen, ciudadDestino } = req.body;
+    console.log('Request body:', req.body); // Depuración
+
+    const query = `
+        SELECT h.hora_salida, h.duracion_viaje 
+        FROM horarios_de_buses h
+        JOIN Terminales t_origen ON h.terminal_origen_id = t_origen.terminal_id
+        JOIN Terminales t_destino ON h.terminal_destino_id = t_destino.terminal_id
+        JOIN Ciudades c_origen ON t_origen.ciudad_id = c_origen.ciudad_id
+        JOIN Ciudades c_destino ON t_destino.ciudad_id = c_destino.ciudad_id
+        WHERE c_origen.nombre_ciudad = ? AND c_destino.nombre_ciudad = ?
+    `;
+    pool.query(query, [ciudadOrigen, ciudadDestino], (error, results) => {
+        if (error) {
+            console.error('Error al realizar la consulta', error); // Depuración
+            return res.status(500).json({ error: 'Error al consultar la base de datos' });
+        }
+        console.log('Query results:', results); // Depuración
+        res.json(results);
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
+});
