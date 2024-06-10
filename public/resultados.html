@@ -2,11 +2,32 @@
 <html lang="es">
 <head>
     <title>Resultados de Horarios</title>
-    <link rel="stylesheet" href="css-code/index.css">
+    <link rel="stylesheet" href="css-code/resultados.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Resultados de Horarios</h1>
+    <header class="header">
+        <div class="logo-container">
+            <img class="logo-nicabuses" src="css-code/imagenes/logo-test.png" alt="Logo NicaBuses">
+        </div>
+        <nav class="menu-navegacion">
+            <a href="index.html"><img src="css-code/imagenes/iconos/home-page.png" alt="Terminales Icon" class="nav-icon">Inicio</a>
+            <a href="terminales.html"><img src="css-code/imagenes/iconos/terminales-menu-icono.png" alt="Terminales Icon" class="nav-icon">Terminales</a>
+            <a href="horarios.html"><img src="css-code/imagenes/iconos/horario.png" alt="Horario Icon" class="nav-icon">Horario</a>
+        </nav>
+    </header>
+    <div class="header-content">
+        <div class="back-button-container">
+            <button class="back-button" onclick="goBack()">Volver</button>
+        </div>
+        <h1>Resultados de Horarios</h1>
+    </div>
     <div id="resultados"></div>
     <script src="js/resultados.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = '/';
+        }
+    </script>
 </body>
 </html>

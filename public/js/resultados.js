@@ -4,15 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     resultadosDiv.innerHTML = ''; 
     resultados.forEach(horario => {
-        const p = document.createElement('p');
-        p.innerHTML = `
-            <strong>Ciudad Origen:</strong> ${horario.ciudad_origen} <br>
-            <strong>Terminal Origen:</strong> ${horario.terminal_origen} <br>
-            <strong>Ciudad Destino:</strong> ${horario.ciudad_destino} <br>
-            <strong>Terminal Destino:</strong> ${horario.terminal_destino} <br>
-            <strong>Hora de salida:</strong> ${horario.hora_salida} <br>
-            <strong>Duración:</strong> ${horario.duracion_viaje} <br>
+        const resultDiv = document.createElement('div');
+        resultDiv.className = 'result';
+        resultDiv.innerHTML = `
+            <p><strong>Ciudad Origen:</strong> ${horario.ciudad_origen}</p>
+            <p><strong>Terminal Origen:</strong> ${horario.terminal_origen}</p>
+            <p><strong>Ciudad Destino:</strong> ${horario.ciudad_destino}</p>
+            <p><strong>Terminal Destino:</strong> ${horario.terminal_destino}</p>
+            <p><strong>Hora de salida:</strong> ${horario.hora_salida}</p>
+            <p><strong>Duración:</strong> ${horario.duracion_viaje}</p>
         `;
-        resultadosDiv.appendChild(p);
+        resultadosDiv.appendChild(resultDiv);
     });
 });

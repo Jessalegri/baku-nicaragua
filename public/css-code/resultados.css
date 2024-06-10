@@ -1,0 +1,140 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-navegacion a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 300;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-navegacion img.nav-icon {
+    margin-right: 8px;
+}
+
+.header-content {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.back-button-container {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.back-button {
+    width: auto;
+    padding: 12px 20px;
+    border: none;
+    background-color: #de007b;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+}
+
+.resultado-container {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    width: 80%;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ruta-bar {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 10px 10px 0 0; /* redondear solo las esquinas superiores */
+}
+
+.detalles-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.terminal {
+    flex: 1;
+    padding: 10px;
+}
+
+.origen {
+    text-align: left;
+}
+
+.destino {
+    text-align: right;
+}
+
+.horario {
+    flex: 1;
+    text-align: center;
+}
+
+span {
+    display: block;
+    margin-top: 10px;
+    color: grey;
+}
+
+/* Estilo para las barras de ruta en tarjetas impares */
+.resultado-container:nth-child(odd) .ruta-bar {
+    background-color: #16B5F1; /* Color azul que proporcionaste */
+}
+
+/* Estilo para las barras de ruta en tarjetas pares */
+.resultado-container:nth-child(even) .ruta-bar {
+    background-color: #4CAF50; /* Color verde que proporcionaste */
+}
+
+/* Estilo para horarios no encontrados */
+.no-result {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    width: 80%;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #666;
+    background-color: #f8f9fa;
+}
+/* Agrega estilos para la sección de calificaciones */
+.calificacion {
+    font-weight: bold; /* Hace que el texto de la calificación sea negrita */
+    color: #3498db; 
+    margin-top: 10px; /* Añade un espacio superior para separar la calificación de otros detalles */
+}
