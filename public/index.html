@@ -6,21 +6,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header class="header">
         <div class="logo-container">
-            <img class="logo-nicabuses" src="css-code/imagenes/logo-test.png" alt="Logo NicaBuses">
-        </div>
+            <a href="/">
+                <img class="logo-nicabuses" src="css-code/imagenes/Kabu.logo.png" alt="Logo NicaBuses">
+            </a>
+        </div>        
         <nav class="menu-navegacion">
-            <a href="#inicio"><img src="css-code/imagenes/iconos/home-page.png" alt="Terminales Icon" class="nav-icon">Inicio</a>
-            <a href="terminales.html"><img src="css-code/imagenes/iconos/terminales-menu-icono.png" alt="Terminales Icon" class="nav-icon">Terminales</a>
-            <a href="horarios.html"><img src="css-code/imagenes/iconos/horario.png" alt="Horario Icon" class="nav-icon">Horario</a>
+            <a href="/sobreBaku"><img src="css-code/imagenes/iconos/homepageIcon.png" alt="Inicio Icon" class="nav-icon">Nosotros</a>
+            <a href="/terminales"><img src="css-code/imagenes/iconos/terminales-menu.png" alt="Terminales Icon" class="nav-icon">Terminales</a>
+            <a href="horarios.html"><img src="css-code/imagenes/iconos/llamar.png" alt="Horario Icon" class="nav-icon">Contacto</a>
         </nav>
     </header>
     <main>
         <div class="homepage-content">
-            <img class="left-image" src="css-code/imagenes/bus-station.png" alt="City Bus">
+            <img class="left-image" src="css-code/imagenes/caminando.png" alt="City Bus">
             <div>
                 <h1 class="titulo-central">Descubre cómo viajar en bus en Nicaragua</h1>
                 <h2 class="subtitulo">Busca las terminales y horario de buses:</h2>
@@ -34,7 +38,7 @@
                             </div>
                             <div class="contenedor-principal">
                                 <div class="icono-intercambio" id="intercambiar">
-                                    <img src="css-code/imagenes/exchange.png" alt="Icono de intercambio">
+                                    <img src="css-code/imagenes/colordiferente.png" alt="Icono de intercambio">
                                 </div>
                             </div>                       
                             <div class="par-busqueda">
@@ -53,64 +57,95 @@
         </div>
         <div id="resultados"></div> <!-- Contenedor para mostrar los resultados -->
     </main>
-    <section id="como-funciona">
-        <div class="container">
-            <h2>¿Cómo funciona NicaBuses?</h2>
-            <p class="descripcion-gris">NicaBuses busca horario de buses y terminales en distintas ciudades, municipios y departamentos en Nicaragua.</p>
-            <div class="iconos-container">
-                <div class="icono morado">
-                    <div class="icono-background">
-                        <img src="css-code/imagenes/iconos/icono-horarios.png" alt="Encuentra horarios de buses">
-                    </div>
-                    <p>Encuentra horarios de buses</p>
-                </div>
-                <div class="icono naranja">
-                    <div class="icono-background">
-                        <img src="css-code/imagenes/iconos/add-package.png" alt="Agrega nuevos horarios de buses">
-                    </div>
-                    <p>Agrega nuevos horarios de buses</p>
-                </div>
-                <div class="icono celeste">
-                    <div class="icono-background">
-                        <img src="css-code/imagenes/iconos/icono-terminales.png" alt="Encuentra terminales">
-                    </div>
-                    <p>Encuentra terminales</p>
-                </div>
-                <div class="icono verde">
-                    <div class="icono-background">
-                        <img src="css-code/imagenes/iconos/icono-califica.png" alt="Califica horarios de buses en Nicaragua">
-                    </div>
-                    <p>Califica horarios de buses en Nicaragua</p>
-                </div>
+
+<!-- Acerca de Baku-->  
+    <section id="about-baku">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h2>Acerca de Baku</h2>
+                <p class="description-text">Baku es una plataforma interactiva que permite a los usuarios encontrar y contribuir con información sobre el transporte público en Nicaragua.</p>
+                <a href="/sobreBaku" class="button-link">Leer más</a>
             </div>
-        </div>
-      </section>
-      <section class="gallery" id="departamentos">
-        <div class="contenedor">
-            <h2 class="subtitulo">Departamentos</h2>
-            <div class="contenedor-galeria">
-                <img src="css-code/imagenes/leon.jpg" alt="Granada" class="img-galeria">
-                <img src="css-code/imagenes/granada.jpg" alt="León" class="img-galeria">
-                <img src="css-code/imagenes/leon.jpg" alt="Masaya" class="img-galeria">
-                <img src="css-code/imagenes/granada.jpg" alt="Rivas" class="img-galeria">
-                <img src="css-code/imagenes/granada.jpg" alt="Matagalpa" class="img-galeria">
-                <img src="css-code/imagenes/granada.jpg" alt="Estelí" class="img-galeria">
+            <div class="image-content">
+                <div class="image-content">
+                    <img src="css-code/imagenes/caminandoalaubicacion.png" alt="Ubicación">
+                </div>
             </div>
         </div>
     </section>
-      <footer id="footer">
-        <div class="footer-container">
-            <div class="footer-text">
-                <h3>Nica Buses</h3>
-                <p>Encuentra y califica los horarios de buses en Nicaragua, explorando ciudades, municipios y departamentos de manera eficiente.</p>
-            </div>
+<!-- Contribucion detalles-->  
+<section class="contribucion-section">
+    <h1>Cómo contribuir con Baku Nicaragua</h1>
+    <div class="contribucion-container">
+        <a href="/agregarHorario" class="contribucion-button blue">Agrega un horario</a>
+        <a href="/calificar-horario/ID_DEL_HORARIO" class="contribucion-button orange">Califica un horario</a>
+        <a href="#" class="contribucion-button orange">Agregar terminal</a>
+        <a href="#" class="contribucion-button blue">Comparte tu experiencia</a>
+    </div>
+</section>
+<!-- Galeria de fotos -->
+    <section class="photo-gallery">
+        <h2>Destinos populares de Nicaragua</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="css-code/imagenes/leon.jpg" alt="Destino 1">
+                <div class="image-overlay">Chinandega</div> <!-- Agregado overlay con texto -->
+            </div>            
+            <div class="gallery-item">
+                <img src="css-code/imagenes/leon.jpg" alt="Destino 1">
+                <div class="image-overlay">San Juan del Sur</div> <!-- Agregado overlay con texto -->
+            </div>               
+            <div class="gallery-item">
+                <img src="css-code/imagenes/leon.jpg" alt="Destino 1">
+                <div class="image-overlay">Leon</div> <!-- Agregado overlay con texto -->
+            </div>   
+            <div class="gallery-item">
+                <img src="css-code/imagenes/leon.jpg" alt="Destino 1">
+                <div class="image-overlay">Granada</div> <!-- Agregado overlay con texto -->
+            </div>               
+            <div class="gallery-item">
+                <img src="css-code/imagenes/leon.jpg" alt="Destino 1">
+                <div class="image-overlay">Esteli</div> <!-- Agregado overlay con texto -->
+            </div>               
+            <div class="gallery-item">
+                <img src="css-code/imagenes/leon.jpg" alt="Destino 1">
+                <div class="image-overlay">Matagalpa</div> <!-- Agregado overlay con texto -->
+            </div>           
+        </div>
+        <button class="button-galeria">Buscar horarios</button>
+    </section>
+    
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-section logo-and-slogan">
+            <img src="css-code/imagenes/Kabu.logo.png" alt="Logo de Baku" class="footer-logo-img">
+            <p>Conectando Nicaragua, un viaje a la vez.</p>
+        </div>  
+        <div class="footer-section navigation-links">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="#about-baku">Acerca de Baku</a></li>
+                <li><a href="terminales.html">Terminales</a></li>
+                <li><a href="horarios.html">Horarios</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact-info">
+            <p>Email: contacto@baku.com</p>
             <div class="social-media">
-                <a href="https://www.facebook.com/nicabuses" target="_blank"><img src="css-code/imagenes/iconos/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/nicabuses" target="_blank"><img src="css-code/imagenes/iconos/instagram.png" alt="Instagram"></a>
-                <a href="https://github.com/nicabuses" target="_blank"><img src="css-code/imagenes/iconos/github.png" alt="GitHub"></a>
+                <a href="https://www.facebook.com/nicabuses" target="_blank">
+                    <img src="css-code/imagenes/iconos/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/nicabuses" target="_blank">
+                    <img src="css-code/imagenes/iconos/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://github.com/nicabuses" target="_blank">
+                    <img src="css-code/imagenes/iconos/github.png" alt="GitHub">
+                </a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
     <script src="js/search-button.js"></script>
 </body>
 </html>

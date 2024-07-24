@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css-code/index.css">
+    <link rel="stylesheet" href="/css-code/sobreBaku.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('navbar') %>
+    <!-- Sección "Acerca de Baku" -->
+    <section class="acerca-de-baku">
+        <div class="texto-baku">
+            <h1>Acerca de Baku</h1>
+        </div>
+        <div class="imagen-baku">
+            <img src="/css-code/imagenes/acercadeBaku.jpg" alt="Imagen descriptiva de Baku">
+        </div>
+    </section>
+
+    <!-- Sección "Quiénes somos?" -->
+    <section class="quienes-somos">
+        <div class="quienes-somos-container">
+            <div class="quienes-somos-imagen">
+                <img src="/css-code/imagenes/Airport-rafiki.png" alt="Imagen representativa de Baku">
+            </div>
+            <div class="quienes-somos-texto">
+                <h2>Quiénes somos?</h2>
+                <div class="description">
+                    <p>Baku es un sitio web interactivo que inicia desde la necesidad a la escasez de información acerca del transporte público en Nicaragua.</p>
+                    <p>En Baku podrás encontrar y agregar horarios de buses, terminales en los distintos departamentos de Nicaragua.</p>
+                    <p>Cada usuario puede calificar horarios disponibles en Baku de esta manera cada contribución será efectiva y actualizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Sección de Invitación a Sugerencias -->
+    <section class="seccion-sugerencias">
+        <p class="texto-sugerencia">
+            Ayúdanos a mejorar la experiencia de todos en Baku.
+            Tus comentarios sobre el transporte público en Nicaragua son fundamentales para nuestro crecimiento.        
+        </p>
+        </section>
+        
+        <%- include('footer') %>
+</body>
+</html>

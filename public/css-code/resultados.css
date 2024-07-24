@@ -8,45 +8,196 @@ body {
     align-items: center;
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-h1 {
-    margin: 0;
-    font-size: 2em;
-    color: black;
-    text-align: center;
-    flex: 1;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;   
-    font-style: normal;
-}
-
-.back-button {
-    padding: 12px 20px;
-    border: none;
-    background-color: #de007b;
-    color: white;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    position: absolute;
-    left: 20px;
-}
-
 #resultados {
+    width: 80%;  /* Ajusta el ancho del contenedor principal */
+    margin-top: 0px;
+    padding: 20px;
+    box-sizing: border-box;  /* Incluye el padding en el ancho total */
+}
+
+.resultado-container {
+    margin: 20px auto;
     width: 80%;
-    margin-top: 20px;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
+    overflow: hidden; 
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ruta-bar {
+    color: white;
+    text-align: center;
+    padding: 15px; /* Aumenta el padding para hacer la barra más grande */
+    font-size: 1.8em; /* Incrementa el tamaño de la fuente */
+    border-radius: 10px 10px 0 0; /* Redondear solo las esquinas superiores */
+}
+
+.detalles-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+    grid-template-rows: auto auto; /* 2 filas automáticas */
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 25px; /* Incrementa el padding para hacer el contenedor de detalles más grande */
+    align-items: start; /* Alinea los elementos en la parte superior de la celda */
+}
+
+.terminal, .horario, .calificacion {
+    padding: 15px; /* Aumenta el padding interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.origen, .destino {
+    grid-column: span 1; /* Cada uno ocupa una columna */
+}
+
+.origen {
+    grid-row: 1; /* Primera fila */
+    justify-self: start; /* Justifica el contenido al principio de la celda */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.horario {
+    grid-row: 1; 
+    justify-self: start; 
+    text-align: center; 
+}
+/* Estilo específico para la duración */
+.horario p:nth-child(2) {
+    justify-self: start;
+    text-align: left; /* Alinea el texto al principio de la celda */
+}
+
+.destino {
+    grid-row: 2; /* Segunda fila */
+    justify-self: start; /* Justifica el contenido al principio de la celda */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.calificacion {
+    grid-column: span 2; /* Occupies both columns */
+    grid-row: 2; /* Second row */
+    text-align: justify; /* Justifies the text */
+    font-size: 1.2em; /* Font size */
+    color: #3498db; /* Blue color to highlight the rating */
+    margin: 0; /* Removes margins */
+    padding: 15px; /* Padding to maintain size */
+    justify-self: start;
+}
+
+p {
+    margin: 0 0 10px 0; /* Ajusta los márgenes para que sean iguales */
+    color: #333; /* Color de texto principal */
+    font-size: 16px; /* Tamaño de fuente uniforme */
+}
+
+p strong {
+    color: #000; /* Encabezados en negro */
+    font-weight: bold; /* Negrita para mayor énfasis */
+    display: inline-block; /* Asegura que el texto se alinee correctamente */
+}
+
+p span {
+    color: gray; /* Respuestas en gris oscuro */
+    margin-left: 5px; /* Espacio entre encabezado y respuesta */
+    font-weight: normal; /* Fuente normal para el contenido */
+}
+
+/* Estilo para tarjetas impares */
+.resultado-container:nth-child(odd) .ruta-bar {
+    background-color: #16B5F1; /* Color azul */
+}
+
+/* Estilo para tarjetas pares */
+.resultado-container:nth-child(even) .ruta-bar {
+    background-color: #4CAF50; /* Color verde */
+}
+
+/* Hrarios no encontrados */
+.no-result {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 100;
+    font-style: normal;
+    margin: 20px auto;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03); /* Sombra más suave */
+    text-align: center;
     padding: 20px;
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    color: #666;
+    background-color: #f8f9fa;
+}
+
+.no-result h2 {
+    font-family: 'Roboto', sans-serif; /* Asegura que la tipografía del encabezado sea Roboto */
+    font-weight: 400; 
+    color: #333; /* Color más oscuro para el encabezado */
+    margin-bottom: 10px; /* Margen inferior para separar el encabezado del texto */
+}
+
+/* Estilo para el contenedor del encabezado */
+.header-container {
+    display: flex;  /* Flexbox para alinear el botón y el título */
+    align-items: center;  /* Alinea verticalmente los elementos */
+    justify-content: flex-start;  /* Justifica el botón al inicio */
+    gap: 5px;  /* Espacio entre el botón y el título */
+    padding: 10px;  /* Padding interno para el contenedor */
+    background-color: #f4f4f9;  /* Fondo coincidente con el resto de la página */
+    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho */
+    box-sizing: border-box;  /* Incluye el padding en el ancho total */
+    margin: 10px 0 0px 0;  /* Agrega espacio en la parte superior */
+    position: relative;  /* Posicionamiento relativo para el contenedor */
+}
+
+/* Estilo para el botón de volver */
+.go-back-button {
+    background-color: #de007b;  
+    color: white;  
+    border: none;  
+    border-radius: 15px; 
+    padding: 12px 20px;  /* Aumenta el padding para hacerlo más grande */
+    font-family: 'Roboto', sans-serif;  /* Fuente Roboto */
+    font-size: 18px;  /* Aumenta el tamaño de la fuente */
+    font-weight: bold; 
+    cursor: pointer; 
+    margin: 10px 0 0 10px;  /* Agrega espacio en la parte superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Añade sombreado */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;  /* Transición suave */
+}
+
+/* Estilo para el encabezado */
+.header-container h1 {
+    flex-grow: 1;  
+    text-align: center;  /* Alinea el texto del título al centro */
+    margin: 0;  /* Elimina margen por defecto */
+    font-family: 'Roboto', sans-serif;  /* Asegura que el encabezado use Roboto */
+    font-size: 1.8em;  
+    color: #333;  /* Color del texto */
+}
+
+.calificar-button {
+    background-color: #007BFF; /* Color de fondo azul */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Padding para hacer el botón más grande */
+    cursor: pointer; /* Cursor de mano */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    display: inline-block; /* Asegura que el botón se comporte como un bloque en línea */
+    margin-top: 10px; /* Espacio superior */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.calificar-button:hover {
+    background-color: #0056b3; /* Fondo más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Agrandar un poco al pasar el ratón */
+}
+
+.calificar-button:active {
+    background-color: #003f7f; /* Fondo más oscuro al hacer clic */
+    transform: scale(1); /* Volver al tamaño original al hacer clic */
 }

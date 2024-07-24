@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmación</title>
+    <link rel="stylesheet" href="/css-code/index.css">
+    <link rel="stylesheet" href="/css-code/terminales.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css-code/confirmacion.css"> 
+    <link rel="stylesheet" href="/css-code/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"></head>
+    <body>
+        <div class="container">
+            <h1>Gracias por tu aporte</h1>
+            <% if (mensaje) { %>
+                <div class="alert alert-success">
+                    <%= mensaje %>
+                </div>
+            <% } %>
+            <a href="/agregarHorario" class="btn">Agregar otro horario</a>
+            <a href="/" class="btn">Volver al inicio</a>
+        </div>
+    </body>
+    </html>
+    

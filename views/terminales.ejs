@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminales - Baku</title>
+    <link rel="stylesheet" href="/css-code/index.css">
+    <link rel="stylesheet" href="/css-code/terminales.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('navbar') %>  <!-- Incluye el navbar desde la plantilla navbar.ejs -->
+
+
+    <!-- Contenido principal de la página de Terminales -->
+    <main id="main-content">
+        <section id="terminales-content" class="terminales-content">
+            <div class="text-container">
+                <h1>Encuentra Terminales en Nicaragua</h1>
+                <p>Utiliza nuestro buscador para encontrar terminales de autobuses en todo el país.</p>
+            
+                <form action="/buscar-terminales" method="get" id="search-form">
+                    <input type="text" placeholder="Buscar terminal..." name="search" id="search-input">
+                    <button type="submit" id="search-button">Buscar</button>
+                </form>
+
+                <div id="resultados">
+                    <% if (typeof terminales !== 'undefined' && terminales.length > 0) { %>
+                        <ul>
+                            <% terminales.forEach(terminal => { %>
+                                <li>
+                                    <h2><%= terminal.nombre_terminal %></h2>
+                                    <p>Ubicación: <%= terminal.ubicacion %></p>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    <% } else if (typeof terminales !== 'undefined') { %>
+                        <p>No se encontraron terminales.</p>
+                    <% } %>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <%- include('footer') %>  <!-- Incluye el footer desde la plantilla footer.ejs -->
+</body>
+</html>

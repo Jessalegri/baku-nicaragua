@@ -1,0 +1,104 @@
+/* Estilos para Poppins y Roboto Light */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#terminales-content {
+    width: 100%;
+    max-width: 800px; /* Ajusta según necesidades */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center; /* Centra el contenido */
+}
+
+#terminales-image {
+    max-width: 400px; /* Haz la imagen más grande */
+    width: 100%;
+    height: auto;
+    align-self: flex-end; /* Asegura que la imagen esté a la derecha */
+}
+
+.text-container h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: #16142D;
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #616161;
+    margin-bottom: 20px;
+}
+
+#search-form {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+}
+
+#search-input {
+    flex: 3; 
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#search-button {
+    flex: 1; 
+    padding: 12px 20px;
+    background-color: #FF6F00; 
+    color: white;
+    border: 1px solid #FF6F00;     
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+#search-button:hover {
+    background-color: #2979FF; 
+    border: none;
+}
+
+/* Dispositivos moviles */
+@media (max-width: 768px) {
+    .text-container h1 {
+        font-size: 22px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+    .text-container p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Horarios</title>
+    <link rel="stylesheet" href="css-code/agregarhorarios.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Agregar Horarios de Buses</h1>
+        <form id="horarioForm">
+            <div class="form-group">
+                <label for="ciudadOrigen">Ciudad de Origen:</label>
+                <input type="text" id="ciudadOrigen" name="ciudadOrigen" required>
+            </div>
+            <div class="form-group">
+                <label for="ciudadDestino">Ciudad de Destino:</label>
+                <input type="text" id="ciudadDestino" name="ciudadDestino" required>
+            </div>
+            <div class="form-group">
+                <label for="terminalOrigen">Terminal de Origen:</label>
+                <input type="text" id="terminalOrigen" name="terminalOrigen" required>
+            </div>
+            <div class="form-group">
+                <label for="terminalDestino">Terminal de Destino:</label>
+                <input type="text" id="terminalDestino" name="terminalDestino" required>
+            </div>
+            <div class="form-group">
+                <label for="horaSalida">Hora de Salida:</label>
+                <input type="time" id="horaSalida" name="horaSalida" required>
+            </div>
+            <div class="form-group">
+                <label for="duracionViaje">Duración del Viaje (minutos):</label>
+                <input type="number" id="duracionViaje" name="duracionViaje" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" id="agregarBtn">Agregar Horario</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

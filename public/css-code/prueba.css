@@ -1,0 +1,87 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilos para la sección de servicios */
+.servicios {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+/* Estilos para el h1 */
+.servicios h1 {
+    font-family: "Roboto", sans-serif;  
+    font-weight: bold;  
+    font-size: 35px;
+    line-height: 38px;
+    font-weight: 700;
+    color: #545454;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la descripción general */
+.descripcion-general {
+    color: #8c9597;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;    
+    font-weight: 300;
+    font-size: normal;
+    margin-bottom: 40px;
+}
+
+/* Estilos para el contenedor flex de los servicios */
+.servicios-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Estilos para cada servicio */
+.servicio {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+/* Efecto hover en cada servicio */
+.servicio:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos específicos para el primer servicio */
+.servicio-diseno {
+    color: #ff8c00;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Estilos para los otros títulos de servicio */
+.servicio-seo
+ {
+    font-family: "Poppins", sans-serif;
+    color: #16B5F1;  /* Cambia este color según tus necesidades */
+}
+
+.servicio-marketing {
+    font-family: "Poppins", sans-serif;
+    color: rgb(106, 77, 138);
+}
+/* Estilos para las descripciones de los servicios */
+.descripcion-servicio {
+    font-family: "Lato", sans-serif;
+    color: #8c9597;
+    font-size: 16px;
+    line-height: 1.6;
+}

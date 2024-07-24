@@ -1,11 +1,11 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: white;
     }
 
     .header {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
@@ -14,11 +14,11 @@
     }
 
     .logo-container {
-        flex: 1;
+        display: inline-block;
     }
 
     .logo-nicabuses {
-        max-height: 60px;
+        max-height: 80px;
     }
 
     .menu-navegacion {
@@ -27,16 +27,17 @@
         border-radius: 10px;
         justify-content: center;
         cursor: pointer;
+        flex-wrap: wrap; 
     }
     
     .menu-navegacion a {
         text-decoration: none;
-        color: black; 
+        color: #16142D; 
         padding: 10px 20px;
         background-color: transparent;
         border-radius: 10px;
         font-family: 'Roboto', sans-serif;
-        font-size: 18px;
+        font-size: 20px;
         box-shadow: none; 
         display: inline-flex;
         justify-content: center;
@@ -47,7 +48,7 @@
         }
     
     .menu-navegacion a:hover {
-        background-color: #1AA1E9; 
+        background-color: #2979FF; 
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
         color: white;
         opacity: 0.8;    
@@ -60,23 +61,6 @@
         vertical-align: middle; 
         height: 30px; 
         width: 30px; 
-    }
-    
-    
-    .homepage-content {
-        display: flex; 
-        justify-content: flex-start; 
-        align-items: center; 
-        height: calc(80vh - 70px); 
-        margin: 0 auto; 
-        padding-left: 20px; 
-    }
-    
-    .left-image {
-        width: 45%; 
-        height: auto; 
-        display: block; 
-        box-shadow: none; 
     }
     
     .homepage-content {
@@ -98,9 +82,9 @@
         grid-column: 2; 
         text-align: center;
         margin: 30px 0 20px 0;
-        font-size: 40px;
-        color: black; 
-        font-weight: bold;
+        font-size: 38px;
+        color: #16142D; 
+        font-family: 'Roboto', sans-serif; 
     }
 
     .subtitulo {
@@ -110,7 +94,6 @@
         text-align: center;
         color: gray;
         margin: 0 0 40px 0; 
-
     }
     
     .formulario-container {
@@ -163,13 +146,12 @@
         display: flex;
         justify-content: center;
         align-items: center;            
-        background-color: pink; 
         border-radius: 50%; 
     }
     
     .icono-intercambio img {
-        width: 24px; /* Ajustar el tamaño del icono */
-        height: 24px; 
+        width: 45px; /* Ajustar el tamaño del icono */
+        height: 45px; 
     }
     
     .button {
@@ -183,7 +165,7 @@
         width: 80%;        
         padding: 12px;
         border: none;
-        background-color: #de007b;
+        background-color: #FF8D21;
         color: white;
         border-radius: 15px;
         cursor: pointer;
@@ -194,7 +176,7 @@
     }
     
     button:hover {
-        background-color: #1AA1E9;
+        background-color: #2979FF;
         opacity: 0.8;    
     }
 
@@ -204,8 +186,7 @@
         width: 30px;
         height: 30px;
     }
-    
-    
+
     input[type="text"] {
         width: 100%;
         padding: 10px;
@@ -222,182 +203,306 @@
         margin-bottom: 10px;
     }
 
-    /* Estilo para el ícono de cada servicio */
-    #como-funciona .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px;
+/* Contribucion de info */
+.contribucion-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #2979FF;
+    color: #ffffff;
+}
+
+.contribucion-section h1 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+}
+
+.contribucion-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.contribucion-button {
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.blue {
+    background-color: #1B50E0;
+}
+.blue:hover {
+    background-color: #e69530; 
+}
+
+.orange {
+    background-color: #1B50E0;
+}
+.orange:hover {
+    background-color: #e69530; 
+}
+/* acerca de baku */
+#about-baku {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #F5F5F5;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    padding: 20px;
+}
+
+.text-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; 
+    font-size: 35px;
+    color: #16142D;
+    margin-bottom: 5px; 
+}
+
+.description-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; 
+    font-size: 18px;
+    margin-bottom: 30px; 
+}
+
+.button-link  {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FF8D21;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #2979FF;
+    color: #F2F5FF; 
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    background-color: #F5F5F5;
+}
+/* Galeria */
+.photo-gallery {
+    text-align: center;
+    margin: 40px;
+    padding: 20px;
+    background-color: #ffff;
+}
+
+.photo-gallery h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-family: 'roboto';
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery-item {
+    flex: 0 1 25%; 
+    margin-bottom: 15px;
+    position: relative; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block; 
+}
+.image-overlay {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    color: white; 
+    text-align: center;
+    padding: 10px 0; 
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+.button-galeria {
+    width: 60%;  
+    max-width: 350px;      
+    padding: 12px 14px;
+    border: none;
+    background-color: #FF8D21;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    margin: 35px auto 35px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2979FF;
+}
+
+/* Footer section */
+    #footer {
+        background-color: #F2F5FF
+        ;
+        color: black;
+        padding: 20px;
         text-align: center;
     }
-    
-    #como-funciona .descripcion-gris {
-        color: gray; 
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;  
-        font-style: normal;
-        font-size: 22px;
+
+    #footer .footer-logo-img {
+        width: 80px; 
+        height: auto; 
+        margin-bottom: 0px;
     }
-    
-    #como-funciona h2 {
-        color: black;
-        font-size: 36px;
-        margin-bottom: 20px;
+    #footer .footer-section.navigation-links {
+        text-align: left; 
+        align-items: flex-start;
     }
-    
-    #como-funciona p {
-        color: black;
-        font-family: 'Roboto', sans-serif;
-        margin-bottom: 20px;
-        font-size: 18px;
+
+    #footer .footer-section.navigation-links ul {
+        padding-left: 20px; 
     }
-    
-    .iconos-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    .icono {
-        flex: 1 1 45%; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-        margin: 10px; 
-        border-radius: 15px;
-        padding-top: 20px;
-        background-color: #ffff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        
-    }
-    
-    .icono-background {
-        padding: 20px; 
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60px; 
-        height: 60px;
+
+    #footer .footer-section.navigation-links li {
+        display: list-item; 
+        list-style-type: disc; 
+        list-style-position: inside; 
+        text-align: left; 
         margin-bottom: 10px;
     }
-    
-    .icono img {
-        width: 85%; 
-        height: auto;
+
+    #footer .footer-section.navigation-links li a {
+        font-size: 18px; 
+    }
+    #footer .footer-section p {
+        font-size: 18px; 
     }
     
-    .icono.morado .icono-background {
-        background-color: #8975E8;
-        border: 7px solid #d6c6ff; 
+    #footer .social-media img {
+        width: 24px; 
+        height: 24px; 
+        margin: 0 5px; 
     }
-    
-    .icono.naranja .icono-background {
-        background-color: #ff8c00;
-        border: 7px solid #FFB366; 
-    }
-    
-    .icono.celeste .icono-background {
-        background-color: #16B5F1; 
-        border: 7px solid #B2E4FA; 
-    }
-    
-    .icono.verde .icono-background {
-        background-color: #FE829A;
-        border: 7px solid #FFC3DE; 
-    }
-    
-    /* Footer section */
-    #footer {
-        background-color: #FFC0CB; /* Color de fondo rosado claro */
-        padding: 20px;
-        display: flex;
-        align-items: center;
-    }
-    
+
     .footer-container {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        flex-wrap: wrap; 
+    }
+
+    .footer-section {
+        flex: 1; 
+        padding: 10px; 
+        min-width: 200px; 
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li a, .footer-section p, .footer-section a {
+        color: black; 
+        text-decoration: none;
+    }
+
+    .social-media a {
+        display: inline-block; 
+    }
+
+@media (max-width: 768px) {
+    /* Homepage*/
+    .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
+        padding: 10px;
+        background-color: #FFFFFF; /* Color de fondo del encabezado */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     }
-    
-    .social-media {
+
+    .logo-container {
+        flex: 1; /* Toma la mayor parte del espacio disponible */
+        display: flex; /* Asegura que los elementos estén en una fila */
+        align-items: center; /* Alinea verticalmente */
+    }
+
+    .logo-nicabuses {
+        max-height: 60px; /* Altura máxima del logo */
+    }
+
+    .menu-navegacion {
         display: flex;
-        align-items: center;
+        gap: 20px; /* Espacio entre elementos del menú */
+        align-items: center; /* Alinea los elementos verticalmente */
     }
-    
-    .social-media a {
-        margin-right: 25px; /* Espacio entre iconos */
+
+    .menu-navegacion a {
+        font-size: 16px;
+        padding: 8px 10px;
+        text-decoration: none; /* Quita el subrayado del enlace */
+        color: #16142D; /* Color del texto */
     }
-    
-    .social-media img {
-        width: 40px; /* Tamaño de los iconos de redes sociales */
-        height: auto;
+
+
+    .nav-icon {
+        display: none; 
     }
-    
-    .footer-text {
-        text-align: left;
-        max-width: 60%; /* Ajuste para evitar que el texto ocupe todo el ancho disponible */
+
+    /* Homepage - Imagen + formulario. */
+
+
+    /* Acerca de Baku*/
+    .text-content h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
     }
-    
-    .footer-text h3 {
-        margin-bottom: 5px;
-        font-size: 24px; /* Aumentado de un tamaño estándar a 24px */
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;   /* sino cambiarla a 100 */
-        font-style: normal;
-        color: black;
+
+    .description-text {
+        font-size: 16px;
+        margin-bottom: 10px;
     }
-    
-    .footer-text p {
-        font-size: 16px; /* Aumentado de 14px a 16px */
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;   /* sino cambiarla a 100 */
-        font-style: normal;
-        color: black;
-    }
-    
-/* Estilo para seccion galeria */
-    .gallery {
-        background-color: #fff; 
-        padding: 20px 0;
-        text-align: center;
-    }
-    
-    .gallery .contenedor {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-    
-    .gallery h2.subtitulo {
-        font-size: 30px;
-        color: #333;
-        margin-bottom: 20px;
-    }
-    
-    .gallery .contenedor-galeria {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    
-    .gallery .img-galeria {
-        width: calc(25% - 20px); 
-        height: auto;
-        margin: 10px; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
-        border-radius: 10px; 
-    }
-    
-    section {
-        margin-top: 10px;
-        margin-bottom: 50px;
-    }
-    
+}

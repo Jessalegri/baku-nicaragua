@@ -1,0 +1,124 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: none; 
+    border-bottom: 1px solid transparent;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo-nicabuses {
+    max-height: 80px;
+}
+
+.menu-navegacion {
+    display: flex;
+    gap: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-navegacion a {
+    text-decoration: none;
+    color: black; 
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: 'semibold';
+    font-size: 18px;
+    box-shadow: none; 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; 
+    text-align: center; 
+    transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s; 
+    }
+
+.menu-navegacion a:hover {
+    background-color: #1AA1E9; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
+    color: white;
+    opacity: 0.8;    
+    cursor: pointer;
+}
+
+/* Iconos del menu de navegacion */
+.nav-icon { 
+    margin-right: 8px; 
+    vertical-align: middle; 
+    height: 30px; 
+    width: 30px; 
+}
+
+.content-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.content-section img {
+    max-width: 95%; /* Ajusta este valor según necesites */
+    max-height: 95vh; /* Limita la altura para que no sea demasiado grande */
+    object-fit: contain; /* Mantiene las proporciones de la imagen sin recortarla */
+    margin-top: -10%; /* Mueve la imagen un 10% hacia arriba */
+}
+
+.custom-shape-divider-bottom-1719001535 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1719001535 svg {
+    position: relative;
+    display: block;
+    width: calc(128% + 1.3px);
+    height: 122px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1719001535 .shape-fill {
+    fill: #FFFFFF;
+}
+
+#about-baku .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#about-baku .text-content, #about-baku .image-content {
+    flex: 1;
+}
+
+#about-baku .description-text {
+    margin: 10px 0;
+}
+
+#about-baku img {
+    width: 100%;
+    height: auto;
+    background-color: white;
+}

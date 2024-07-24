@@ -1,0 +1,201 @@
+/* Estilos generales para sobreBaku */
+body {
+    font-family: 'Roboto', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sección "Acerca de Baku" */
+.acerca-de-baku {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    background-color: #FFFFFF;
+    padding: 15px;
+}
+
+.texto-baku {
+    flex: 1; 
+    padding: 20px;
+    text-align: left; 
+}
+
+.texto-baku h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 34px; 
+    color: #16142D; 
+    margin-left: 40px;
+    margin-bottom: 10px; 
+}
+
+.imagen-baku {
+    flex: 1; 
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.imagen-baku img {
+    max-width: 500px; 
+    height: auto; 
+}
+
+/* Sección "Quiénes somos?" */
+.quienes-somos {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #F2F5FF;
+}
+
+.quienes-somos-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between; 
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.quienes-somos-imagen img {
+    width: 100%;
+    max-width: 700px;
+}
+
+.quienes-somos-texto {
+    padding: 10px;
+}
+
+.quienes-somos h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #1B50E0; 
+    font-size: 30px; 
+    margin-bottom: 10px; 
+    text-align: center;
+}
+
+.description p {
+    font-size: 18px; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #16142D;
+    line-height: 1.2;
+    text-align: justify; 
+    margin-bottom: 1.5em;
+}
+
+/* Texto "Frase" Baku */
+.seccion-sugerencias {
+    background-color: #FF8D21; 
+    padding: 40px 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 200px; 
+}
+
+.texto-sugerencia {
+    color: white; 
+    font-size: 20px; 
+    max-width: 60%; 
+    margin: 0 auto;    
+    line-height: 1.8;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .acerca-de-baku {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        background-color: #FFFFFF;
+        padding: 15px;
+    }
+
+    .texto-baku {
+        padding: 20px;
+        text-align: center; 
+    }
+
+    .texto-baku h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px; 
+        color: #16142D; 
+        margin-bottom: 10px; 
+    }
+
+    .imagen-baku {
+        padding: 20px;
+    }
+
+    .imagen-baku img {
+        max-width: 100%;
+        height: auto; 
+    }
+
+    /* Sección "Quiénes somos?" */
+    .quienes-somos {
+        text-align: center;
+        padding: 20px 10px;
+        background-color: #F2F5FF;
+    }
+
+    .quienes-somos-container {
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between; 
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .quienes-somos-imagen img {
+        display: none;
+    }
+
+    .quienes-somos-texto {
+        padding: 10px;
+    }
+
+    .quienes-somos h2 {
+        font-family: 'Poppins', sans-serif;
+        color: #1B50E0; 
+        font-size: 30px; 
+        margin-bottom: 10px; 
+        text-align: center;
+    }
+
+    .description p {
+        font-size: 18px; 
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        color: #16142D;
+        line-height: 1.2;
+        text-align: justify; 
+        margin-bottom: 1.5em;
+    }
+
+    /* Texto "Frase" Baku */
+    .seccion-sugerencias {
+        background-color: #083DCC; 
+        padding: 40px 20px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 200px; 
+    }
+
+    .texto-sugerencia {
+        color: white; 
+        font-size: 18px; 
+        max-width: 90%; 
+        margin: 0 auto;    
+        line-height: 1.1;
+        text-align: center;
+    }
+}
