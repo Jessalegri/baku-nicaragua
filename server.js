@@ -18,6 +18,16 @@ const pool = mysql.createPool({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE
 });
+
+pool.getConnection((err, connection) => {
+    if (err) {
+        console.error('Error connecting to the database', err);
+        return;
+    }
+    console.log('Connected to the database');
+    connection.release();
+});
+
 // Ruta principal para servir la página inicial
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html'); 
@@ -182,7 +192,7 @@ app.post('/buscar-horarios', (req, res) => {
             console.error('Error al realizar la consulta', error);
             return res.status(500).json({ error: 'Error al consultar la base de datos' });
         }
-        console.log('Query results:', results);
+        console.log('Query results:', results); // Aquí results está definido
         res.json(results);
     });
 });
