@@ -2,23 +2,48 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="/css-code/index.css">
+    <link rel="stylesheet" href="/css-code/calificar-horario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <title><%= title %></title>
 </head>
 <body>
-    <h1>Calificar Horario</h1>
-    <p>Ciudad de Origen: <%= horario.ciudad_origen %></p>
-    <p>Terminal de Origen: <%= horario.terminal_origen %></p>
-    <p>Ciudad de Destino: <%= horario.ciudad_destino %></p>
-    <p>Terminal de Destino: <%= horario.terminal_destino %></p>
-    <p>Hora de Salida: <%= horario.hora_salida %></p>
-    <p>Duración del Viaje: <%= horario.duracion_viaje %></p>
+    <%- include('navbar') %>
 
-    <form action="/submit-calificacion" method="POST">
-        <input type="hidden" name="horario_id" value="<%= horario.horario_id %>">
-        <label for="calificacion">Calificación:</label>
-        <input type="number" name="calificacion" id="calificacion" min="1" max="5" required>
-        <button type="submit">Enviar Calificación</button>
-    </form>
+    <div class="container">
+        <h1>Calificar Horario</h1>
+        <p>Ciudad de Origen: <%= horario.ciudad_origen %></p>
+        <p>Terminal de Origen: <%= horario.terminal_origen %></p>
+        <p>Ciudad de Destino: <%= horario.ciudad_destino %></p>
+        <p>Terminal de Destino: <%= horario.terminal_destino %></p>
+        <p>Hora de Salida: <%= horario.hora_salida %></p>
+        <p>Duración del Viaje: <%= horario.duracion_viaje %></p>
+
+        <form action="/submit-calificacion" method="POST">
+            <input type="hidden" name="horario_id" value="<%= horario.horario_id %>">
+            <label for="calificacion">Calificación:</label>
+            <div class="calificacion-container">
+                <input type="radio" id="calificacion-1" name="calificacion" value="1" required>
+                <label for="calificacion-1" class="calificacion-label">1</label>
+
+                <input type="radio" id="calificacion-2" name="calificacion" value="2">
+                <label for="calificacion-2" class="calificacion-label">2</label>
+
+                <input type="radio" id="calificacion-3" name="calificacion" value="3">
+                <label for="calificacion-3" class="calificacion-label">3</label>
+
+                <input type="radio" id="calificacion-4" name="calificacion" value="4">
+                <label for="calificacion-4" class="calificacion-label">4</label>
+
+                <input type="radio" id="calificacion-5" name="calificacion" value="5">
+                <label for="calificacion-5" class="calificacion-label">5</label>
+            </div>
+            <button type="submit">Enviar Calificación</button>
+        </form>
+    </div>
 </body>
 </html>

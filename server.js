@@ -214,6 +214,43 @@ app.get('/buscar-terminales', (req, res) => {
         res.render('terminales', { title: 'Terminales', terminales: results });
     });
 });
+// Calificaciones 
+// Ruta para seleccionar la ciudad antes de calificar un horario
+app.get('/seleccionar-ciudad', (req, res) => {
+    const query = 'SELECT ciudad_id, nombre_ciudad FROM Ciudades';
+    pool.query(query, (error, results) => {
+        if (error) {
+            console.error('Error al obtener las ciudades:', error);
+            return res.status(500).json({ error: 'Error al obtener las ciudades' });
+        }
+        res.render('seleccionar-ciudad', { title: 'Seleccionar Ciudad', ciudades: results });
+    });
+});
+
+// Ruta para mostrar los horarios de la ciudad seleccionada
+app.get('/ver-horarios/:ciudadId', (req, res) => {
+    const ciudadId = req.params.ciudadId;
+    const query = `
+        SELECT 
+            h.horario_id,
+            t_origen.nombre_terminal AS terminal_origen,
+            t_destino.nombre_terminal AS terminal_destino,
+            h.hora_salida,
+            h.duracion_viaje
+        FROM horarios_de_buses h
+        JOIN Terminales t_origen ON h.terminal_origen_id = t_origen.terminal_id
+        JOIN Terminales t_destino ON h.terminal_destino_id = t_destino.terminal_id
+        WHERE t_origen.ciudad_id = ? OR t_destino.ciudad_id = ?
+    `;
+    pool.query(query, [ciudadId, ciudadId], (error, results) => {
+        if (error) {
+            console.error('Error al obtener los horarios:', error);
+            return res.status(500).json({ error: 'Error al obtener los horarios' });
+        }
+        res.json(results);
+    });
+});
+
 
 // Ruta para mostrar el formulario de calificación
 app.get('/calificar-horario/:id', (req, res) => {
@@ -247,11 +284,12 @@ app.get('/calificar-horario/:id', (req, res) => {
         }
 
         const horario = results[0];
-        res.render('calificar-horarios', { title: 'Calificar Horario', horario });
+        res.render('calificar-horario', { title: 'Calificar Horario', horario });
+
     });
 });
 
-// Ruta para guardar calificaciones
+// Ruta para guardar la calificación
 app.post('/submit-calificacion', (req, res) => {
     const { horario_id, calificacion } = req.body;
 
@@ -266,10 +304,10 @@ app.post('/submit-calificacion', (req, res) => {
             console.error('Error al actualizar la calificación:', error);
             return res.status(500).json({ error: 'Error al actualizar la calificación' });
         }
-        res.redirect('/'); // Redirigir a la página de inicio u otra página deseada después de calificar
+        // Redirigir a la página de confirmación con mensaje de éxito
+        res.redirect('/confirmacion?mensaje=Calificación agregada con éxito');
     });
 });
-
 
 // Iniciar el servidor
 app.listen(port, () => {

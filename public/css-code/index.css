@@ -384,6 +384,27 @@
 button:hover {
     background-color: #2979FF;
 }
+/* Sobre Baku nuevo estilo */
+.sobrebaku-btn {
+    display: inline-block;
+    padding: 20px 24px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    background-color: #41695D;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease-in-out;
+    text-align: left; /* Alinear el botón a la izquierda */
+}
+
+.sobrebaku-btn:hover {
+    background-color: #EFD284;
+    color: #41695D;
+}
 
 /* Footer section */
     #footer {
@@ -456,6 +477,164 @@ button:hover {
         display: inline-block; 
     }
 
+/* Nueva prueba de galery*/
+.featured-cottages-section {
+    text-align: center; 
+    padding: 40px 20px; 
+    background-color: #f7f7f7; /* Fondo claro opcional */
+}
+
+/* Estilo del subtítulo */
+.featured-subtitulo {
+    color: #41695D;
+    font-family: "Source Sans Pro", sans-serif;   
+    font-size: 18px;
+    letter-spacing: 2px;
+    word-spacing: normal;
+}
+
+/* Estilo del título */
+.featured-text {
+    max-width: 800px; /* Ajusta este valor para hacer el contenedor más ancho */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    text-align: center;
+}
+
+.featured-titulo {
+    color: #313131;
+    font-family: 'Poppins, sans-serif';
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 2px;
+    word-spacing: normal;
+    margin-bottom: 20px;
+}
+
+/* Estilo de la descripción */
+.featured-descripcion {
+    color: #777;
+    font-family: var(--e-global-typography-dc7f13c-font-family), Sans-serif;
+    font-size: 18px;
+    line-height: 2.0;
+    margin-bottom: 30px;
+    text-align: justify;
+    max-width: 900px; 
+    letter-spacing: 1px;
+}
+
+/* Contenedor de imágenes */
+.featured-imagenes {
+    display: flex;
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes */
+}
+
+/* Estilo de las imágenes */
+.cottage-img {
+    width: 400px; /* Controlar el ancho de la imagen */
+    height: 600px; /* Modifica la altura aquí */
+    object-fit: cover;
+}
+.overlay h3 {
+    font-size: 28px; /* Aumentar el tamaño de la fuente */
+    margin-bottom: 10px; /* Mantener un pequeño espacio debajo */
+    font-family: 'Poppins, sans-serif';
+    letter-spacing: 1.5px;
+}
+
+.cottage-container {
+    position: relative;
+}
+
+.cottage-img {
+    width: 400px; 
+    height: 600px;
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cottage-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(80, 118, 106, 0.2) 0%, rgba(80, 118, 106, 0.7) 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    padding-bottom: 20px; /* Añadir espacio en la parte inferior */
+}
+
+.cottage-container:hover .overlay {
+    opacity: 1; 
+}
+
+.overlay h3, .overlay a {
+    opacity: 0;
+    transform: translateY(20px); /* Comienza desplazado hacia abajo */
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* Ajuste de velocidad */
+}
+
+.cottage-container:hover .overlay h3, 
+.cottage-container:hover .overlay a {
+    opacity: 1; /* Aparece cuando el cursor está sobre la imagen */
+    transform: translateY(0); /* Se desliza a su posición original */
+}
+
+.leer-mas-btn {
+    display: inline-block;
+    padding: 14px 24px; /* Ajustar padding para evitar que el texto se desborde */
+    background-color: #fff;
+    color: #41695D;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif; /* Alineación con .main-btn */
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out;
+    border: none; /* Asegúrate de que no haya borde */
+    border-radius: 0; /* Asegúrate de que no haya bordes redondeados */
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap; /* Asegura que el texto no se quiebre en varias líneas */
+    min-width: 180px; 
+}
+
+
+.leer-mas-btn:hover {
+    background-color: #ccc;
+    color: #41695D;
+}
+
+.main-btn {
+    display: inline-block;
+    padding: 20px 24px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    background-color: #41695D;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.main-btn:hover {
+    background-color: #EFD284;
+    color: #41695D;
+}
+
+
 @media (max-width: 768px) {
     /* Homepage*/
     .header {
@@ -513,5 +692,118 @@ button:hover {
         height: 200px !important; /* Ajusta la altura para dispositivos móviles */
         object-fit: cover;
         object-position: top;
+    }
+/* Featured Cottages Section */
+    .featured-cottages-section {
+        display: flex !important;
+        flex-direction: column !important; /* Cambia la dirección del contenido a vertical */
+        align-items: center !important;
+        max-width: 100%;
+        padding: 20px 10px !important; /* Ajusta el padding para pantallas más pequeñas */
+    }
+
+
+    /* Ajuste de tamaño de los textos */
+    .featured-titulo {
+        max-width: 100% !important;
+        font-size: 24px !important; /* Tamaño del título */
+    }
+
+    .featured-subtitulo {
+        padding-top: 15px !important;
+        font-size: 14px !important; /* Tamaño del subtítulo */
+    }
+
+    .featured-descripcion {
+        font-size: 11.5px;
+        margin-bottom: 30px !important;
+        padding-left: 15px !important; /* Añade espacio a la izquierda */
+        padding-right: 15px !important; /* Añade espacio a la derecha */
+        max-width: 100% !important; /* Ajusta el ancho máximo para hacer la descripción más corta */
+        text-align: justify !important; /* Justifica el texto */
+    }
+    
+    .featured-imagenes {
+        display: flex !important;
+        flex-direction: column !important; /* Cambia la disposición a una columna */
+        gap: 15px !important; /* Ajusta el espacio entre las imágenes */
+        align-items: center !important; /* Centra las imágenes */
+    }
+
+    .cottage-container {
+        width: 100% !important; /* Asegura que cada contenedor ocupe todo el ancho */
+        max-width: 320px !important; /* Establece un ancho máximo para las imágenes */
+    }
+
+    .cottage-img {
+        width: 100% !important; /* Las imágenes ocupan todo el ancho disponible */
+        height: auto !important; /* Mantén la proporción de la imagen */
+    }
+
+    .leer-mas-btn {
+        padding: 14px 24px !important;
+        font-size: 16px !important;
+        min-width: 140px !important;
+    }
+
+    .main-btn {
+        padding: 15px 20px !important; /* Reduce el tamaño del botón principal */
+        font-size: 18px !important; /* Ajusta el tamaño de la fuente del botón principal */
+    }
+}
+@media (max-width: 480px) {
+    .featured-cottages-section {
+        padding: 15px 10px;
+    }
+    .featured-imagenes {
+        gap: 15px;
+    }
+    .cottage-container {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1368px) {
+    .featured-cottages-section {
+        padding: 20px 10px !important;
+        max-width: 100% !important;
+    }
+
+    .featured-text {
+        max-width: 80% !important; /* Reduce el ancho del texto para pantallas medianas */
+    }
+
+    .featured-titulo {
+        max-width: 600px !important; /* Aumenta el ancho máximo del título */
+        font-size: 28px !important; /* Tamaño del título */
+        text-align: center !important; /* Centra el texto */
+        margin: 0 auto !important; /* Asegura que el contenedor esté centrado */
+        padding-left: 5% !important; /* Añade espacio a la izquierda */
+        padding-right: 5% !important; /* Añade espacio a la derecha */
+    }
+
+    .featured-subtitulo {
+        font-size: 18px !important;
+    }
+
+    .featured-descripcion {
+        font-size: 20px !important;
+        max-width: 90% !important;
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+    }
+
+    .featured-imagenes {
+        gap: 20px !important;
+    }
+
+    .cottage-container {
+        width: 90% !important; 
+        max-width: 100% !important;
+    }
+
+    .cottage-img {
+        width: 100% !important;
+        height: auto !important;
     }
 }

@@ -1,0 +1,108 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: flex;
+    padding: 100px;
+    background-color: #f9f9f9;     
+}
+
+.contact-container {
+    display: flex;
+    justify-content: flex-start;    
+    width: 100%;
+    max-width: 1200px; 
+    align-items: center; 
+
+}
+
+.contact-info {
+    text-align: left;
+    flex: 0 0 60%;    
+    padding: 20px;
+}
+
+.subtitle {
+    font-family: "Roboto";
+    color: rgb(65, 105, 94);
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.title {
+    font-family: 'Roboto';
+    font-weight: 600;
+    color: #313131;
+    font-size: 40px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(110, 110, 110);
+    line-height: 2.0;
+    letter-spacing: 1px;
+    font-size: 14px; /* Tamaño de fuente de la descripción */
+}
+
+.contact-form {
+    flex: 0 0 40%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    padding: 20px; /* Espaciado para el formulario */
+    border: 1px solid rgb(65, 105, 94); /* Borde verde */
+    background-color: transparent; /* Sin fondo */
+}
+
+.contact-form form {
+    width: 100%;
+    max-width: 450px; /* Más ancho que largo */
+}
+
+.contact-form label {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(65, 105, 94);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid rgb(65, 105, 94); /* Línea verde */
+    margin-bottom: 15px;
+    border-radius: 0; /* Sin bordes redondeados */
+    font-family: "Source Sans Pro", sans-serif;
+    color: #313131;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 16px;
+}
+.contact-form textarea {
+    resize: none; /* Desactiva la opción de redimensionar */
+    line-height: 1.5;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #41695D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.contact-form button:hover {
+    background-color: #365e50;
+}

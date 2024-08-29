@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css-code/index.css">
+    <link rel="stylesheet" href="/css-code/seleccionar-ciudad.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('navbar') %>
+
+    <div class="select-city-container">
+        <h1>Seleccionar Ciudad</h1>
+        <form id="cityForm" class="select-city-form">
+            <label for="ciudad">Elige una ciudad:</label>
+            <select name="ciudad" id="ciudad" class="select-city-dropdown" required>
+                <% ciudades.forEach(ciudad => { %>
+                    <option value="<%= ciudad.ciudad_id %>"><%= ciudad.nombre_ciudad %></option>
+                <% }) %>
+            </select>
+            <button type="button" onclick="loadHorarios()" class="btn-select-city">Ver Horarios</button>
+        </form>
+    </div>
+
+    <div id="horariosContainer" class="horarios-container"></div>
+
+    <script>
+        function loadHorarios() {
+            const ciudadId = document.getElementById('ciudad').value;
+            fetch(`/ver-horarios/${ciudadId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('horariosContainer');
+                    container.innerHTML = '';
+
+                    const title = document.createElement('h1');
+                    title.textContent = 'Horarios disponibles para calificar';
+                    container.appendChild(title);
+
+                    if (data.length === 0) {
+                        container.innerHTML = '<p>No se encontraron horarios para esta ciudad.</p>';
+                    } else {
+                        data.forEach(horario => {
+                            const horarioDiv = document.createElement('div');
+                            horarioDiv.classList.add('horario-item');
+                            horarioDiv.innerHTML = `
+                                <p><strong>Terminal de Origen:</strong> ${horario.terminal_origen}</p>
+                                <p><strong>Terminal de Destino:</strong> ${horario.terminal_destino}</p>
+                                <p><strong>Hora de Salida:</strong> ${horario.hora_salida}</p>
+                                <p><strong>Duración del Viaje:</strong> ${horario.duracion_viaje}</p>
+                                <button onclick="location.href='/calificar-horario/${horario.horario_id}'" class="btn-calificar">Calificar</button>
+                            `;
+                            container.appendChild(horarioDiv);
+                        });
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

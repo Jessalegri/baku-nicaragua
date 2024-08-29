@@ -3,6 +3,8 @@
 <head>
     <title>NicaBuses</title>
     <link rel="stylesheet" href="css-code/index.css">
+    <link rel="stylesheet" href="css-code/blog.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -57,8 +59,49 @@
         </div>
         <div id="resultados"></div> <!-- Contenedor para mostrar los resultados -->
     </main>
+<!-- Sobre baku -->
+<div class="about-section">
+    <div class="about-left">
+        <p class="about-subtitle">Acerca de Baku</p>
+        <h1 class="about-title">Tu Guía Completa para Navegar el Transporte Público en Nicaragua</h1>
+        <p class="about-description">
+            Baku es tu guía confiable para explorar el transporte público en Nicaragua. Nuestra plataforma interactiva permite a los usuarios descubrir rutas, horarios y terminales, así como compartir sus propias experiencias y conocimientos para ayudar a otros viajeros.
+        </p>
+        <!-- Botón alineado a la izquierda -->
+        <a href="/sobreBaku" class="about-btn">Leer más</a>
+    </div>
+    <div class="about-right">
+        <img src="css-code/imagenes/Judith-Free.jpeg" alt="Judith en San Juan del Sur" class="about-image">
+        <div class="about-rectangle">
+            <div class="about-icons-container">
+                <div class="about-icon-item">
+                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <div class="about-icon-text">
+                        <h3 class="about-icon-title">Explora</h3>
+                        <p class="about-icon-description">Navega por la red de transporte público en Nicaragua.</p>
+                    </div>
+                </div>
+                <div class="about-icon-item">
+                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <div class="about-icon-text">
+                        <h3 class="about-icon-title">Contribuye</h3>
+                        <p class="about-icon-description">Comparte y actualiza información sobre horarios y rutas.</p>
+                    </div>
+                </div>
+                <div class="about-icon-item">
+                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <div class="about-icon-text">
+                        <h3 class="about-icon-title">Planifica</h3>
+                        <p class="about-icon-description">Organiza tus viajes con información actualizada al instante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- Acerca de Baku-->  
+
+<!-- Acerca de Baku
     <section id="about-baku">
         <div class="content-wrapper">
             <div class="text-content">
@@ -73,47 +116,53 @@
             </div>
         </div>
     </section>
+    -->  
 <!-- Contribucion detalles-->  
 <section class="contribucion-section">
     <h1>Cómo contribuir con Baku Nicaragua</h1>
     <div class="contribucion-container">
         <a href="/agregarHorario" class="contribucion-button blue">Agrega un horario</a>
-        <a href="/calificar-horario/ID_DEL_HORARIO" class="contribucion-button orange">Califica un horario</a>
+        <a href="/seleccionar-ciudad" class="contribucion-button orange">Califica un horario</a>
         <a href="#" class="contribucion-button orange">Agregar terminal</a>
         <a href="#" class="contribucion-button blue">Comparte tu experiencia</a>
     </div>
 </section>
-<!-- Galeria de fotos -->
-    <section class="photo-gallery">
-        <h2>Destinos populares de Nicaragua</h2>
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="css-code/imagenes/maderasSJ.jpeg" alt="Destino 1">
-                <div class="image-overlay">San Juan del Sur</div> <!-- Agregado overlay con texto -->
-            </div>            
-            <div class="gallery-item">
-                <img src="css-code/imagenes/sanCristoalVolcano.jpeg" alt="Destino 1">
-                <div class="image-overlay">Chinandega</div> 
-            </div>               
-            <div class="gallery-item">
-                <img src="css-code/imagenes/lagunaNicaragua.jpeg" alt="Destino 1">
-                <div class="image-overlay">Esteli</div> 
-            </div>   
-            <div class="gallery-item">
-                <img src="css-code/imagenes/ciudadDeGranada.jpeg" alt="Destino 1">
-                <div class="image-overlay">Granada</div>
-            </div>               
-            <div class="gallery-item">
-                <img src="css-code/imagenes/leon.jpg" alt="Destino 1">
-                <div class="image-overlay">León</div> 
-            </div>               
-            <div class="gallery-item">
-                <img src="css-code/imagenes/leon.jpg" alt="Destino 1">
-                <div class="image-overlay">Matagalpa</div> 
-            </div>           
+<!-- Nueva seccion de fotos -->
+<div class="featured-cottages-section">
+    <div class="featured-text">
+        <p class="featured-subtitulo">Recomendaciones Baku</p>
+        <h2 class="featured-titulo">Tres Lugares de Nicaragua que te sorprenderán</h2>
+        <p class="featured-descripcion">
+            Baku te muestra lo mejor de Nicaragua, con destinos accesibles en transporte público. ¡Prepárate para explorar!    </div>
+    
+    <div class="featured-imagenes">
+        <div class="cottage-container">
+            <img src="css-code/imagenes/judithChinandega.jpeg" alt="Cottage 1" class="cottage-img">
+            <div class="overlay">
+                <h3>San Juan del Sur</h3>
+                <a href="san-juan-del-sur.html"><button class="leer-mas-btn">Leer más</button></a>
+            </div>
         </div>
-        <button class="button-galeria">Buscar horarios</button>
-    </section>
+        <div class="cottage-container">
+            <img src="css-code/imagenes/judithChinandega.jpeg" alt="Cottage 2" class="cottage-img">
+            <div class="overlay">
+                <h3>San Juan del Sur</h3>
+                <a href="san-juan-del-sur.html"><button class="leer-mas-btn">Leer más</button></a>
+            </div>
+        </div>
+        <div class="cottage-container">
+            <img src="css-code/imagenes/judithChinandega.jpeg" alt="Cottage 3" class="cottage-img">
+            <div class="overlay">
+                <h3>San Juan del Sur</h3>
+                <a href="san-juan-del-sur.html"><button class="leer-mas-btn">Leer más</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón ubicado fuera del contenedor de imágenes -->
+    <a href="explore-cottages.html" class="main-btn">Explore More Cottages</a>
+</div>
+
     
 <footer id="footer">
     <div class="footer-container">

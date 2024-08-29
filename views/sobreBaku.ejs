@@ -39,8 +39,33 @@
             </div>
         </div>
     </section>
-    
-    
+    <!-- Sección de Estadísticas -->
+<!-- Sección de Estadísticas -->
+<section class="statistics-section">
+    <div class="statistics-container">
+        <div class="stat-item">
+            <img src="css-code/imagenes/iconSurf.png" alt="Icono" class="stat-icon">
+            <p class="stat-number">60</p>
+            <p class="stat-description">Terminales de Buses</p>
+        </div>
+        <div class="stat-item">
+            <img src="css-code/imagenes/iconSurf.png" alt="Icono" class="stat-icon">
+            <p class="stat-number">145</p>
+            <p class="stat-description">Municipios cubiertos</p>
+        </div>
+        <div class="stat-item">
+            <img src="css-code/imagenes/iconSurf.png" alt="Icono" class="stat-icon">
+            <p class="stat-number">150</p>
+            <p class="stat-description">Rutas disponibles</p>
+        </div>
+        <div class="stat-item">
+            <img src="css-code/imagenes/iconSurf.png" alt="Icono" class="stat-icon">
+            <p class="stat-number">2500</p>
+            <p class="stat-description">Autobuses operando</p>
+        </div>
+    </div>
+</section>
+
 
     <!-- Sección de Invitación a Sugerencias -->
     <section class="seccion-sugerencias">
@@ -51,5 +76,44 @@
         </section>
         
         <%- include('footer') %>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const statNumbers = document.querySelectorAll('.stat-number');
+        
+                statNumbers.forEach(stat => {
+                    const targetNumber = parseInt(stat.textContent, 10);
+                    let currentNumber = 0;
+        
+                    // Ajustar la velocidad según el número objetivo
+                    let speed;
+                    if (targetNumber < 100) {
+                        speed = 230; // Muy lento para números bajos
+                    } else if (targetNumber < 200) {
+                        speed = 90; // Moderadamente lento para números medianos
+                    } else if (targetNumber < 1000) {
+                        speed = 50; // Velocidad media para números más altos
+                    } else {
+                        speed = 10; // Muy rápido para números muy altos
+                    }
+        
+                    const countUp = () => {
+                        if (currentNumber < targetNumber) {
+                            const increment = targetNumber > 1000 ? 2 : 1; // Incremento mayor para números altos
+                            currentNumber += increment;
+                            if (currentNumber > targetNumber) {
+                                currentNumber = targetNumber; // Asegura que no supere el objetivo
+                            }
+                            stat.textContent = currentNumber;
+                            setTimeout(countUp, speed);
+                        } else {
+                            stat.textContent = targetNumber; // Asegura que el número final se muestre correctamente
+                        }
+                    };
+        
+                    countUp();
+                });
+            });
+        </script>
+        
 </body>
 </html>

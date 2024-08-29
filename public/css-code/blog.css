@@ -1,0 +1,440 @@
+.homepage-section {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Altura de la imagen tipo encabezado */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(3px); /* Aplica un filtro borroso a la imagen */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(80, 110, 95, 0.4), rgba(80, 110, 95, 0.4)); /* Capa de color menos intensa */
+    z-index: 2;
+}
+
+.section-principal {
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.left-section {
+    width: 35%;
+    padding-right: 70px; /* Ajustar margen a la derecha para que coincida con el margen izquierdo */
+    margin-left: 50px; /* Margen a la izquierda */
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    align-items: center; /* Centrar el contenido horizontalmente */
+}
+
+.subtitulo, .titulo, .descripcion {
+    width: 100%; /* Asegura que los textos ocupen todo el ancho disponible */
+    text-align: left; /* Alinear el texto a la izquierda dentro del contenedor centrado */
+}
+
+.subtitulo {
+    font-family: "Source Sans Pro", sans-serif;   
+    color: rgb(65, 105, 94);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.titulo {
+    font-family: 'Poppins, sans-serif';
+    font-weight: 400;
+    font-weight: 700;
+    color: #313131;
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+
+}
+
+.descripcion {
+    font-family: "Source Sans Pro", sans-serif;    
+    color: rgb(110, 110, 110);
+    line-height: 2.0;
+}
+
+.right-section {
+    width: 80%;
+    position: relative;
+}
+
+.imagen-san-juan {
+    width: 55%; /* Reducir el ancho de la imagen */
+    height: 100%; /* Reducir la altura de la imagen */
+    object-fit: cover;
+}
+
+.rectangulo {
+    position: absolute;
+    top: 130px; /* Ajuste de la posición para adaptarse al nuevo tamaño */
+    left: 420px; /* Ajuste de la posición para adaptarse al nuevo tamaño */
+    width: 45%; /* Reducir el ancho del rectángulo */
+    height: 80%; /* Reducir la altura del rectángulo */
+    background-color: #41695d;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.icono-contenedor {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-left: 20px; 
+    height: 100%; 
+}
+
+.icono-item {
+    display: flex;
+    align-items: flex-start; 
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.icono-img {
+    width: 50px; /* Tamaño del icono */
+    height: 50px; /* Asegurar que el icono mantenga proporciones */
+    margin-right: 15px; /* Espacio entre el icono y el texto */
+}
+
+.icono-texto {
+    display: flex;
+    flex-direction: column; /* Alinear texto en columna */
+}
+
+.icono-titulo {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 24px;
+    color: #F2F2F2; /* Color del título */
+    margin: 0;
+}
+
+.icono-descripcion {
+    font-size: 16px;
+    color: #C6C6C6; 
+    margin-top: 10px; /* Espacio entre el título y la descripción */
+    line-height: 1.5; /* Interlineado para la descripción */
+}
+/* Seccion en index.html */
+.about-section {
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.about-left {
+    width: 35%;
+    padding-right: 70px;
+    margin-left: 50px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-subtitle, .about-title, .about-description {
+    width: 100%;
+    text-align: left;
+}
+
+.about-subtitle {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(65, 105, 94);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.about-title {
+    font-family: 'Poppins, sans-serif';
+    font-weight: 700;
+    color: #313131;
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(110, 110, 110);
+    line-height: 2.0;
+}
+
+/* Estilo del botón alineado a la izquierda */
+.about-btn {
+    display: inline-block;
+    padding: 15px 20px; /* Ajuste de padding para una apariencia compacta */
+    background-color: #2979FF;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px; /* Ajuste del tamaño de la fuente */
+    margin-top: 10px;    
+    text-align: center; 
+    letter-spacing: 1px;
+    font-weight: 400;
+    width: 100px; /* Permite que el botón se ajuste al contenido */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.about-btn:hover {
+    background-color: #EFD284;
+    color: #41695D;
+}
+
+
+.about-right {
+    width: 80%;
+    position: relative;
+}
+
+.about-image {
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-rectangle {
+    position: absolute;
+    top: 130px;
+    left: 420px;
+    width: 45%;
+    height: 80%;
+    background-color: #41695d;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.about-icons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    height: 100%;
+}
+
+.about-icon-item {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.about-icon-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.about-icon-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-icon-title {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 24px;
+    color: #F2F2F2;
+    margin: 0;
+}
+
+.about-icon-description {
+    font-size: 16px;
+    color: #C6C6C6;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+/* Estilos responsive para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .section-principal {
+        flex-direction: column; /* Colocar elementos en columna */
+        padding: 20px; /* Reducir el padding para pantallas más pequeñas */
+    }
+
+    .right-section, .left-section {
+        width: 100%; /* Asegura que las secciones ocupen el 100% del ancho */
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .imagen-san-juan {
+        width: 100%; /* Hacer la imagen del ancho completo */
+        height: auto; /* Permitir que la altura se ajuste automáticamente */
+        object-fit: cover;
+    }
+
+    .rectangulo {
+        position: relative; /* Cambiar a posición relativa para dispositivos móviles */
+        top: 0;
+        left: 0;
+        width: 100%; /* Hacer que el rectángulo ocupe todo el ancho */
+        height: auto; /* Ajustar la altura automáticamente según el contenido */
+        margin-top: 20px; /* Añadir un margen entre la imagen y el rectángulo */
+    }
+
+    .left-section {
+        margin-top: 20px; 
+        margin-bottom: 20px;
+    }
+
+    .subtitulo, .descripcion {
+        font-size: 90%; 
+    }
+
+    .icono-descripcion {
+        font-size: 14px; 
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    .icono-titulo {
+        font-size: 22px; 
+        margin-top: 10px
+    }
+    .icono-img {
+        margin-top: 10px
+
+    }
+    /* About Baku index.html */
+    .about-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about-right, .about-left {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .about-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .about-rectangle {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .about-left {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .about-subtitle, .about-description {
+        font-size: 90%;
+    }
+
+    .about-icon-description {
+        font-size: 14px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+
+    .about-icon-title {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    .about-icon-img {
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width: 820px) and (max-width: 1366px) {
+
+    .about-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about-right, .about-left {
+        width: 100%;
+        margin-left: 0px;
+        padding-right: 0;
+    }
+    .about-left {
+        padding-left: 50px;
+        padding-right: 50px; /* Agrega espacio a la derecha */
+        width: 80%; /* Reduce el ancho del contenedor */
+        margin: 0 auto; 
+    }
+
+    .about-right {
+        display: flex;
+        flex-direction: column; /* Cambia a disposición vertical */
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Espacio entre la imagen y el rectángulo */
+    }
+
+    .about-image {
+        width: 80%;
+        height: auto;
+        margin-top: 5%;
+        object-fit: cover;
+    }
+
+    .about-rectangle {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .about-icon-item {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .about-icon-img {
+        margin-right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-icon-title {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    .about-icon-description {
+        font-size: 16px;
+        color: #C6C6C6;
+    }
+}
