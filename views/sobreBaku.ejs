@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/css-code/index.css">
+    <link rel="stylesheet" href="css-code/blog.css">
+
     <link rel="stylesheet" href="/css-code/sobreBaku.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +15,19 @@
 </head>
 <body>
     <%- include('navbar') %>
-    <!-- Sección "Acerca de Baku" -->
+        <!-- Sección Homepage -->
+        <div class="homepage-section">
+            <img src="css-code/imagenes/olas.jpg" alt="Imagen de fondo" class="background-image">
+            <div class="overlay"></div>
+            <h1 class="homepage-title">
+                Acerca <span>de Baku</span>
+            </h1>
+            <div class="homepage-links">
+                <a href="index.html" class="link blanco">Inicio</a>
+                <a href="sobreBaku.ejs" class="link amarillo">Acerca de Baku</a>
+            </div>
+        </div>
+    <!-- Sección "Acerca de Baku" 
     <section class="acerca-de-baku">
         <div class="texto-baku">
             <h1>Acerca de Baku</h1>
@@ -22,8 +36,48 @@
             <img src="/css-code/imagenes/acercadeBaku.jpg" alt="Imagen descriptiva de Baku">
         </div>
     </section>
-
-    <!-- Sección "Quiénes somos?" -->
+-->
+    <!-- Sobre baku -->
+<div class="about-section">
+    <div class="about-left">
+        <p class="about-subtitle">Acerca de Baku</p>
+        <h1 class="about-title">Tu Guía Completa para Navegar el Transporte Público en Nicaragua</h1>
+        <p class="about-description">
+            Baku es tu guía confiable para explorar el transporte público en Nicaragua. Nuestra plataforma interactiva permite a los usuarios descubrir rutas, horarios y terminales, así como compartir sus propias experiencias y conocimientos para ayudar a otros viajeros.
+        </p>
+        <!-- Botón alineado a la izquierda -->
+        <a href="/sobreBaku" class="about-btn">Leer más</a>
+    </div>
+    <div class="about-right">
+        <img src="css-code/imagenes/Judith-Free.jpeg" alt="Judith en San Juan del Sur" class="imagen-san-juan">
+        <div class="about-rectangle">
+            <div class="about-icons-container">
+                <div class="about-icon-item">
+                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <div class="about-icon-text">
+                        <h3 class="about-icon-title">Explora</h3>
+                        <p class="about-icon-description">Navega por la red de transporte público en Nicaragua.</p>
+                    </div>
+                </div>
+                <div class="about-icon-item">
+                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <div class="about-icon-text">
+                        <h3 class="about-icon-title">Contribuye</h3>
+                        <p class="about-icon-description">Comparte y actualiza información sobre horarios y rutas.</p>
+                    </div>
+                </div>
+                <div class="about-icon-item">
+                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <div class="about-icon-text">
+                        <h3 class="about-icon-title">Planifica</h3>
+                        <p class="about-icon-description">Organiza tus viajes con información actualizada al instante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Sección "Quiénes somos?" 
     <section class="quienes-somos">
         <div class="quienes-somos-container">
             <div class="quienes-somos-imagen">
@@ -39,6 +93,7 @@
             </div>
         </div>
     </section>
+-->
     <!-- Sección de Estadísticas -->
 <!-- Sección de Estadísticas -->
 <section class="statistics-section">

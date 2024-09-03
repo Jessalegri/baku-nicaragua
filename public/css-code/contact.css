@@ -37,7 +37,7 @@ body {
     font-family: 'Roboto';
     font-weight: 600;
     color: #313131;
-    font-size: 40px;
+    font-size: 42px;
     letter-spacing: 3px;
     margin-bottom: 20px;
 }
@@ -95,7 +95,7 @@ body {
 .contact-form button {
     width: 100%;
     padding: 10px;
-    background-color: #41695D;
+    background-color: #85C5E9;
     color: white;
     border: none;
     cursor: pointer;
@@ -104,5 +104,5 @@ body {
 }
 
 .contact-form button:hover {
-    background-color: #365e50;
+    background-color: #4C9866;
 }
