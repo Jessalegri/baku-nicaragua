@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh; /* Altura de la imagen tipo encabezado */
+    height: 50vh; 
     margin: 0;
     padding: 0;
 }
@@ -25,9 +25,9 @@
 }
 .homepage-title {
     position: absolute;
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centr\a horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición para que el texto esté exactamente en el centro */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     font-family: 'Spectra', sans-serif;
     font-size: 55px;
     letter-spacing: 2px;
@@ -38,30 +38,30 @@
 }
 .homepage-links {
     position: absolute;
-    top: 65%; /* Coloca los enlaces debajo del título */
+    top: 65%; 
     z-index: 3;
     text-align: center;
     display: flex;
-    gap: 20px; /* Espacio entre los enlaces */
+    gap: 20px; 
 }
 
 .homepage-links .link {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    text-decoration: none; /* Quita el subrayado de los enlaces */
+    text-decoration: none; 
     transition: color 0.3s ease;
 }
 
 .homepage-links .link.blanco {
-    color: #EFD284; /* Color blanco para el enlace "Inicio" */
+    color: #EFD284; 
 }
 
 .homepage-links .link.amarillo {
-    color: white; /* Color blanco por defecto para "Acerca de Baku" */
+    color: white; 
 }
 
 .homepage-links .link.amarillo:hover {
-    color: #EFD284; /* Cambia a amarillo cuando el cursor está encima */
+    color: #EFD284;
 }
 .section-principal {
     background-color: rgb(242, 242, 242);
@@ -72,19 +72,19 @@
 
 .left-section {
     width: 35%;
-    padding-right: 70px; /* Ajustar margen a la derecha para que coincida con el margen izquierdo */
-    margin-left: 50px; /* Margen a la izquierda */
+    padding-right: 70px; 
+    margin-left: 50px; 
     text-align: justify;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: justify;
-    align-items: center; /* Centrar el contenido horizontalmente */
+    align-items: center; 
 }
 
 .subtitulo, .titulo, .descripcion {
-    width: 100%; /* Asegura que los textos ocupen todo el ancho disponible */
-    text-align: left; /* Alinear el texto a la izquierda dentro del contenedor centrado */
+    width: 100%; 
+    text-align: left; 
 }
 
 .subtitulo {
@@ -116,17 +116,17 @@
 }
 
 .imagen-san-juan {
-    width: 55%; /* Reducir el ancho de la imagen */
-    height: 100%; /* Reducir la altura de la imagen */
+    width: 55%; 
+    height: 100%; 
     object-fit: cover;
 }
 
 .rectangulo {
     position: absolute;
-    top: 130px; /* Ajuste de la posición para adaptarse al nuevo tamaño */
-    left: 520px; /* Ajuste de la posición para adaptarse al nuevo tamaño */
-    width: 45%; /* Reducir el ancho del rectángulo */
-    height: 80%; /* Reducir la altura del rectángulo */
+    top: 130px; 
+    left: 520px;
+    width: 45%; 
+    height: 80%; 
     background-color: #41695d;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -149,14 +149,14 @@
 }
 
 .icono-img {
-    width: 50px; /* Tamaño del icono */
-    height: 50px; /* Asegurar que el icono mantenga proporciones */
-    margin-right: 15px; /* Espacio entre el icono y el texto */
+    width: 50px; 
+    height: 50px; 
+    margin-right: 15px; 
 }
 
 .icono-texto {
     display: flex;
-    flex-direction: column; /* Alinear texto en columna */
+    flex-direction: column; 
 }
 
 .icono-titulo {
@@ -164,15 +164,15 @@
     font-weight: 400;
     letter-spacing: 0.5px;
     font-size: 24px;
-    color: #F2F2F2; /* Color del título */
+    color: #F2F2F2; 
     margin: 0;
 }
 
 .icono-descripcion {
     font-size: 16px;
     color: #C6C6C6; 
-    margin-top: 10px; /* Espacio entre el título y la descripción */
-    line-height: 1.5; /* Interlineado para la descripción */
+    margin-top: 10px; 
+    line-height: 1.5;
 }
 /* Seccion en index.html */
 .about-section {
@@ -219,20 +219,19 @@
     line-height: 2.0;
 }
 
-/* Estilo del botón alineado a la izquierda */
 .about-btn {
     display: inline-block;
-    padding: 15px 20px; /* Ajuste de padding para una apariencia compacta */
-    background-color: #85C5E9;
+    padding: 15px 20px;
+    background-color: #41695d;
     color: #fff;
     text-decoration: none;
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 18px; /* Ajuste del tamaño de la fuente */
+    font-size: 18px; 
     margin-top: 10px;    
     text-align: center; 
     letter-spacing: 1px;
     font-weight: 400;
-    width: 100px; /* Permite que el botón se ajuste al contenido */
+    width: 100px; 
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -240,8 +239,6 @@
     background-color: #EFD284;
     color: #41695D;
 }
-
-
 .about-right {
     width: 80%;
     position: relative;
@@ -306,7 +303,7 @@
     margin-top: 10px;
     line-height: 1.5;
 }
-/* Otras pantallas para seccion en index.html */
+/* Seccion: About Baku (index.html */
 @media screen and (min-width: 820px) and (max-width: 1366px) {
 
     .about-section {
@@ -321,17 +318,17 @@
     }
     .about-left {
         padding-left: 50px;
-        padding-right: 50px; /* Agrega espacio a la derecha */
-        width: 80%; /* Reduce el ancho del contenedor */
+        padding-right: 50px; 
+        width: 80%; 
         margin: 0 auto; 
     }
 
     .about-right {
         display: flex;
-        flex-direction: column; /* Cambia a disposición vertical */
+        flex-direction: column; 
         justify-content: center;
         align-items: center;
-        gap: 20px; /* Espacio entre la imagen y el rectángulo */
+        gap: 20px; 
     }
 
     .about-image {
@@ -373,54 +370,7 @@
 }
 /* Estilos responsive para dispositivos móviles */
 @media screen and (max-width: 768px) {
-    .section-principal {
-        flex-direction: column; /* Colocar elementos en columna */
-        padding: 20px; /* Reducir el padding para pantallas más pequeñas */
-    }
 
-    .right-section, .left-section {
-        width: 100%; /* Asegura que las secciones ocupen el 100% del ancho */
-        margin-left: 0;
-        padding-right: 0;
-    }
-
-    .imagen-san-juan {
-        width: 100%; /* Hacer la imagen del ancho completo */
-        height: auto; /* Permitir que la altura se ajuste automáticamente */
-        object-fit: cover;
-    }
-
-    .rectangulo {
-        position: relative; /* Cambiar a posición relativa para dispositivos móviles */
-        top: 0;
-        left: 0;
-        width: 100%; /* Hacer que el rectángulo ocupe todo el ancho */
-        height: auto; /* Ajustar la altura automáticamente según el contenido */
-        margin-top: 20px; /* Añadir un margen entre la imagen y el rectángulo */
-    }
-
-    .left-section {
-        margin-top: 20px; 
-        margin-bottom: 20px;
-    }
-
-    .subtitulo, .descripcion {
-        font-size: 90%; 
-    }
-
-    .icono-descripcion {
-        font-size: 14px; 
-        margin-right: 10px;
-        margin-bottom: 20px;
-    }
-    .icono-titulo {
-        font-size: 22px; 
-        margin-top: 10px
-    }
-    .icono-img {
-        margin-top: 10px
-
-    }
     /* About Baku index.html */
     .about-section {
         flex-direction: column;
@@ -471,86 +421,7 @@
     .about-icon-img {
         margin-top: 10px;
     }
-    /* Seccion: Actividades/Surf  */
-    .surf-section {
-        flex-direction: column !important; /* Cambia a disposición en columna */
-        padding: 20px !important;
-    }
-
-    .surf-left, .surf-right {
-        width: 100% !important; /* Asegura que las secciones ocupen el 100% del ancho */
-        margin-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    .surf-left {
-        margin-top: 20px !important; 
-        margin-bottom: 20px !important;
-        padding-right: 0 !important; /* Elimina el padding para dispositivos móviles */
-        text-align: left !important; /* Mantiene el texto alineado a la izquierda */
-    }
-
-    .imagen-surf {
-        width: 100% !important; /* Hacer la imagen del ancho completo */
-        height: auto !important; /* Permitir que la altura se ajuste automáticamente */
-        object-fit: cover !important;
-        margin-bottom: 20px !important; /* Añadir margen inferior para separar del texto */
-    }
-
-    .subtitulo-surf, .descripcion-surf {
-        font-size: 90% !important; 
-    }
-
-    .titulo-surf {
-        font-size: 28px !important; /* Reducir el tamaño de la fuente para pantallas más pequeñas */
-    }
-
-    .surf-right-text {
-        display: none !important; /* Oculta la tercera cuadrilla en dispositivos móviles */
-    }
-
 }
-@media screen and (min-width: 768px) and (max-width: 1366px) {
-    .surf-section {
-        gap: 40px !important;
-        flex-direction: row !important; 
-        padding: 40px !important; 
-    }
-
-    .surf-left, .surf-right {
-        width: 100% !important; 
-        margin-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    .surf-left {
-        text-align: justify !important;
-        margin-top: 30px !important; 
-        margin-bottom: 30px !important;
-        padding-right: 0 !important; 
-    }
-
-    .imagen-surf {
-        width: 90% !important;
-        height: auto !important; /* Permitir que la altura se ajuste automáticamente */
-        object-fit: cover !important;
-        margin-bottom: 30px !important; /* Añadir margen inferior para separar del texto */
-    }
-
-    .subtitulo-surf, .descripcion-surf {
-        font-size: 100% !important; /* Ajuste del tamaño de la fuente para dispositivos más grandes */
-    }
-
-    .titulo-surf {
-        font-size: 32px !important; /* Ajuste del tamaño de la fuente */
-    }
-
-    .surf-right-text {
-        display: none !important; /* Oculta la tercera cuadrilla en dispositivos más grandes */
-    }
-    
-}
-
 /* Aventuras - seccion: San Juan del sur */
 .surf-section {
     background-color: rgb(242, 242, 242);
@@ -558,22 +429,20 @@
     justify-content: space-between;
     padding: 100px;
 }
-
-/* Primera Cuadrilla (Izquierda) */
 .surf-left {
     width: 35%;
-    padding-right: 70px; /* Ajustar margen a la derecha para que coincida con el margen izquierdo */
-    margin-left: 50px; /* Margen a la izquierda */
+    padding-right: 70px; 
+    margin-left: 50px; 
     text-align: justify;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centrar el contenido horizontalmente */
+    align-items: center; 
 }
 
 .subtitulo-surf, .titulo-surf, .descripcion-surf {
-    width: 100%; /* Asegura que los textos ocupen todo el ancho disponible */
-    text-align: left; /* Alinear el texto a la izquierda dentro del contenedor centrado */
+    width: 100%; 
+    text-align: left; 
 }
 
 .subtitulo-surf {
@@ -606,11 +475,9 @@
 }
 
 .imagen-surf {
-    width: 80%; /* Reducir el ancho de la imagen */
+    width: 80%; 
     object-fit: cover;
 }
-
-/* Tercera Cuadrilla (Derecha) */
 .surf-right-text {
     font-family: 'Poppins, sans-serif';
     font-size: 70px;
@@ -619,59 +486,672 @@
     margin-top: auto;
     margin-left: -60px;
 }
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
-    .section-principal {
-        flex-direction: column !important; /* Colocar elementos en columna */
-        padding: 40px !important; /* Ajustar el padding para pantallas más grandes */
-        justify-content: flex-start !important; /* Alinear los elementos al inicio */
-        align-items: center !important; /* Centrar los elementos horizontalmente */
+
+/* Seccion tour*/
+.sailing-section {
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+}
+.sailing-left-text {
+    width: 30%;
+    padding-right: 50px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    font-family: 'Poppins, sans-serif';
+    font-size: 60px;
+    color: rgb(65, 105, 94);
+    letter-spacing: 2px;
+    margin-top: 0;
+}
+
+.sailing-center {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-right: 50px;
+}
+
+.subtitulo-sailing {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(65, 105, 94);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.titulo-sailing {
+    font-family: 'Poppins, sans-serif';
+    font-weight: 700;
+    color: #313131;
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.descripcion-sailing {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(110, 110, 110);
+    line-height: 2.0;
+}
+
+/* Tercera Cuadrilla (Imagen Derecha) */
+.sailing-right {
+    width: 35%;
+    position: relative;
+    margin: 0;
+}
+
+.imagen-sailing {
+    width: 100%; /* Ajusta el ancho de la imagen */
+    object-fit: cover;
+}
+
+/* Sección de Liberación de Tortugas */
+.turtle-section {
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.turtle-left {
+    width: 35%;
+    position: relative;
+    margin-right: 50px;
+}
+
+.imagen-turtle {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Segunda Cuadrilla (Subtítulo, Título, Descripción) */
+.turtle-center {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-left: 50px; 
+}
+
+.subtitulo-turtle {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(65, 105, 94);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.titulo-turtle {
+    font-family: 'Poppins, sans-serif';
+    font-weight: 700;
+    color: #313131;
+    font-size: 34px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.descripcion-turtle {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(110, 110, 110);
+    line-height: 2.0;
+}
+
+/* Tercera Cuadrilla (Texto Derecho) */
+.turtle-right-text {
+    font-family: 'Poppins, sans-serif';
+    font-size: 70px;
+    color: rgb(65, 105, 94);
+    letter-spacing: 2px;
+    width: 30%;
+    text-align: right;
+    margin-left: 50px;
+    display: flex;
+    align-items: flex-start; 
+}
+
+@media screen and (max-width: 768px) {
+    .sailing-section {
+        flex-direction: column;
+        padding: 20px;
     }
 
-    .left-section, .right-section {
-        width: 100% !important; /* Asegura que las secciones ocupen todo el ancho disponible */
+    .sailing-left-text, .sailing-center, .sailing-right {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .sailing-left-text {
+        display: none;
+    
+    }
+
+    .titulo-sailing {
+        font-size: 28px; 
+    }
+
+    .imagen-sailing {
+        width: 100%;
+        height: auto; 
+        margin-top: 20px;
+    }
+
+    .sailing-center {
+        margin-bottom: 20px;
+    }
+
+    /* Turtle section (movil) */
+    .turtle-section {
+        flex-direction: column !important; 
+        justify-content: flex-start !important; 
+        padding: 20px !important; 
+    }
+
+    .turtle-left, .turtle-center, .turtle-right-text {
+        width: 100% !important; 
         margin-left: 0 !important;
+        margin-right: 0 !important;
         padding-right: 0 !important;
-        margin-bottom: 20px !important; /* Añadir un margen inferior para espaciar las secciones */
     }
 
-    .imagen-san-juan {
-        width: 100% !important; /* Hacer la imagen del ancho completo */
-        height: auto !important; /* Permitir que la altura se ajuste automáticamente */
-        object-fit: cover !important;
-        margin-bottom: 20px !important; /* Añadir margen inferior para separar del texto */
-    }
-
-    .rectangulo {
-        position: relative !important; /* Cambiar a posición relativa para estas pantallas */
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important; /* Hacer que el rectángulo ocupe todo el ancho */
-        height: auto !important; /* Ajustar la altura automáticamente según el contenido */
-        margin-top: 20px !important; /* Añadir un margen entre la imagen y el rectángulo */
-    }
-
-    .left-section {
-        margin-top: 0 !important; 
-        margin-bottom: 0 !important;
-    }
-
-    .subtitulo, .descripcion {
-        font-size: 100% !important; /* Ajustar el tamaño de la fuente */
-    }
-
-    .icono-descripcion {
-        font-size: 14px !important; 
-        margin-right: 10px !important;
+    .imagen-turtle {
+        width: 100% !important; 
+        height: auto !important; 
         margin-bottom: 20px !important;
     }
 
-    .icono-titulo {
-        font-size: 22px !important;
-        margin-top: 10px !important;
+    .turtle-center {
+        margin-bottom: 20px !important; 
     }
 
+    .turtle-right-text {
+        display: none !important; 
+    }
+
+    .titulo-turtle {
+        font-size: 28px !important; 
+    }
+
+    .subtitulo-turtle {
+        font-size: 18px !important; 
+    }
+    .turtle-left {
+        order: 1 !important; 
+    }
+   /* Seccion: Actividades/Surf  */
+   .surf-section {
+    flex-direction: column !important; 
+    padding: 20px !important;
+}
+
+    .surf-left, .surf-right {
+        width: 100% !important; 
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .surf-left {
+        margin-top: 20px !important; 
+        margin-bottom: 20px !important;
+        padding-right: 0 !important; 
+        text-align: left !important; 
+    }
+
+    .imagen-surf {
+        width: 100% !important; 
+        height: auto !important; 
+        object-fit: cover !important;
+        margin-bottom: 20px !important; 
+    }
+
+    .subtitulo-surf, .descripcion-surf {
+        font-size: 90% !important; 
+    }
+
+    .titulo-surf {
+        font-size: 28px !important; 
+    }
+
+    .surf-right-text {
+        display: none !important; 
+    }
+    /* Section: Principal */
+    .section-principal {
+        flex-direction: column; 
+        padding: 20px; 
+    }
+
+    .right-section, .left-section {
+        width: 100%; 
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .imagen-san-juan {
+        width: 100%;
+        height: auto; 
+        object-fit: cover;
+    }
+
+    .rectangulo {
+        position: relative; 
+        top: 0;
+        left: 0;
+        width: 100%; 
+        height: auto; 
+        margin-top: 20px; 
+    }
+
+    .left-section {
+        margin-top: 20px; 
+        margin-bottom: 20px;
+    }
+
+    .subtitulo, .descripcion {
+        font-size: 90%; 
+    }
+
+    .icono-descripcion {
+        font-size: 14px; 
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    .icono-titulo {
+        font-size: 22px; 
+        margin-top: 10px
+    }
     .icono-img {
-        margin-top: 10px !important;
+        margin-top: 10px
+
     }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .sailing-section {
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    .sailing-left-text, .sailing-center, .sailing-right {
+        width: 100%;
+    }
+
+    .sailing-left-text {
+        display: none; 
+    }
+
+    .titulo-sailing {
+        font-size: 32px; 
+    }
+
+    .imagen-sailing {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .sailing-center {
+        margin-bottom: 30px;
+    }
+    .turtle-section {
+        flex-direction: column; 
+        padding: 30px;
+    }
+
+    .turtle-left {
+        order: -1; 
+        width: 100%; 
+        margin-right: 0;
+        margin-bottom: 20px; 
+    }
+
+    .imagen-turtle {
+        width: 100%;
+        height: auto;
+    }
+
+    .turtle-center {
+        width: 100%;
+        margin-left: 0;
+        text-align: center; 
+    }
+
+    .titulo-turtle {
+        font-size: 28px; 
+    }
+
+    .descripcion-turtle {
+        line-height: 1.6;
+    }
+
+    .turtle-right-text {
+        display: none; 
+    }
+    /* Sección: Actividades/Surf  */
+    .surf-section {
+        flex-direction: row !important; /* Mantén la disposición en fila */
+        padding: 40px !important; /* Ajusta el padding para iPad Pro */
+        justify-content: space-between !important; /* Asegura que las columnas estén bien distribuidas */
+    }
+ 
+    .surf-left, .surf-right {
+        width: 48% !important; /* Distribuye el espacio equitativamente entre las dos columnas */
+        margin-left: 0 !important;
+        padding-right: 0 !important; /* Remueve el padding entre columnas */
+    }
+ 
+    .surf-left {
+        margin-top: 20px !important; 
+        margin-bottom: 20px !important;
+        text-align: left !important;
+    }
+ 
+    .imagen-surf {
+        width: 100% !important; 
+        height: auto !important; 
+        object-fit: cover !important;
+        margin-bottom: 20px !important; 
+    }
+ 
+    .subtitulo-surf, .descripcion-surf {
+        font-size: 95% !important; /* Aumenta ligeramente el tamaño del texto */
+    }
+ 
+    .titulo-surf {
+        font-size: 32px !important; /* Ajusta el tamaño del título */
+    }
+ 
+    .surf-right-text {
+        display: none !important; /* Oculta el texto decorativo en iPad Pro */
+    }
+    /* Sección: Main/Principal  */
+    .section-principal {
+        flex-direction: column; /* Organiza las secciones en columnas */
+        padding: 40px; /* Ajuste del padding para adaptarse a tamaños más grandes */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-section, .right-section {
+        width: 100%; /* Cada sección ocupa el 100% del ancho */
+        margin-left: 0;
+        padding-right: 0;
+        margin-bottom: 20px; /* Añade un margen inferior para separar las secciones */
+    }
+
+    .imagen-san-juan {
+        width: 100%; 
+        height: auto; 
+        object-fit: cover;
+    }
+
+    .rectangulo {
+        position: relative; 
+        top: 0;
+        left: 0;
+        width: 100%; /* Asegura que el rectángulo también ocupe todo el ancho */
+        height: auto; 
+        margin-top: 20px; 
+    }
+
+    .subtitulo, .descripcion {
+        font-size: 100%; /* Ajuste del tamaño del texto */
+    }
+
+    .icono-descripcion {
+        font-size: 16px; /* Ajuste del tamaño del texto para las descripciones de los iconos */
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+
+    .icono-titulo {
+        font-size: 22px; /* Ajuste del tamaño del título */
+        margin-top: 10px;
+    }
+
+    .icono-img {
+        margin-top: 10px;
+    }
+ 
+}
+
+@media screen and (min-width: 1367px) {
+    .sailing-section {
+        flex-direction: row;
+        padding: 100px;
+    }
+
+    .sailing-left-text, .sailing-center, .sailing-right {
+        width: 30%;
+    }
+
+    .sailing-left-text {
+        display: block; 
+    }
+
+    .titulo-sailing {
+        font-size: 40px;
+    }
+
+    .imagen-sailing {
+        width: 100%;
+        height: auto;
+    }
+
+    .sailing-center {
+        margin-bottom: 50px;
+    }
+    .turtle-section {
+        flex-direction: row; 
+        justify-content: space-between;
+        padding: 60px;
+    }
+
+    .turtle-left {
+        order: -1; 
+        width: 45%;
+        margin-right: 40px;
+    }
+
+    .imagen-turtle {
+        width: 100%; 
+        height: auto;
+    }
+
+    .turtle-center {
+        width: 45%; 
+        margin-left: 40px;
+    }
+
+    .titulo-turtle {
+        font-size: 34px; 
+    }
+
+    .descripcion-turtle {
+        line-height: 1.8;
+    }
+
+    .turtle-right-text {
+        display: none; 
+    }
+ 
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .sailing-section {
+        flex-direction: row; 
+        padding: 50px;
+        justify-content: space-between; 
+    }
+
+    .sailing-left-text {
+        display: none;
+    }
+
+    .sailing-center {
+        width: 50%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        text-align: left;
+        margin-left: 80px
+    }
+
+    .sailing-right {
+        order: -1;
+        width: 50%; 
+    }
+
+    .imagen-sailing {
+        width: 100%; 
+        height: auto;
+    }
+
+    .titulo-sailing {
+        font-size: 32px; 
+    }
+
+    .descripcion-sailing {
+        line-height: 1.6; 
+    }
+/*Seccion: Liberando tortugas */
+    .turtle-section {
+        flex-direction: row; 
+        justify-content: space-between;
+        padding: 50px;
+    }
+
+    .turtle-left {
+        order: -1; 
+        width: 50%; 
+        margin-right: 30px; 
+    }
+
+    .imagen-turtle {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .turtle-center {
+        width: 50%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        margin-left: 30px;
+    }
+
+    .titulo-turtle {
+        font-size: 32px; 
+    }
+
+    .descripcion-turtle {
+        line-height: 1.6; 
+    }
+    .turtle-right-text {
+        display: none; 
+    }
+
+/*Seccion principal */
+    .section-principal {
+        flex-direction: column; 
+        padding: 50px; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-section, .right-section {
+        width: 100%; 
+        margin-left: 0;
+        padding-right: 0;
+        margin-bottom: 30px; 
+    }
+
+    .imagen-san-juan {
+        width: 100%; 
+        height: auto;
+        object-fit: cover;
+    }
+
+    .rectangulo {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%; 
+        height: auto; 
+        margin-top: 30px; 
+    }
+
+    .subtitulo, .titulo, .descripcion {
+        font-size: 110%; 
+        text-align: center; 
+    }
+
+    .icono-descripcion {
+        font-size: 16px;
+        margin-right: 10px;
+        margin-bottom: 15px;
+    }
+
+    .icono-titulo {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .icono-img {
+        margin-top: 15px;
+    }
+
+    .icono-item {
+        margin-bottom: 20px;
+    }
+/*Seccion: Surf */
+ .surf-section {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between; 
+        padding: 40px; 
+    }
+
+    .surf-left, .surf-right {
+        width: 48%; 
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .surf-left {
+        margin-top: 0; 
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .imagen-surf {
+        width: 100%; 
+        height: auto;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    .subtitulo-surf, .descripcion-surf {
+        font-size: 100%; 
+    }
+
+    .titulo-surf {
+        font-size: 40px; 
+    }
+
+    .surf-right-text {
+        display: none; 
+    }
+}

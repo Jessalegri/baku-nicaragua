@@ -1,0 +1,30 @@
+.carousel-container {
+    width: 100%; /* Ancho del contenedor del carrusel */
+    max-width: 500px; /* Limita el tamaño máximo de la imagen */
+    margin: 0 auto; /* Centra el carrusel horizontalmente */
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 500%; /* Ajusta el ancho para mostrar todas las imágenes en fila */
+    animation: slide 20s infinite ease-in-out; /* Controla la duración de la animación */
+}
+
+.left-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(0%); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    95% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+}
