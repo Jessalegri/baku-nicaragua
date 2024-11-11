@@ -1,4 +1,4 @@
-# Nica Buses Project
+# Baku Nicaragua Project
 #### Video Demo:  URL https://www.youtube.com/watch?v=Xvu6-1Mde0Y
 
 ## Introduction
