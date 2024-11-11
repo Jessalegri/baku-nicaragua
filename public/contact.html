@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Contacto - Baku</title>
     <link rel="stylesheet" href="css-code/contact.css">
+    <link rel="stylesheet" href="/css-code/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('/navbar')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
     <div class="contact-section">
         <div class="contact-container">
             <div class="contact-info">

@@ -40,7 +40,33 @@ app.get('/sobreBaku', (req, res) => {
 app.get('/agregarHorario', (req, res) => {
     res.render('agregarHorario', { title: 'Agregar Horario' });
 });
+// Ruta para la página "San Juan del Sur" sin extensión .html
+app.get('/san-juan-del-sur', (req, res) => {
+    res.sendFile(__dirname + '/public/san-juan-del-sur.html');
+});
+// Ruta para la página "Contact" sin extensión .html
+app.get('/contact', (req, res) => {
+    res.sendFile(__dirname + '/public/contact.html');
+});
+// Ruta para rendirizar navbar en archivo html
+app.get('/navbar-for-san-juan', (req, res) => {
+    res.render('navbar'); // Renderiza el archivo navbar.ejs como HTML
+});
+// Ruta para rendirizar navbar en archivo contacto.html
+app.get('/navbar', (req, res) => {
+    res.render('navbar'); // Renderiza navbar.ejs como HTML
+});
 
+
+// Middleware para redirigir URLs con .html a la versión sin la extensión
+app.use((req, res, next) => {
+    if (req.url.endsWith('.html')) {
+        const newUrl = req.url.slice(0, -5); // Elimina la extensión .html
+        res.redirect(301, newUrl); // Redirige a la nueva URL sin .html
+    } else {
+        next(); // Si no termina en .html, continúa normalmente
+    }
+});
 // Ruta para mostrar la página de confirmación
 app.get('/confirmacion', (req, res) => {
     const mensaje = req.query.mensaje || '';

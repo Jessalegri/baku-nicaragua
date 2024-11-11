@@ -7,8 +7,8 @@ body {
 .contact-section {
     display: flex;
     justify-content: flex;
-    padding: 100px;
-    background-color: #f9f9f9;     
+    padding: 60px;
+    background-color: #fff;     
 }
 
 .contact-container {
@@ -22,7 +22,7 @@ body {
 
 .contact-info {
     text-align: left;
-    flex: 0 0 60%;    
+    flex: 0 0 40%;    
     padding: 20px;
 }
 
@@ -56,7 +56,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-left: 100px;
-    padding: 20px; /* Espaciado para el formulario */
+    padding: 20px; 
     border: 1px solid rgb(65, 105, 94); /* Borde verde */
     background-color: transparent; /* Sin fondo */
 }
@@ -106,3 +106,26 @@ body {
 .contact-form button:hover {
     background-color: #4C9866;
 }
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; /* Cambia a columna */
+        padding: 40px;
+    }
+
+    .contact-info, 
+    .contact-form {
+        flex: 0 0 100%; /* Ocupan el ancho completo */
+        margin-left: 0; /* Remueve margen izquierdo en móviles */
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .title {
+        font-size: 24px;
+    }
+}
+
+

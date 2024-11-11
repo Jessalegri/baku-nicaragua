@@ -64,7 +64,7 @@
     color: #EFD284;
 }
 .section-principal {
-    background-color: rgb(242, 242, 242);
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 100px;
@@ -97,7 +97,6 @@
 .titulo {
     font-family: 'Poppins, sans-serif';
     font-weight: 400;
-    font-weight: 700;
     color: #313131;
     font-size: 34px;
     letter-spacing: 2px;
@@ -174,9 +173,31 @@
     margin-top: 10px; 
     line-height: 1.5;
 }
+/* Seccion Departamento: Granada */
+.granada-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.granada-section .left-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.granada-section .right-section {
+    flex: 1;
+}
+
+.granada-section .right-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 /* Seccion en index.html */
 .about-section {
-    background-color: rgb(242, 242, 242);
+    background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     padding: 100px;
@@ -208,7 +229,7 @@
     font-family: 'Poppins, sans-serif';
     font-weight: 700;
     color: #313131;
-    font-size: 34px;
+    font-size: 24px;
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
@@ -217,27 +238,16 @@
     font-family: "Source Sans Pro", sans-serif;
     color: rgb(110, 110, 110);
     line-height: 2.0;
+    font-size: 20px;
 }
 
 .about-btn {
-    display: inline-block;
-    padding: 15px 20px;
-    background-color: #41695d;
-    color: #fff;
-    text-decoration: none;
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 18px; 
-    margin-top: 10px;    
-    text-align: center; 
-    letter-spacing: 1px;
-    font-weight: 400;
-    width: 100px; 
-    transition: background-color 0.3s ease-in-out;
+    display: none;
 }
 
 .about-btn:hover {
-    background-color: #EFD284;
-    color: #41695D;
+    background-color: #41695d;
+    color: #fff;
 }
 .about-right {
     width: 80%;
@@ -408,18 +418,23 @@
     }
 
     .about-icon-description {
-        font-size: 14px;
+        font-size: 12px !important;
         margin-right: 10px;
         margin-bottom: 20px;
     }
 
     .about-icon-title {
-        font-size: 22px;
+        font-size: 20px !important;
         margin-top: 10px;
+        font-family: 'Poppins, sans-serif' !important;
+        font-weight: 700;
+        letter-spacing: 1.1px;
     }
 
     .about-icon-img {
         margin-top: 10px;
+        width: 40px !important;
+        height: auto !important;
     }
 }
 /* Aventuras - seccion: San Juan del sur */
@@ -548,7 +563,7 @@
 }
 
 .imagen-sailing {
-    width: 100%; /* Ajusta el ancho de la imagen */
+    width: 100%; 
     object-fit: cover;
 }
 
@@ -839,15 +854,15 @@
     }
     /* Sección: Actividades/Surf  */
     .surf-section {
-        flex-direction: row !important; /* Mantén la disposición en fila */
-        padding: 40px !important; /* Ajusta el padding para iPad Pro */
-        justify-content: space-between !important; /* Asegura que las columnas estén bien distribuidas */
+        flex-direction: row !important; 
+        padding: 40px !important; 
+        justify-content: space-between !important; 
     }
  
     .surf-left, .surf-right {
-        width: 48% !important; /* Distribuye el espacio equitativamente entre las dos columnas */
+        width: 48% !important; 
         margin-left: 0 !important;
-        padding-right: 0 !important; /* Remueve el padding entre columnas */
+        padding-right: 0 !important; 
     }
  
     .surf-left {
@@ -876,21 +891,21 @@
     }
     /* Sección: Main/Principal  */
     .section-principal {
-        flex-direction: column; /* Organiza las secciones en columnas */
-        padding: 40px; /* Ajuste del padding para adaptarse a tamaños más grandes */
+        flex-direction: column; 
+        padding: 40px; 
         justify-content: center;
         align-items: center;
     }
 
     .left-section, .right-section {
-        width: 100%; /* Cada sección ocupa el 100% del ancho */
+        width: 100%; 
         margin-left: 0;
         padding-right: 0;
-        margin-bottom: 20px; /* Añade un margen inferior para separar las secciones */
+        margin-bottom: 20px; 
     }
 
     .imagen-san-juan {
-        width: 100%; 
+        width: 80%; 
         height: auto; 
         object-fit: cover;
     }
@@ -905,17 +920,17 @@
     }
 
     .subtitulo, .descripcion {
-        font-size: 100%; /* Ajuste del tamaño del texto */
+        font-size: 100%; 
     }
 
     .icono-descripcion {
-        font-size: 16px; /* Ajuste del tamaño del texto para las descripciones de los iconos */
+        font-size: 16px;
         margin-right: 10px;
         margin-bottom: 20px;
     }
 
     .icono-titulo {
-        font-size: 22px; /* Ajuste del tamaño del título */
+        font-size: 22px;
         margin-top: 10px;
     }
 
@@ -1079,9 +1094,11 @@
     }
 
     .imagen-san-juan {
-        width: 100%; 
+        width: 80%; 
         height: auto;
         object-fit: cover;
+        display: block;
+        margin: 0 auto;
     }
 
     .rectangulo {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explora San Juan del Sur</title>
     <link rel="stylesheet" href="css-code/blog.css">
+    <link rel="stylesheet" href="/css-code/index.css">
     <link rel="stylesheet" href="css-code/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sección Homepage -->
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('/navbar-for-san-juan')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+    
+    <!-- Sección Homepage 
     <div class="homepage-section">
         <img src="css-code/imagenes/olas.jpg" alt="Imagen de fondo" class="background-image">
         <div class="overlay"></div>
@@ -23,7 +34,7 @@
             <a href="index.html" class="link blanco">Inicio</a>
             <a href="sobreBaku.ejs" class="link amarillo">Acerca de Baku</a>
         </div>
-    </div>
+    </div>-->
     <!-- Sección Principal -->
     <div class="section-principal">
         <div class="left-section">
@@ -41,24 +52,24 @@
             <div class="rectangulo"> 
                 <div class="icono-contenedor">
                     <div class="icono-item">
-                        <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="icono-img">
+                        <img src="css-code/imagenes/iconos/iconoGastronomia.png" alt="Icono de Gastronomía" class="icono-img">
                         <div class="icono-texto">
-                            <h3 class="icono-titulo">Restaurante</h3>
-                            <p class="icono-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec.</p>
+                            <h3 class="icono-titulo">Gastronomía</h3>
+                            <p class="icono-descripcion">Platos frescos elaborados con ingredientes locales, perfectos para disfrutar junto al mar y saborear la esencia de San Juan del Sur.</p>
                         </div>
                     </div>
                     <div class="icono-item">
-                        <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="icono-img">
+                        <img src="css-code/imagenes/iconos/iconoCristo.png" alt="Icono de Cristo Misericordia" class="icono-img">
                         <div class="icono-texto">
-                            <h3 class="icono-titulo">Clima Ideal</h3>
-                            <p class="icono-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec.</p>
+                            <h3 class="icono-titulo">Cristo de la Misericordia</h3>
+                            <p class="icono-descripcion">Icono de la región y punto panorámico desde donde se aprecia la bahía en toda su majestuosidad; un sitio imprescindible para fotos.</p>
                         </div>
                     </div>
                     <div class="icono-item">
-                        <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="icono-img">
+                        <img src="css-code/imagenes/iconos/iconoFiesta.png" alt="Icono de Fiesta" class="icono-img">
                         <div class="icono-texto">
-                            <h3 class="icono-titulo">Actividades Acuáticas</h3>
-                            <p class="icono-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec.</p>
+                            <h3 class="icono-titulo">Vida Nocturna Vibrante</h3>
+                            <p class="icono-descripcion">Bares, restaurantes y música que dan vida a cada noche, ofreciendo experiencias únicas para quienes buscan diversión y buen ambiente.</p>
                         </div> 
                     </div>
                 </div>
@@ -97,7 +108,7 @@
         </div>
     
         <div class="sailing-right">
-            <img src="css-code/imagenes/catamaran.jpg" alt="Tour de Sailing" class="imagen-sailing">
+            <img src="css-code/imagenes/catamaranSJ.PNG" alt="Tour de Sailing" class="imagen-sailing">
         </div>
     </div>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Aquí agregas el código de Google Analytics -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-114696GX9S"></script>
   <script>
@@ -18,6 +17,7 @@
     <link rel="stylesheet" href="css-code/footer.css">
     <link rel="stylesheet" href="css-code/albumHomepage.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -37,55 +37,50 @@
             </a>
         </div>        
         <nav class="menu-navegacion">
-            <a href="/sobreBaku"><img src="css-code/imagenes/iconos/homepageIcon.png" alt="Inicio Icon" class="nav-icon">Nosotros</a>
-            <a href="/terminales"><img src="css-code/imagenes/iconos/terminales-menu.png" alt="Terminales Icon" class="nav-icon">Terminales</a>
-            <a href="contact.html"><img src="css-code/imagenes/iconos/llamar.png" alt="Horario Icon" class="nav-icon">Contacto</a>
+            <a href="/sobreBaku"><img src="css-code/imagenes/iconos/iconoHome.png" alt="Inicio Icon" class="nav-icon">Nosotros</a>
+            <a href="/terminales"><img src="css-code/imagenes/iconos/iconoTerminalHomepage.png" alt="Terminales Icon" class="nav-icon">Terminales</a>
+            <a href="contact.html"><img src="css-code/imagenes/iconos/iconoContactoHomepage.png" alt="Horario Icon" class="nav-icon">Contacto</a>
         </nav>
     </header>
     <main>
         <div class="homepage-content">
             <img class="left-image" src="css-code/imagenes/caminando.png" alt="City Bus">
+    
             <div>
+                <h2 class="subtitulo">Busca las terminales y horarios de buses:</h2> 
                 <h1 class="titulo-central">Descubre cómo viajar en bus en Nicaragua</h1>
-                <h2 class="subtitulo">Busca las terminales y horario de buses:</h2>
-
-                <div class="formulario-container">
-                    <div class="formulario-busqueda" id="formulario-busqueda">
-                        <div class="campos-busqueda">
-                            <div class="par-busqueda">
-                                <span class="encabezado-autocompletar">Viaje desde</span>
-                                <input type="text" id="buscar-desde" placeholder="Ciudad de origen">
-                            </div>
-                            <div class="contenedor-principal">
-                                <div class="icono-intercambio" id="intercambiar">
-                                    <img src="css-code/imagenes/colordiferente.png" alt="Icono de intercambio">
-                                </div>
-                            </div>                       
-                            <div class="par-busqueda">
-                                <span class="encabezado-autocompletar">Hasta</span>
-                                <input type="text" id="buscar-hasta" placeholder="Ciudad de destino">
-                            </div>
+    
+                <div class="formulario-busqueda-horizontal" id="busqueda-transporte">
+                    <form id="buscar-transporte">
+                        <div class="campo-busqueda">
+                            <label for="buscar-desde">Origen:</label>
+                            <input type="text" id="buscar-desde" name="ciudadOrigen" placeholder="Ciudad de origen">
                         </div>
-                        <div class="button">
-                            <button type="button" id="buscar-transporte">
-                                <img src="css-code/imagenes/lupa.png" alt="Icon" class="button-icon">Ver todas las opciones
-                            </button>
+                        <div class="campo-busqueda">
+                            <label for="buscar-hasta">Destino:</label>
+                            <input type="text" id="buscar-hasta" name="ciudadDestino" placeholder="Ciudad de destino">
                         </div>
-                    </div>
+                        <div class="campo-busqueda">
+                            <button type="submit" class="boton-busqueda">Buscar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div id="resultados"></div> <!-- Contenedor para mostrar los resultados -->
+        <div id="resultados"></div>
     </main>
+    
+    
 <!-- Sobre baku -->
 <div class="about-section">
     <div class="about-left">
         <p class="about-subtitle">Acerca de Baku</p>
         <h1 class="about-title">Tu Guía Completa para Navegar el Transporte Público en Nicaragua</h1>
         <p class="about-description">
-            Baku es tu guía confiable para explorar el transporte público en Nicaragua. Nuestra plataforma interactiva permite a los usuarios descubrir rutas, horarios y terminales, así como compartir sus propias experiencias y conocimientos para ayudar a otros viajeros.
+            Baku nace de la necesidad de contar con una fuente confiable en línea sobre horarios y rutas del transporte público en Nicaragua.
+            <br><br>
+            Es una plataforma informativa que facilita la planificación de viajes con datos actualizados, consejos útiles y horarios recomendados por usuarios, ideal para quienes desean explorar el país en medios locales.
         </p>
-        <!-- Botón alineado a la izquierda -->
         <a href="/sobreBaku" class="about-btn">Leer más</a>
     </div>
     <div class="about-right">
@@ -93,24 +88,28 @@
         <div class="about-rectangle">
             <div class="about-icons-container">
                 <div class="about-icon-item">
-                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <img src="css-code/imagenes/iconos/iconHorariosBaku.png" alt="Icono Surf" class="about-icon-img">
                     <div class="about-icon-text">
-                        <h3 class="about-icon-title">Explora</h3>
-                        <p class="about-icon-description">Navega por la red de transporte público en Nicaragua.</p>
+                        <h3 class="about-icon-title">Horarios Recomendados</h3>
+                        <p class="about-icon-description">Consulta horarios sugeridos y verificados por la comunidad..
+                        </p>
                     </div>
                 </div>
                 <div class="about-icon-item">
-                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <img src="css-code/imagenes/iconos/IconoTerminalesBaku.png" alt="Icono Surf" class="about-icon-img">
                     <div class="about-icon-text">
-                        <h3 class="about-icon-title">Contribuye</h3>
-                        <p class="about-icon-description">Comparte y actualiza información sobre horarios y rutas.</p>
+                        <h3 class="about-icon-title">Terminales Localizadas</h3>
+                        <p class="about-icon-description">Ubica fácilmente las terminales más cercanas y adecuadas para tu viaje.
+                        </p>
                     </div>
                 </div>
                 <div class="about-icon-item">
-                    <img src="css-code/imagenes/iconSurf.png" alt="Icono Surf" class="about-icon-img">
+                    <img src="css-code/imagenes/iconos/iconCalificaHorarios.png" alt="Icono Surf" class="about-icon-img">
                     <div class="about-icon-text">
-                        <h3 class="about-icon-title">Planifica</h3>
-                        <p class="about-icon-description">Organiza tus viajes con información actualizada al instante.</p>
+                        <h3 class="about-icon-title">Calificaciones de Usuarios
+                        </h3>
+                        <p class="about-icon-description">Valora los horarios disponibles para ayudar a otros viajeros a tomar decisiones informadas.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -118,128 +117,77 @@
     </div>
 </div>
 
-
-<!-- Acerca de Baku
-    <section id="about-baku">
-        <div class="content-wrapper">
-            <div class="text-content">
-                <h2>Acerca de Baku</h2>
-                <p class="description-text">Baku es una plataforma interactiva que permite a los usuarios encontrar y contribuir con información sobre el transporte público en Nicaragua.</p>
-                <a href="/sobreBaku" class="button-link">Leer más</a>
-            </div>
-            <div class="image-content">
-                <div class="image-content">
-                    <img src="css-code/imagenes/caminandoalaubicacion.png" alt="Ubicación">
-                </div>
-            </div>
-        </div>
-    </section>
-    -->  
 <!-- Contribucion detalles-->  
 <section class="contribucion-section">
-    <h1>Cómo contribuir con Baku Nicaragua</h1>
+    <h3>Cómo contribuir con Baku Nicaragua</h3>
     <div class="contribucion-container">
-        <a href="/agregarHorario" class="contribucion-button blue">Agrega un horario</a>
-        <a href="/seleccionar-ciudad" class="contribucion-button orange">Califica un horario</a>
+        <a href="/agregarHorario" class="contribucion-button blue">Agregar horarios</a>
+        <a href="/seleccionar-ciudad" class="contribucion-button orange">Calificar horarios</a>
         <a href="#" class="contribucion-button orange">Agregar terminal</a>
-        <a href="#" class="contribucion-button blue">Comparte tu experiencia</a>
+        <a href="#" class="contribucion-button blue">Compartir experiencia</a>
     </div>
 </section>
-<!-- Nueva seccion de fotos -->
+<!-- Recomendaciones Baku -->
 <div class="featured-cottages-section">
     <div class="featured-text">
         <p class="featured-subtitulo">Recomendaciones Baku</p>
-        <h2 class="featured-titulo">Tres Lugares de Nicaragua que te sorprenderán</h2>
+        <h2 class="featured-titulo">Lugares de Nicaragua que te sorprenderán</h2>
         <p class="featured-descripcion">
             Baku te muestra lo mejor de Nicaragua, con destinos accesibles en transporte público. ¡Prepárate para explorar!    </div>
     
     <div class="featured-imagenes">
         <div class="cottage-container">
-            <img src="css-code/imagenes/judithChinandega.jpeg" alt="Cottage 1" class="cottage-img">
+            <img src="css-code/imagenes/playaMaderasSJ.jpg" alt="Cottage 1" class="cottage-img">
             <div class="overlay">
                 <h3>San Juan del Sur</h3>
-                <a href="san-juan-del-sur.html"><button class="leer-mas-btn">Leer más</button></a>
+                <a href="san-juan-del-sur.html" class="leer-mas-btn">Leer más</a>
             </div>
         </div>
         <div class="cottage-container">
-            <img src="css-code/imagenes/judithChinandega.jpeg" alt="Cottage 2" class="cottage-img">
+            <img src="css-code/imagenes/VolcanEnOmetepe.jpg" alt="Cottage 2" class="cottage-img">
             <div class="overlay">
                 <h3>Granada</h3>
-                <a href="san-juan-del-sur.html"><button class="leer-mas-btn">Leer más</button></a>
+                <a href="san-juan-del-sur.html" class="leer-mas-btn">Leer más</a>
             </div>
         </div>
         <div class="cottage-container">
-            <img src="css-code/imagenes/judithChinandega.jpeg" alt="Cottage 3" class="cottage-img">
+            <img src="css-code/imagenes/CatedralDeLeon.jpg" alt="Cottage 3" class="cottage-img">
             <div class="overlay">
                 <h3>Léon</h3>
-                <a href="san-juan-del-sur.html"><button class="leer-mas-btn">Leer más</button></a>
+                <a href="san-juan-del-sur.html" class="leer-mas-btn">Leer más</a>
             </div>
         </div>
     </div>
 
-    <!-- Botón ubicado fuera del contenedor de imágenes -->
-    <a href="explore-cottages.html" class="main-btn">Explore More Cottages</a>
+    <a href="explore-cottages.html" class="main-btn">Explora Departamentos</a>
 </div>
 
-  <!--   
-<footer id="footer">
-    <div class="footer-container">
-        <div class="footer-section logo-and-slogan">
-            <img src="css-code/imagenes/Kabu.logo.png" alt="Logo de Baku" class="footer-logo-img">
-            <p>Conectando Nicaragua, un viaje a la vez.</p>
-        </div>  
-        <div class="footer-section navigation-links">
-            <h4>Navegación</h4>
-            <ul>
-                <li><a href="#about-baku">Acerca de Baku</a></li>
-                <li><a href="terminales.html">Terminales</a></li>
-                <li><a href="horarios.html">Horarios</a></li>
-            </ul>
-        </div>
-        <div class="footer-section contact-info">
-            <p>Email: contacto@baku.com</p>
-            <div class="social-media">
-                <a href="https://www.facebook.com/nicabuses" target="_blank">
-                    <img src="css-code/imagenes/iconos/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://www.instagram.com/nicabuses" target="_blank">
-                    <img src="css-code/imagenes/iconos/instagram.png" alt="Instagram">
-                </a>
-                <a href="https://github.com/nicabuses" target="_blank">
-                    <img src="css-code/imagenes/iconos/github.png" alt="GitHub">
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
--->
 <!-- Footer Section -->
 <footer class="footer-section">
-    <!-- Primera Cuadrilla (Logo, Slogan, Redes Sociales) -->
     <div class="footer-column logo-section">
         <h1 class="footer-logo">Baku Nicaragua</h1>
         <p class="footer-slogan">Descubre Nicaragua de manera auténtica: una guía de transporte público para cada aventura.</p>
         <div class="footer-social-icons">
             <img src="css-code/imagenes/iconos/camera.png" alt="Facebook" class="social-icon">
             <img src="css-code/imagenes/iconos/social.png" alt="Twitter" class="social-icon">
-            <img src="css-code/imagenes/iconos/github.png" alt="Instagram" class="social-icon">
-        </div>
+            <a href="https://github.com/Jessalegri/baku-nicaragua.git" target="_blank">
+                <img src="css-code/imagenes/iconos/githubWhite.png" alt="GitHub" class="social-icon">
+            </a>
+         </div>
     </div>
 
-    <!-- Segunda Cuadrilla (Páginas) -->
     <div class="footer-column">
         <h2>Páginas</h2>
         <ul class="footer-list">
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca</a></li>
+            <li><a href="/sobreBaku">Nosotros</a></li>
             <li><a href="#">Horarios de buses</a></li>
-            <li><a href="#">Terminales de buses</a></li>
-            <li><a href="#">Agregar horario</a></li>
-            <li><a href="#">Calificar horario</a></li>
+            <li><a href="/terminales">Terminales de buses</a></li>
+            <li><a href="/agregarHorario">Agregar horario</a></li>
+            <li><a href="/seleccionar-ciudad">Calificar horario</a></li>
         </ul>
     </div>
 
-    <!-- Tercera Cuadrilla (Guía de Viaje) -->
     <div class="footer-column">
         <h2>Guía de Viaje</h2>
         <ul class="footer-list">
@@ -251,7 +199,6 @@
         </ul>
     </div>
 
-    <!-- Cuarta Cuadrilla (Newsletter) -->
     <div class="footer-column">
         <h2>Newsletter</h2>
         <p class="newsletter-paragraph">Descubre Nicaragua de manera auténtica: una guía de transporte público para cada aventura.</p>

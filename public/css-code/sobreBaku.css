@@ -9,7 +9,7 @@ body {
 .homepage-section {
     position: relative;
     width: 100%;
-    height: 50vh; /* Altura completa de la pantalla */
+    height: 50vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,7 +35,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
 
@@ -46,12 +46,12 @@ body {
 }
 
 .homepage-title span {
-    color: #FFD700; /* Color amarillo para "de Baku" */
+    color: #FFD700; 
 }
 
 .homepage-links {
     display: flex;
-    gap: 20px; /* Espacio entre los enlaces */
+    gap: 20px; 
 }
 
 .homepage-links .link {
@@ -178,6 +178,142 @@ body {
     line-height: 1.8;
     text-align: center;
 }
+/* Sección de Consejos de Viaje */
+.tips-section {
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+    gap: 20px;
+}
+
+.tips-left {
+    width: 45%;
+    position: relative;
+    margin-right: 50px;
+}
+
+.imagen-tips {
+    width: 100%;
+    object-fit: cover;
+}
+
+.tips-right {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.subtitulo-tips {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(65, 105, 94);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.titulo-tips {
+    font-family: 'Poppins, sans-serif';
+    font-weight: 700;
+    color: #313131;
+    font-size: 34px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.lista-tips {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(110, 110, 110);
+    line-height: 2.0;
+    list-style-type: none;
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+.lista-tips li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding-left: 20px; 
+    line-height: 1.6;
+}
+.lista-tips li strong {
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    color: rgb(65, 105, 94);
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.lista-tips li:before {
+    content: "• ";
+    color: rgb(65, 105, 94);
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+/* Seccion: Mision - Sobre Baku */
+.mission-section {
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.mission-left-text {
+    width: 30%;
+    padding-right: 50px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    font-family: 'Poppins, sans-serif';
+    font-size: 60px;
+    color: rgb(65, 105, 94);
+    letter-spacing: 2px;
+}
+
+.mission-center {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-right: 50px;
+}
+
+.subtitulo-mission {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(65, 105, 94);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.titulo-mission {
+    font-family: 'Poppins, sans-serif';
+    font-weight: 700;
+    color: #313131;
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.descripcion-mission {
+    font-family: "Source Sans Pro", sans-serif;
+    color: rgb(110, 110, 110);
+    line-height: 2.0;
+}
+
+.imagen-mission {
+    width: 80%;
+    max-width: 500px;
+    object-fit: cover;
+}
+
 
 @media (max-width: 768px) {
     .acerca-de-baku {
@@ -275,16 +411,112 @@ body {
     /* SECCION: ESTADISTICAS */
     .statistics-container {
         justify-content: center;
-        gap: 20px; /* Espacio entre los elementos */
+        gap: 20px; 
     }
 
     .stat-item {
-        width: calc(50% - 40px);
+        width: calc(50% - 40px) !important;
         box-sizing: border-box;    
         text-align: center;
     }
+
+    .stat-icon {
+        width: 30px !important; 
+        height: auto;
+        margin-bottom: 5px; 
+    }
+
+    .stat-number {
+        font-size: 30px !important; 
+        margin: 0 !important;
+    }
+
+    .stat-description {
+        font-size: 12px !important; 
+        color: #f2f2f0;
+        line-height: 1.2;
+    }
+    /* Consejos de viajes - sobre Baku */
+    .tips-section {
+        display: flex;
+        flex-direction: column; 
+        padding: 20px;
+    }
+
+    .tips-left, .tips-right {
+        width: 100%; 
+        margin: 0;
+    }
+
+    .imagen-tips {
+        width: 100%; 
+        height: auto;
+        margin-bottom: 20px; 
+    }
+
+    .tips-right {
+        max-width: 500px;
+        margin: 0 auto; 
+    }
+    .titulo-tips {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subtitulo-tips {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .lista-tips {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+
+    .lista-tips li {
+        font-size: 12px;
+        margin-bottom: 10px;
+        line-height: 1.6;
+        padding-left: 20px; 
+    }
+    .lista-tips li strong {
+        font-size: 12px; 
+    }
+
+    /* Seccion: Mision - Sobre Baku */
+    .mission-section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .mission-left-text, .mission-center, .mission-right {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mission-left-text {
+        display: none; /* Ocultar el título lateral en móviles */
+    }
+
+    .titulo-mission {
+        font-size: 28px; /* Tamaño de fuente ajustado para móviles */
+    }
+
+    .imagen-mission {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .mission-center {
+        margin-bottom: 20px;
+    }
 }
-/* SECCION: ESTADISTICAS */
+
+/* Seccion: Estadisticas */
 .statistics-section {
     background-color: #41695D;
     padding: 40px 20px;
@@ -313,21 +545,21 @@ body {
 
 .stat-number {
     font-size: 45px; 
-    color: white; 
+    color: #ff8c7a; 
     font-weight: 400; 
     line-height: 1.2; 
-    letter-spacing: 0.5px; /* Espaciado de letras */
-    word-spacing: 1px; /* Espaciado de palabras */
-    font-family: 'Roboto', Sans-serif; /* Familia de fuente */
+    letter-spacing: 0.5px;
+    word-spacing: 1px; 
+    font-family: 'Roboto', Sans-serif; 
     margin: 0; 
 }
 
 .stat-description {
-    color: #EFD284; /* Color de la descripción */
-    font-family: 'Roboto', Sans-serif; /* Familia de fuente */
-    font-size: 14px; /* Tamaño de fuente */
-    line-height: 1.5; /* Altura de línea */
-    letter-spacing: 1.0px; /* Espaciado de letras */
+    color: #f2f2f0; 
+    font-family: 'Roboto', Sans-serif; 
+    font-size: 14px; 
+    line-height: 1.5; 
+    letter-spacing: 1.0px; 
     word-spacing: 0.5px; 
 }
 
@@ -375,7 +607,7 @@ body {
 }
 
 .surf-image {
-    width: 50%; /* Ajusta el tamaño de la imagen */
+    width: 50%; 
     height: auto;
     object-fit: cover;
     border-radius: 10px;
@@ -388,6 +620,108 @@ body {
 .highlight-text {
     font-family: 'Poppins, sans-serif';
     font-size: 34px;
-    color: rgb(65, 105, 94); /* Color verde */
+    color: rgb(65, 105, 94);
     letter-spacing: 1.5px;
 }
+@media (max-width: 1024px) and (min-width: 600px) {
+    .tips-left {
+        width: 35%; 
+        display: flex;
+        justify-content: center; 
+        align-items: center !important; 
+    }
+
+    .imagen-tips {
+        width: 140%; 
+        max-width: 500px; 
+        height: auto;
+    }
+
+    .tips-right {
+        width: 65%; 
+    }
+    .titulo-tips {
+        font-size: 20px; 
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subtitulo-tips {
+        font-size: 14px; 
+        text-align: center;
+        margin: 8px 0; 
+    }
+
+    .lista-tips li {
+        font-size: 12px; 
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+    .lista-tips li strong {
+        font-size: 12px; 
+    }
+    .tips-section {
+        padding: 20px 10px !important; 
+    }
+}/* Adjusted Media Query for iPad Mini and iPad Pro */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .mission-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        gap: 20px; 
+    }
+
+    .mission-left-text {
+        display: none; 
+    }
+
+    .mission-center, .mission-right {
+        width: 48%; 
+    }
+
+    .titulo-mission {
+        font-size: 28px; 
+    }
+
+    .imagen-mission {
+        width: 100%;
+        height: auto;
+    }
+}
+/* Media Query para dispositivos de 1024px a 1366px (iPad Pro 12.9") */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    .mission-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 40px;
+        gap: 20px; /* Espacio entre las dos secciones */
+    }
+
+    .mission-left-text {
+        font-size: 48px; /* Reducir el tamaño del título para iPad Pro */
+        margin-left: 20px; /* Mover el título más cerca del lateral izquierdo */
+    }
+
+    .mission-center {
+        width: 50%; /* Mantener un ancho del 50% para un equilibrio adecuado */
+    }
+
+    .titulo-mission {
+        font-size: 30px; /* Tamaño de fuente ligeramente más pequeño para el título */
+    }
+
+    .descripcion-mission {
+        font-size: 16px; /* Reducir el tamaño del texto descriptivo */
+        text-align: justify; /* Justificar el texto */
+        line-height: 1.6; /* Ajustar la altura de línea para una mejor legibilidad */
+    }
+
+    .imagen-mission {
+        width: 100%;
+        height: auto;
+    }
+}
+
