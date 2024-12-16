@@ -14,9 +14,10 @@ app.use(express.static('public'));
 app.use((req, res, next) => {
     if (req.url.endsWith('.html')) {
         const newUrl = req.url.slice(0, -5); // Elimina la extensión .html
+        console.log(`Redirigiendo: ${req.url} → ${newUrl}`); // Log para depuración
         res.redirect(301, newUrl); // Redirige a la nueva URL sin .html
     } else {
-        next(); // Si no termina en .html, continúa normalmente
+        next(); // Continúa normalmente si no termina en .html
     }
 });
 
