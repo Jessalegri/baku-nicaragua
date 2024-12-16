@@ -55,10 +55,11 @@ app.get('/agregarHorario', (req, res) => {
 app.get('/san-juan-del-sur', (req, res) => {
     res.sendFile(__dirname + '/public/san-juan-del-sur.html');
 });
-// Ruta para la página "Contact" sin extensión .html
+// Ruta para la página "Contact"
 app.get('/contact', (req, res) => {
-    res.sendFile(__dirname + '/public/contact.html');
+    res.sendFile(__dirname + '/public/contact.html'); // Cambia este comportamiento
 });
+
 // Ruta para rendirizar navbar en archivo html
 app.get('/navbar-for-san-juan', (req, res) => {
     res.render('navbar'); // Renderiza el archivo navbar.ejs como HTML
