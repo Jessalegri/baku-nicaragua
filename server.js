@@ -25,6 +25,20 @@ app.use(express.static('public', {
     extensions: ['html'], // Sirve automáticamente index.html si no se especifica el archivo
 }));
 
+// Redirección de /san-juan-del-sur a /sanjuandelsur
+app.use((req, res, next) => {
+    if (req.url === '/san-juan-del-sur') {
+        console.log(`Redirigiendo ${req.url} → /sanjuandelsur`);
+        return res.redirect(301, '/sanjuandelsur');
+    }
+    next();
+});
+
+// Ruta personalizada para servir san-juan-del-sur.html en /sanjuandelsur
+app.get('/sanjuandelsur', (req, res) => {
+    res.sendFile(__dirname + '/public/san-juan-del-sur.html');
+});
+
 const mysql = require('mysql2');
 const pool = mysql.createPool({
     connectionLimit: 10,
