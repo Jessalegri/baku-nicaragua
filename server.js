@@ -10,6 +10,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+// Middleware para redirigir URLs con .html a la versión sin la extensión
+app.use((req, res, next) => {
+    if (req.url.endsWith('.html')) {
+        const newUrl = req.url.slice(0, -5); // Elimina la extensión .html
+        res.redirect(301, newUrl); // Redirige a la nueva URL sin .html
+    } else {
+        next(); // Si no termina en .html, continúa normalmente
+    }
+});
+
 const mysql = require('mysql2');
 const pool = mysql.createPool({
     connectionLimit: 10,
@@ -58,15 +68,6 @@ app.get('/navbar', (req, res) => {
 });
 
 
-// Middleware para redirigir URLs con .html a la versión sin la extensión
-app.use((req, res, next) => {
-    if (req.url.endsWith('.html')) {
-        const newUrl = req.url.slice(0, -5); // Elimina la extensión .html
-        res.redirect(301, newUrl); // Redirige a la nueva URL sin .html
-    } else {
-        next(); // Si no termina en .html, continúa normalmente
-    }
-});
 // Ruta para mostrar la página de confirmación
 app.get('/confirmacion', (req, res) => {
     const mensaje = req.query.mensaje || '';
@@ -183,15 +184,26 @@ app.post('/agregar-horario', (req, res) => {
 
 // Ruta para la página de "Terminales"
 app.get('/terminales', (req, res) => {
-    const query = 'SELECT * FROM horarios_de_buses';
+    const query = `
+        SELECT 
+            horario_id,
+            terminal_origen_id,
+            terminal_destino_id,
+            DATE_FORMAT(hora_salida, '%h:%i %p') AS hora_salida, -- Formato AM/PM
+            duracion_viaje
+        FROM horarios_de_buses
+    `;
     pool.query(query, (error, results) => {
         if (error) {
             console.error('Error al obtener los horarios:', error);
             return res.status(500).json({ error: 'Error al obtener los horarios' });
         }
+
+        // Renderiza la vista con los horarios en formato AM/PM
         res.render('terminales', { title: 'Terminales', horarios: results });
     });
 });
+
 
 // Ruta para buscar horarios de buses
 app.post('/buscar-horarios', (req, res) => {
