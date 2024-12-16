@@ -19,6 +19,15 @@ app.use((req, res, next) => {
     next(); // Continúa con el siguiente middleware si no hay redirección
 });
 
+// Middleware específico para redirigir "san-juan-del-sur" a "sanjuandelsur"
+app.use((req, res, next) => {
+    if (req.url === '/san-juan-del-sur') {
+        console.log(`Redirigiendo ${req.url} → /sanjuandelsur`);
+        return res.redirect(301, '/sanjuandelsur');
+    }
+    next(); // Continúa si no coincide con /san-juan-del-sur
+});
+
 // Configuración de archivos estáticos
 app.use(express.static('public', {
     extensions: ['html'], // Sirve automáticamente index.html si no se especifica el archivo
