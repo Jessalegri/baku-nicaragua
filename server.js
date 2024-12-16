@@ -71,7 +71,8 @@ app.get('/contact', (req, res) => {
 
 // Ruta para renderizar terminales.ejs
 app.get('/terminales', (req, res) => {
-    res.render('terminales', { title: 'Terminales' });
+    // Si necesitas pasar datos a la vista, aquí es donde lo harías
+    res.render('terminales', { title: 'Terminales', terminales: [] }); // Enviar terminales vacío por defecto si no hay datos
 });
 
 
