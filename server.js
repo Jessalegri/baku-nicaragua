@@ -13,15 +13,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
     if (req.url.endsWith('.html')) {
         const newUrl = req.url.slice(0, -5); // Elimina la extensión .html
-        console.log(`Middleware ejecutado: Redirigiendo ${req.url} → ${newUrl}`);
-        res.redirect(301, newUrl); // Redirige a la nueva URL sin .html
-    } else {
-        next(); // Continúa normalmente si no termina en .html
+        console.log(`Redirigiendo ${req.url} → ${newUrl}`);
+        return res.redirect(301, newUrl); // Redirige a la nueva URL sin .html
     }
+    next(); // Continúa con el siguiente middleware si no hay redirección
 });
 
-app.use(express.static('public'));
-
+// Configuración de archivos estáticos
+app.use(express.static('public', {
+    extensions: ['html'], // Sirve automáticamente index.html si no se especifica el archivo
+}));
 
 const mysql = require('mysql2');
 const pool = mysql.createPool({
@@ -41,25 +42,22 @@ pool.getConnection((err, connection) => {
     connection.release();
 });
 
-// Ruta principal para servir la página inicial
+// Rutas personalizadas
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html'); 
+    res.sendFile(__dirname + '/public/index.html');
 });
-// Ruta para la página "Sobre Baku"
+
 app.get('/sobreBaku', (req, res) => {
     res.render('sobreBaku', { title: 'Acerca de Baku' });
 });
+
+app.get('/contact', (req, res) => {
+    res.sendFile(__dirname + '/public/contact.html');
+});
+
 // Ruta para mostrar el formulario de agregar horario de autobús
 app.get('/agregarHorario', (req, res) => {
     res.render('agregarHorario', { title: 'Agregar Horario' });
-});
-// Ruta para la página "San Juan del Sur" sin extensión .html
-app.get('/san-juan-del-sur', (req, res) => {
-    res.sendFile(__dirname + '/public/san-juan-del-sur.html');
-});
-// Ruta para la página "Contact"
-app.get('/contact', (req, res) => {
-    res.sendFile(__dirname + '/public/contact.html'); // Cambia este comportamiento
 });
 
 // Ruta para rendirizar navbar en archivo html
