@@ -12,17 +12,16 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware para redirigir URLs con .html a la versión sin la extensión
 app.use((req, res, next) => {
     if (req.url.endsWith('.html')) {
-        const newUrl = req.url.slice(0, -5); // Elimina la extensión .html
+        const newUrl = req.url.slice(0, -5); 
         console.log(`Redirigiendo ${req.url} → ${newUrl}`);
-        return res.redirect(301, newUrl); // Redirige a la nueva URL sin .html
+        return res.redirect(301, newUrl);
     }
-    next(); // Continúa con el siguiente middleware si no hay redirección
+    next(); 
 });
-
 
 // Configuración de archivos estáticos
 app.use(express.static('public', {
-    extensions: ['html'], // Sirve automáticamente index.html si no se especifica el archivo
+    extensions: ['html'],
 }));
 
 // Redirección de /san-juan-del-sur a /sanjuandelsur
@@ -69,6 +68,12 @@ app.get('/sobreBaku', (req, res) => {
 app.get('/contact', (req, res) => {
     res.sendFile(__dirname + '/public/contact.html');
 });
+
+// Ruta para renderizar terminales.ejs
+app.get('/terminales', (req, res) => {
+    res.render('terminales', { title: 'Terminales' });
+});
+
 
 // Ruta para mostrar el formulario de agregar horario de autobús
 app.get('/agregarHorario', (req, res) => {
