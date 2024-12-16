@@ -8,18 +8,20 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
 
 // Middleware para redirigir URLs con .html a la versión sin la extensión
 app.use((req, res, next) => {
     if (req.url.endsWith('.html')) {
         const newUrl = req.url.slice(0, -5); // Elimina la extensión .html
-        console.log(`Redirigiendo: ${req.url} → ${newUrl}`); // Log para depuración
+        console.log(`Middleware ejecutado: Redirigiendo ${req.url} → ${newUrl}`);
         res.redirect(301, newUrl); // Redirige a la nueva URL sin .html
     } else {
         next(); // Continúa normalmente si no termina en .html
     }
 });
+
+app.use(express.static('public'));
+
 
 const mysql = require('mysql2');
 const pool = mysql.createPool({
