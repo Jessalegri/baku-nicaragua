@@ -167,6 +167,7 @@ app.get('/nueva-terminal', (req, res) => {
     });
 });
 
+
 // Ruta POST para agregar una nueva terminal
 app.post('/nueva-terminal', (req, res) => {
     const { nombre_terminal, ciudad } = req.body;
