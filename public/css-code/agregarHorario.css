@@ -5,13 +5,20 @@
     padding: 0;
 }
 
+h1{
+    font-family: "Source Sans Pro", sans-serif;  /* Aplicar la tipografía */
+    color: rgb(65, 105, 94); 
+    letter-spacing: 1px;  
+    text-align: center; 
+}
+
 .form-container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #FFFFFF;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 form {
     display: flex;
@@ -45,15 +52,18 @@ button {
 }
 
 button {
-    background-color: #FF8D21;
-    color: #fff;
+    background-color: #548578;
+    color: white;
     border: none;
     cursor: pointer;
-    border-radius: 10px;
-    padding: 12px 20px;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    padding: 14px 18px;
+    letter-spacing: 1px;
+    margin: 10px 0 0 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    background-color: #007bff;
+    background-color: #ff6f61;
 }

@@ -134,6 +134,134 @@ const agregarTerminal = (nombreTerminal, ciudadId, callback) => {
     });
 };
 
+// Trabajando en: TERMINALES:
+app.get('/nueva-terminal', (req, res) => {
+    // Obtener todas las ciudades
+    const query = 'SELECT ciudad_id, nombre_ciudad FROM Ciudades';
+    pool.query(query, (error, results) => {
+        if (error) {
+            console.error('Error al obtener las ciudades:', error);
+            return res.status(500).send('Error al cargar las ciudades.');
+        }
+
+        // Obtener la ciudad seleccionada desde la query string
+        const ciudadSeleccionada = req.query.ciudad || '';
+        let terminales = [];
+
+        // Obtener las terminales solo si hay una ciudad seleccionada
+        if (ciudadSeleccionada) {
+            const terminalQuery = 'SELECT nombre_terminal FROM Terminales WHERE ciudad_id = (SELECT ciudad_id FROM Ciudades WHERE nombre_ciudad = ?)';
+            pool.query(terminalQuery, [ciudadSeleccionada], (error, terminalResults) => {
+                if (error) {
+                    console.error('Error al obtener las terminales:', error);
+                    return res.status(500).send('Error al obtener las terminales');
+                }
+                terminales = terminalResults;
+                // Renderizamos la vista pasando las ciudades, terminales y la ciudad seleccionada
+                res.render('nuevaTerminal', { ciudades: results, terminales, ciudadSeleccionada });
+            });
+        } else {
+            // Si no hay ciudad seleccionada, solo pasamos las ciudades y un array vacío de terminales
+            res.render('nuevaTerminal', { ciudades: results, terminales, ciudadSeleccionada });
+        }
+    });
+});
+
+// Ruta POST para agregar una nueva terminal
+app.post('/nueva-terminal', (req, res) => {
+    const { nombre_terminal, ciudad } = req.body;
+
+    // Verificar si la ciudad existe en la base de datos
+    const ciudadQuery = 'SELECT ciudad_id FROM Ciudades WHERE nombre_ciudad = ?';
+    pool.query(ciudadQuery, [ciudad], (error, results) => {
+        if (error) {
+            console.error('Error al verificar la ciudad:', error);
+            return res.status(500).send('Error al verificar la ciudad.');
+        }
+
+        if (results.length > 0) {
+            const ciudadId = results[0].ciudad_id;
+
+            // Verificar si la terminal ya existe en la ciudad seleccionada
+            const terminalQuery = 'SELECT * FROM Terminales WHERE nombre_terminal = ? AND ciudad_id = ?';
+            pool.query(terminalQuery, [nombre_terminal, ciudadId], (error, results) => {
+                if (error) {
+                    console.error('Error al verificar la terminal:', error);
+                    return res.status(500).send('Error al verificar la terminal.');
+                }
+
+                if (results.length > 0) {
+                    // Si la terminal ya existe, redirigir con un mensaje
+                    return res.redirect('/confirmacion-terminales?mensaje=La terminal ya existe en esta ciudad.');
+                }
+
+                // Si la terminal no existe, agregarla
+                agregarNuevaTerminal(nombre_terminal, ciudadId, res);
+            });
+        } else {
+            // Si la ciudad no existe, crearla primero
+            const insertCiudadQuery = 'INSERT INTO Ciudades (nombre_ciudad) VALUES (?)';
+            pool.query(insertCiudadQuery, [ciudad], (error, insertResult) => {
+                if (error) {
+                    console.error('Error al agregar la ciudad:', error);
+                    return res.status(500).send('Error al agregar la ciudad.');
+                }
+                const ciudadId = insertResult.insertId;
+                agregarNuevaTerminal(nombre_terminal, ciudadId, res);
+            });
+        }
+    });
+});
+
+// Función auxiliar para insertar la terminal
+function agregarNuevaTerminal(nombre_terminal, ciudadId, res) {
+    const insertTerminalQuery = 'INSERT INTO Terminales (nombre_terminal, ciudad_id) VALUES (?, ?)';
+    pool.query(insertTerminalQuery, [nombre_terminal, ciudadId], (error) => {
+        if (error) {
+            console.error('Error al agregar la terminal:', error);
+            return res.status(500).send('Error al agregar la terminal.');
+        }
+        res.redirect('/confirmacion-terminales?mensaje=Terminal agregada con éxito');
+    });
+}
+// Ruta para obtener terminales por ciudad
+app.get('/nueva-terminal', (req, res) => {
+    // Obtener todas las ciudades
+    const query = 'SELECT ciudad_id, nombre_ciudad FROM Ciudades';
+    pool.query(query, (error, results) => {
+        if (error) {
+            console.error('Error al obtener las ciudades:', error);
+            return res.status(500).send('Error al cargar las ciudades.');
+        }
+
+        // Obtener las terminales si la ciudad está seleccionada
+        const ciudadSeleccionada = req.query.ciudad || '';
+        let terminales = [];
+
+        if (ciudadSeleccionada) {
+            const terminalQuery = 'SELECT nombre_terminal FROM Terminales WHERE ciudad_id = (SELECT ciudad_id FROM Ciudades WHERE nombre_ciudad = ?)';
+            pool.query(terminalQuery, [ciudadSeleccionada], (error, terminalResults) => {
+                if (error) {
+                    console.error('Error al obtener las terminales:', error);
+                    return res.status(500).send('Error al obtener las terminales');
+                }
+                terminales = terminalResults;
+                // Renderizamos la vista pasando las ciudades y terminales
+                res.render('nuevaTerminal', { ciudades: results, terminales });
+            });
+        } else {
+            // Si no hay ciudad seleccionada, pasamos la lista vacía de terminales
+            res.render('nuevaTerminal', { ciudades: results, terminales });
+        }
+    });
+});
+
+
+app.get('/confirmacion-terminales', (req, res) => {
+    const mensaje = req.query.mensaje || 'Operación exitosa.';
+    res.render('confirmacionTerminales', { mensaje });
+});
+
 // Ruta para procesar la solicitud de agregar horario de autobús
 app.post('/agregar-horario', (req, res) => {
     const { ciudadOrigen, terminalOrigen, ciudadDestino, terminalDestino, horaSalida, duracionViajeHoras, duracionViajeMinutos, calificacion } = req.body;

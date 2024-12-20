@@ -1,0 +1,65 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-code/nuevaTerminal.css">
+    <link rel="stylesheet" href="css-code/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<%- include('navbar') %> <!-- Incluir navbar al inicio de la página -->
+
+<div class="terminales-section">
+    <!-- Primera cuadrilla: Título -->
+    <div class="terminales-left-text">
+        <h2 class="titulo-terminales">Terminales Baku</h2>
+    </div>
+
+    <!-- Segunda cuadrilla: Formulario -->
+    <div class="terminales-form">
+        <form action="/nueva-terminal" method="POST">
+            <label for="ciudad">Seleccionar Ciudad:</label>
+            <select name="ciudad" id="ciudad" onchange="window.location.href='/nueva-terminal?ciudad=' + encodeURIComponent(this.value);">
+                <option value="">Selecciona una ciudad</option>
+                <% ciudades.forEach(ciudad => { %>
+                    <option value="<%= ciudad.nombre_ciudad %>" <%= ciudad.nombre_ciudad === ciudadSeleccionada ? 'selected' : '' %>><%= ciudad.nombre_ciudad %></option>
+                <% }) %>
+            </select>
+
+            <div id="terminales-container">
+                <label for="nombre_terminal">Seleccionar Terminal:</label>
+                <select name="nombre_terminal" id="nombre_terminal">
+                    <option value="">Selecciona una terminal</option>
+                    <% if (terminales && terminales.length > 0) { %>
+                        <% terminales.forEach(terminal => { %>
+                            <option value="<%= terminal.nombre_terminal %>"><%= terminal.nombre_terminal %></option>
+                        <% }) %>
+                    <% } else { %>
+                        <option value="no-existe">No hay terminales disponibles</option>
+                    <% } %>
+                </select>
+                <div class="button-container">
+                    <button type="button" id="add-terminal">Agregar nueva terminal</button>
+                </div>
+                </div>
+
+            <div id="nueva-terminal-container" style="display: none;">
+                <label for="nuevo-nombre-terminal">Nombre de la nueva terminal:</label>
+                <input type="text" id="nuevo-nombre-terminal" name="nombre_terminal" required>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" id="guardar-btn">Guardar nueva terminal</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Mostrar o esconder el campo para agregar una nueva terminal
+    document.getElementById('add-terminal').addEventListener('click', function() {
+        document.getElementById('nueva-terminal-container').style.display = 'block';
+        document.getElementById('nombre_terminal').disabled = true; // Desactivar el select de terminal
+    });
+</script>

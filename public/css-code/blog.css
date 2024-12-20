@@ -119,6 +119,18 @@
     height: 100%; 
     object-fit: cover;
 }
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+#titulo-sailing-left {
+    scroll-margin-top: 100px; /* Ajusta el margen superior */
+}
+#titulo-surf {
+    scroll-margin-top: 100px; /* Ajusta el desplazamiento para que no quede oculto debajo de la barra de navegación */
+}
+
+
 
 .rectangulo {
     position: absolute;

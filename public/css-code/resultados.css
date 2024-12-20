@@ -106,15 +106,14 @@ p span {
 
 /* Estilo para tarjetas impares */
 .resultado-container:nth-child(odd) .ruta-bar {
-    background-color: #16B5F1; /* Color azul */
+    background-color: #548578; /* Color azul */
 }
 
 /* Estilo para tarjetas pares */
 .resultado-container:nth-child(even) .ruta-bar {
-    background-color: #4CAF50; /* Color verde */
+    background-color: #8cb4a8; 
 }
 
-/* Hrarios no encontrados */
 .no-result {
     font-family: 'Roboto', sans-serif; 
     font-weight: 100;
@@ -123,81 +122,83 @@ p span {
     width: 80%;
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03); /* Sombra más suave */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03);
     text-align: center;
     padding: 20px;
-    font-size: 16px; /* Tamaño de fuente más pequeño */
+    font-size: 16px; 
     color: #666;
     background-color: #f8f9fa;
 }
 
 .no-result h2 {
-    font-family: 'Roboto', sans-serif; /* Asegura que la tipografía del encabezado sea Roboto */
+    font-family: 'Roboto', sans-serif; 
     font-weight: 400; 
-    color: #333; /* Color más oscuro para el encabezado */
-    margin-bottom: 10px; /* Margen inferior para separar el encabezado del texto */
+    color: #333; 
+    margin-bottom: 10px; 
 }
 
-/* Estilo para el contenedor del encabezado */
 .header-container {
-    display: flex;  /* Flexbox para alinear el botón y el título */
-    align-items: center;  /* Alinea verticalmente los elementos */
-    justify-content: flex-start;  /* Justifica el botón al inicio */
-    gap: 5px;  /* Espacio entre el botón y el título */
-    padding: 10px;  /* Padding interno para el contenedor */
-    background-color: #f4f4f9;  /* Fondo coincidente con el resto de la página */
-    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho */
-    box-sizing: border-box;  /* Incluye el padding en el ancho total */
-    margin: 10px 0 0px 0;  /* Agrega espacio en la parte superior */
-    position: relative;  /* Posicionamiento relativo para el contenedor */
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 5px; 
+    padding: 10px;  
+    background-color: #f4f4f9; 
+    width: 100%;  
+    box-sizing: border-box;  
+    margin: 10px 0 0px 0; 
+    position: relative;  
 }
 
 /* Estilo para el botón de volver */
 .go-back-button {
-    background-color: #de007b;  
+    background-color: #8cb4a8;  
     color: white;  
     border: none;  
-    border-radius: 15px; 
-    padding: 12px 20px;  /* Aumenta el padding para hacerlo más grande */
-    font-family: 'Roboto', sans-serif;  /* Fuente Roboto */
-    font-size: 18px;  /* Aumenta el tamaño de la fuente */
-    font-weight: bold; 
+    border-radius: 5px; 
+    padding: 14px 25px;  
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px; 
     cursor: pointer; 
-    margin: 10px 0 0 10px;  /* Agrega espacio en la parte superior */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Añade sombreado */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;  /* Transición suave */
+    letter-spacing: 1px;
+    margin: 10px 0 0 20px;  
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
-
-/* Estilo para el encabezado */
+.go-back-button:hover {
+    background-color: #ff6f61;
+    transform: scale(1.05); 
+}
 .header-container h1 {
     flex-grow: 1;  
-    text-align: center;  /* Alinea el texto del título al centro */
-    margin: 0;  /* Elimina margen por defecto */
-    font-family: 'Roboto', sans-serif;  /* Asegura que el encabezado use Roboto */
+    text-align: center;  
+    margin: 0;  
+    font-family: 'Roboto', sans-serif; 
     font-size: 1.8em;  
-    color: #333;  /* Color del texto */
+    color: #333; 
 }
-
+/*
 .calificar-button {
-    background-color: #007BFF; /* Color de fondo azul */
-    border: none; /* Sin borde */
-    color: white; /* Texto blanco */
-    padding: 10px 20px; /* Padding para hacer el botón más grande */
-    cursor: pointer; /* Cursor de mano */
-    font-size: 16px; /* Tamaño de la fuente */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
-    display: inline-block; /* Asegura que el botón se comporte como un bloque en línea */
-    margin-top: 10px; /* Espacio superior */
-    font-weight: bold; /* Texto en negrita */
+    background-color: #007BFF; 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    font-size: 16px; 
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; 
+    display: inline-block; 
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 .calificar-button:hover {
-    background-color: #0056b3; /* Fondo más oscuro al pasar el ratón */
-    transform: scale(1.05); /* Agrandar un poco al pasar el ratón */
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .calificar-button:active {
-    background-color: #003f7f; /* Fondo más oscuro al hacer clic */
-    transform: scale(1); /* Volver al tamaño original al hacer clic */
+    background-color: #003f7f; 
+    transform: scale(1); 
 }
+*/

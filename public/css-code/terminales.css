@@ -9,6 +9,14 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth; /* Esto habilita el desplazamiento suave en todo el sitio */
+}
+
+#encuentra-terminales {
+    scroll-margin-top: 100px; /* Evita que quede oculto debajo de una barra de navegación fija, si es necesario */
+}
+
 
 #main-content {
     display: flex;

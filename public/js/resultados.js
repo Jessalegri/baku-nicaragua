@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="calificacion">
                         <p><strong>Calificación:</strong> <span>${horario.calificacion || 'N/A'}</span></p>
-                        <button class="calificar-button" onclick="window.location.href='/calificar-horario/${horario.horario_id}'">Calificar este horario</button>
                     </div>
                 </div>
             `;
