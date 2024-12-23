@@ -3,14 +3,15 @@ body {
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    background-color: #fff;
 }
 
 .container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     text-align: center;
 }
@@ -58,7 +59,7 @@ label[for="calificacion"] {
 }
 
 .calificacion-label {
-    background-color: #007bff;
+    background-color: #8cb4a8;
     color: white;
     padding: 10px 15px;
     border-radius: 50%;
@@ -68,22 +69,29 @@ label[for="calificacion"] {
 
 .calificacion-label:hover,
 input[type="radio"]:checked + .calificacion-label {
-    background-color: #0056b3;
+    background-color: #548578;
 }
 
 button {
-    padding: 12px 25px;
-    background-color: #28a745;
+    padding: 14px 18px;
+    background-color: #548578;
     color: white;
     border: none;
-    border-radius: 30px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #ff6f61;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 /* Adaptación para dispositivos móviles */

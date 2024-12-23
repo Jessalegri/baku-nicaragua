@@ -1,7 +1,7 @@
 /* Estilos generales para la página */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #fff;
     margin: 0;
     padding: 0;
 }
@@ -19,6 +19,10 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    font-size: 24px;
+    letter-spacing: 1.0;
+    font-family: "Source Sans Pro", sans-serif;
+
 }
 
 form {
@@ -62,7 +66,11 @@ button:hover {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    line-height: 1.5;
+    font-size: 16px;
+    color: #313131;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .horario-item p {
@@ -73,17 +81,17 @@ button:hover {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px; /* Espacio para separar el siguiente contenedor */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px; 
 }
 
 .horarios-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #eef9f9;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -107,31 +115,37 @@ button:hover {
 }
 
 .btn-select-city {
-    background-color: #007bff;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
+    background-color: #ff6f61;
+    color: white;  
+    border: none;  
+    border-radius: 5px; 
+    padding: 14px 25px;  
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer; 
+    letter-spacing: 1px;
+    margin: 10px 0 0 20px;  
+    font-size: 18px;
 }
 
 .btn-select-city:hover {
-    background-color: #0056b3;
+    background-color: #8cb4a8;
 }
 
 .btn-calificar {
-    background-color: #28a745;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+    background-color: #548578;
+    color: white;  
+    border: none;  
+    border-radius: 5px; 
+    padding: 14px 25px;  
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer; 
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 .btn-calificar:hover {
-    background-color: #218838;
+    background-color: #8cb4a8;
 }
 
 /* Adaptación para dispositivos móviles */

@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="/css-code/index.css">
-    <link rel="stylesheet" href="/css-code/calificar-horario.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <title><%= title %></title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <link rel="stylesheet" href="/css-code/index.css">
+        <link rel="stylesheet" href="/css-code/calificar-horario.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <title><%= title %></title>
+    </head>
+    <header class="header">
+        <div class="logo-container">
+            <a href="/">
+                <img class="logo-nicabuses" src="/css-code/imagenes/Kabu.logo.png" alt="Logo NicaBuses">
+            </a>
+        </div>    
+        <nav class="menu-navegacion">
+            <a href="/sobreBaku"><img src="/css-code/imagenes/iconos/iconoHome.png" alt="Inicio Icon" class="nav-icon">Nosotros</a>
+            <a href="/terminales"><img src="/css-code/imagenes/iconos/iconoTerminalHomepage.png" alt="Terminales Icon" class="nav-icon">Terminales</a>
+            <a href="/contact"><img src="/css-code/imagenes/iconos/iconoContactoHomepage.png" alt="Horario Icon" class="nav-icon">Contacto</a>
+        </nav>
+    </header>
 <body>
-    <%- include('navbar') %>
 
     <div class="container">
         <h1>Calificar Horario</h1>
