@@ -32,6 +32,11 @@ app.use((req, res, next) => {
     }
     next();
 });
+// Ruta para servir sitemap.xml
+app.get('/sitemap.xml', (req, res) => {
+    res.sendFile(__dirname + '/sitemap.xml');
+});
+
 
 // Ruta personalizada para servir san-juan-del-sur.html en /sanjuandelsur
 app.get('/sanjuandelsur', (req, res) => {
