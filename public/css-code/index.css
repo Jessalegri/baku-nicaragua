@@ -2,163 +2,218 @@
         margin: 0;
         padding: 0;
     }
-    .header {
+   
+/* Container for layout */
+header {
+        width: 100%;
+        position: fixed; /* Posicionarlo sobre el fondo */
+        top: 0;
+        left: 0;
+        z-index: 100;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+    .menu a,
+    .logo {
+    color: white;
+    transition: color 0.3s ease;
+    }
+
+/* Estilos cuando se hace scroll */
+body.scrolled header {
+    background-color: white; /* Fondo blanco */
+ }
+
+    body.scrolled .menu a,
+    body.scrolled .logo {
+    color: black; /* Texto negro para menú y logo */
+    }
+
+    .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
-        background-color: #fff;
+        padding: 20px 30px;
+        background-color: transparent;
+        font-family: 'Poppins';
+    }
+    .logo {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .menu {
+        display: flex;
+        gap: 20px;
+    }
+    .menu a {
+        color: white;
+        text-decoration: none !important;
+        font-size: 18px;
+        font-family: 'Poppins';
+    }
+    .menu a:hover {
+        text-decoration: underline;
+    }
+    .menu-toggle {
+        display: none; 
+        background: none;
+        border: none;
+        color: white;  
+        font-size: 30px;
+        cursor: pointer;
     }
     
-    .logo-container img {
-        max-width: 100px;
-        height: auto;
-    }
-    
-    .menu-navegacion {
-        display: flex;
-        gap: 50px; 
-        padding-right: 30px;
-    }
-    
-    .menu-navegacion a {
-        display: flex;
-        align-items: center;
-        font-size: 20px;
-        color: #313131;
-        text-decoration: none;
-        font-family: 'Roboto', sans-serif;
-    }
-    
-    .menu-navegacion .nav-icon {
-        width: 35px;
-        height: 35px;
-        margin-right: 8px;
-    }
-
-    .homepage-content {
-        display: flex; 
-        align-items: center !important; 
-        justify-content: center; 
-        height: 100vh; 
-        padding: 20px;
-        box-sizing: border-box;
-    } 
-    .left-image {
-        display: block;
-        width: 100%;
-        max-width: 650px; 
-        max-height: 650px;
-        object-fit: cover;
-        margin-right: 10px;    
-    }
-
-    .homepage-content div {
-        display: flex;
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: flex-end;        
-        width: 60%; 
-        text-align: center;
-    }
-    .titulo-central {
-        font-family: 'Poppins, sans-serif';
-        font-weight: 700;
-        color: #313131;
-        font-size: 45px;
-        letter-spacing: 2px;
-        text-align: center; 
-        margin-top: 10px;
-        margin-bottom: 0px;
-    } 
-    .subtitulo {
-        font-family: 'Source Sans Pro', sans-serif;
-        color: rgb(65, 105, 94);
-        letter-spacing: 2px;
-        font-size: 20px;
-        font-weight: 300;
-        margin-bottom: 10px;
-        text-align: center !important; 
-    }
-    .formulario-busqueda-horizontal {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-    }
-    .campo-busqueda label[for="destino"] {
-        margin-left: 15px; 
-    }
-    
-    #buscar-transporte {
-        display: flex;
-        gap: 30px; 
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 600px;
-    }
-    .formulario-busqueda-horizontal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background-color: #f9f9f9; 
-        border-radius: 10px; 
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
-        gap: 20px !important; 
-    }
     .campo-busqueda {
+        position: relative;
+      }
+ 
+    .homepage {
         display: flex;
         flex-direction: column;
-        align-items: flex-start !important;
-    }
-    .campo-busqueda label {
-        font-size: 16px;
-        margin-bottom: 12px;
-        margin-top: 10px;
-        font-family: 'Source Sans Pro', sans-serif;
-        color: #313131;
-    }
-
-    .campo-busqueda input {
-        padding: 20px;
-        font-size: 16px;
-        border: 1.2px solid #ccc;
-        border-radius: 5px;
-        width: calc(100% + 15%);        
-        max-width: 400px;
-        box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
-        margin-bottom: 20px; 
-    }
-    .campo-busqueda:first-child {
-        margin-right: 15px; 
-    }
-    .campo-busqueda:nth-child(2) {
-        margin-right: 15px; 
-    }
-    
-    .campo-busqueda button.boton-busqueda {
-        padding: 20px 60px;
-        background-color: #548578;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('imagenes/vistaOmepete1.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        text-align: center;
         color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        font-family: 'Roboto', sans-serif;
-        margin-top: 17px;
     }
+    .homepage::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2); /* Capa negra con opacidad mínima */
+        pointer-events: none; /* Permite interactuar con elementos debajo */
+        z-index: 1;
+    }   
 
-    button.boton-busqueda{
-        margin-right: 5%; 
-    }
-    .boton-busqueda:hover {
-        background-color: #41695D !important;
-        color: white !important;
-    }
+.wave-container1 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;    
+    margin-bottom: -0.99%;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.formulario-busqueda-horizontal {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    border-radius: 10px;
+    padding: 20px 20px;
+    box-shadow: 0 4px 10px rgba(252, 249, 249, 0.1);
+    display: flex;
+    gap: 10px; 
+    align-items: center;
+    width: auto; 
+    z-index: 2;
+    position: relative;
+
+}
+
+.formulario-busqueda-horizontal input {
+    padding: 15px 20px;
+    font-size: 16px !important;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formulario-busqueda-horizontal input:focus {
+    border-color: #c96b4f;
+}
+
+.boton-busqueda {
+    padding: 12px 40px;
+    font-size: 16px;
+    background-color: #c96b4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.boton-busqueda:hover {
+    background-color: #c96b4f;
+}
+
+/* Title and subtitle styles */
+.main-title1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.subtitleIndex {
+    font-size: 19.7px;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    z-index: 2;
+    position: relative;
+}
+    
+/* Estilo del contenedor de opciones */
+.dropdown-options {
+    position: absolute;
+    top: calc(100% + 5px); /* Debajo del campo de entrada */
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Estilo de las opciones */
+.dropdown-options .dropdown-item {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #313131;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.dropdown-options .active-item {
+    background-color: #dfe6e9; /* Fondo de la opción activa */
+    color: #2d3436; /* Color del texto */
+}
+
+
+/* Estilo al pasar el mouse */
+.dropdown-options .dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Para asegurarse de que el input no interfiera */
+.campo-busqueda {
+    position: relative;
+}
 
     /* Contribucion de info */
     .contribucion-section {
@@ -205,22 +260,30 @@
     .orange:hover {
     background-color: #ff6f61; 
     }
-    /* acerca de baku */
-    #about-baku {
+/* acerca de baku */
+#about-baku {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #FFFFFF;
-    }
+    background-color: #add8e6 !important;
+}
 
-    .content-wrapper {
+/* Ola superior */
+.wave {
+    display: block; /* Asegúrate de que no se comporte como inline */
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* Esto elimina posibles espacios en blanco */
+}
+/* Contenido del about-baku */
+.content-wrapper {
     display: flex;
     width: 100%;
     max-width: 1200px;
     }
 
-    .text-content {
+.text-content {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -228,17 +291,9 @@
     align-items: center; 
     text-align: center;
     padding: 20px;
-    }
-
-    .text-content h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600; 
-    font-size: 35px;
-    color: #16142D;
-    margin-bottom: 5px; 
-    }
-
-    .description-text {
+    z-index: 2; /* Sobrepone el contenido a la ola */
+}
+.description-text {
     font-family: 'Roboto', sans-serif;
     font-weight: 300; 
     font-size: 18px;
@@ -262,86 +317,86 @@
         color: #F2F5FF; 
     }
 
-    .image-content {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        }
 
-        .image-content img {
-        max-width: 100%;
-        height: auto;
-        background-color: #F5F5F5;
-    }
-    /* Galeria */
-    .photo-gallery {
-    text-align: center;
-    margin: 40px;
-    padding: 20px;
-    background-color: #ffff;
-    }
-
-    .photo-gallery h2 {
-    color: #333;
-    margin-bottom: 35px;
-    font-size: 38px;
-    font-family: 'roboto';
-    }
-
-    .gallery-container {
+.image-content {
+    flex: 1;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 15px;
-    }
+    z-index: 2; /* Asegura que la imagen esté sobre la ola */
+}
 
-    .gallery-item {
-    flex: 0 1 25%; 
-    margin-bottom: 15px;
-    position: relative; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    background-color: #F5F5F5;
+}
 
-    .gallery-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: top;
-    display: block; 
-    }
-    .image-overlay {
-    position: absolute;
-    bottom: 0; 
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3); 
-    color: white; 
-    text-align: center;
-    padding: 10px 0; 
-    font-size: 16px; 
-    font-weight: bold;
-    font-family: 'roboto';
-    }
-
-    .button-galeria {
-    width: 60%;  
-    max-width: 350px;      
-    padding: 12px 14px;
-    border: none;
-    background-color: #FF8D21;
-    color: white;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: bold;
+/* Galeria */
+.main-title {
+    font-size: 1.9rem;
+    padding-bottom: 22px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-top: 5px;
+    text-align: uppercase;
     display: block;
-    margin: 35px auto 35px;
-    font-size: 16px;
-    }
+    width: 100%;
+    font-family:'Montserrat', Arial, sans-serif;
+    text-align: center;
+    color:#333;
+}
+.dropdown-item.active-item {
+    background-color: #41695D;
+    color: white;
+    font-weight: bold;
+}
+.dropdown-options {
+    scroll-behavior: auto;
+    overflow-y: auto;
+}
 
-    button:hover {
-    background-color: #2979FF;
-    }
+/* Subtitle */
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #c96b4f;
+    margin-bottom: 5px;     
+    padding-bottom: 10px;   
+    padding-top: 20px; 
+    font-weight: 400;
+}
+/* Botón centrado */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+    
+/* View All Button */
+.view-button {
+    display: inline-block;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #c96b4f;
+    color: #fff;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 15px 22px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+    
+.view-button:hover {
+    background-color: #c08e73;;
+    color: white;
+}
+
     /* Sobre Baku nuevo estilo */
     .sobrebaku-btn {
     display: inline-block;
@@ -593,38 +648,75 @@
     }
 
 @media (max-width: 768px) {
+/* Homepage - index.html*/
+    body.scrolled .menu a,
+    body.scrolled .logo {
+    color: black; 
+    }
     .header {
         flex-direction: row; 
         justify-content: space-between;
         align-items: center;
     }
-     .menu-navegacion {
-        display: flex;
-        gap: 10px; 
-        padding-right: 10px;
-    }
-    .logo-container img {
-        max-width: 70px;
-        height: auto;
-    }
-    .menu-navegacion a {
-        font-size: 16px; 
-    }
-    
-    .menu-navegacion .nav-icon {
-        display: none;
-    }
-/* Acerca de Baku*/
-    .text-content h2 {
-        font-size: 28px;
-        margin-bottom: 10px;
+    .menu {
+        display: none; 
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px; /* Justo debajo del navbar */
+        right: 0;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 200;
     }
 
-    .description-text {
-        font-size: 16px;
-        margin-bottom: 10px;
+    .menu.open {
+        display: flex; 
     }
-    /* Galery */
+
+    .menu a {
+        color: black; 
+        padding: 10px 0; 
+        text-align: left;
+    }
+
+    .menu-toggle {
+        color: white;
+        display: block; 
+    }
+    .formulario-busqueda-horizontal {
+        flex-direction: column; 
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .formulario-busqueda-horizontal input,
+    .boton-busqueda {
+        width: 85%; 
+        font-size: 16px;
+    }
+
+    .boton-busqueda {
+        padding: 12px;
+    }
+
+    .main-title1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitleIndex {
+        font-size: 16px;
+        margin-left: 15px;
+        margin-right: 15px !important;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .wave-container1 {
+        position: absolute;
+        bottom: -2px;
+    }
+/* Galery */
     .gallery-item img {
         height: 200px !important; 
         object-fit: cover;
@@ -638,8 +730,6 @@
         max-width: 100%;
         padding: 20px 10px !important; /* Ajusta el padding para pantallas más pequeñas */
     }
-
-    /* Ajuste de tamaño de los textos */
     .featured-titulo {
         max-width: 100% !important;
         font-size: 24px !important; /* Tamaño del título */
@@ -686,81 +776,6 @@
         padding: 15px 20px !important; /* Reduce el tamaño del botón principal */
         font-size: 18px !important; /* Ajusta el tamaño de la fuente del botón principal */
     }
-    /* Homepage code - moviles devices */
-    .left-image {
-        display: none; /* Oculta la imagen */
-    }
-    .homepage-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        padding: 20px;
-        min-height: 70vh;
-    }
-    .titulo-central {
-        font-size: 20px; 
-        max-width: 120% !important; 
-        letter-spacing: 1px; 
-        line-height: 1.2;
-    }
-    .subtitulo {
-        font-size: 12px !important; 
-        text-align: center;
-        margin-bottom: 15px;
-    }
-    .formulario-busqueda-horizontal {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 10px; /* Espacio entre los elementos del formulario */
-        width: 150% !important; /* Hacer el formulario más ancho */
-        max-width: 500px; /* Asegura que el formulario no exceda este ancho */
-    }
-
-    .campo-busqueda {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 300px !important;
-        margin-right: 25px !important; 
-    }
-    .campo-busqueda label {
-        font-size: 14px;
-        margin-bottom: 12px;
-    }
-    .campo-busqueda input {
-        width: 150%; /* Ajusta según lo que prefieras */
-        max-width: 300px; /* Limita el ancho máximo */
-    }
-    
-    .campo-busqueda:first-child input {
-        max-width: 100px;
-        margin-left: 20px;
-        padding: 15px 20px; /* Reducción de 5% respecto al padding original */
-    }
-    
-    /* Ajustes específicos para el input de "Destino" */
-    .campo-busqueda:nth-child(2) input {
-        max-width: 100px;
-        margin-left: 10px;
-        padding: 15px 20px;  /* Reducción de 5% respecto al padding original */
-    }
-    
-    /* Ajustes para el botón de búsqueda */
-    .campo-busqueda button.boton-busqueda {
-        padding: 15px 20px; /* Aplicamos el mismo padding que los inputs */
-        font-size: 16px;
-        cursor: pointer;
-    }
-    .campo-busqueda:nth-child(2) label {
-        margin-left: 15px; /* Añade espacio a la izquierda del texto del label */
-    }
-    .campo-busqueda:nth-child(1) label {
-        margin-left: 20px; /* Añade espacio a la izquierda del texto del label */
-    }  
 }
 
     @media (max-width: 400px) {

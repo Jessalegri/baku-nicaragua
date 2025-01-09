@@ -37,7 +37,22 @@ app.get('/sitemap.xml', (req, res) => {
     res.sendFile(__dirname + '/sitemap.xml');
 });
 
-
+// Ruta para servir granada.html
+app.get('/granada', (req, res) => {
+    res.sendFile(__dirname + '/public/granada.html');
+});
+// Nueva Ruta
+app.get('/api/ciudades', (req, res) => {
+    const query = 'SELECT nombre_ciudad FROM Ciudades';
+    pool.query(query, (error, results) => {
+        if (error) {
+            console.error('Error al obtener las ciudades:', error);
+            return res.status(500).json({ error: 'Error al obtener las ciudades' });
+        }
+        const ciudades = results.map(row => row.nombre_ciudad); // Extrae solo los nombres
+        res.json(ciudades);
+    });
+});
 // Ruta personalizada para servir san-juan-del-sur.html en /sanjuandelsur
 app.get('/sanjuandelsur', (req, res) => {
     res.sendFile(__dirname + '/public/san-juan-del-sur.html');
@@ -365,6 +380,11 @@ app.get('/terminales', (req, res) => {
 // Ruta para buscar horarios de buses
 app.post('/buscar-horarios', (req, res) => {
     const { ciudadOrigen, ciudadDestino } = req.body;
+
+    if (!ciudadOrigen || !ciudadDestino) {
+        return res.status(400).send('Por favor seleccione una ciudad de origen y destino.');
+    }
+
     const query = `
         SELECT 
             c_origen.nombre_ciudad AS ciudad_origen,
@@ -372,22 +392,20 @@ app.post('/buscar-horarios', (req, res) => {
             t_origen.nombre_terminal AS terminal_origen,
             t_destino.nombre_terminal AS terminal_destino,
             h.hora_salida,
-            h.duracion_viaje,
-            c.calificacion
+            h.duracion_viaje
         FROM horarios_de_buses h
-        LEFT JOIN Calificaciones c ON h.horario_id = c.horario_id
         JOIN Terminales t_origen ON h.terminal_origen_id = t_origen.terminal_id
         JOIN Terminales t_destino ON h.terminal_destino_id = t_destino.terminal_id
         JOIN Ciudades c_origen ON t_origen.ciudad_id = c_origen.ciudad_id
         JOIN Ciudades c_destino ON t_destino.ciudad_id = c_destino.ciudad_id
         WHERE c_origen.nombre_ciudad = ? AND c_destino.nombre_ciudad = ?
     `;
+
     pool.query(query, [ciudadOrigen, ciudadDestino], (error, results) => {
         if (error) {
-            console.error('Error al realizar la consulta', error);
-            return res.status(500).json({ error: 'Error al consultar la base de datos' });
+            console.error('Error al buscar horarios:', error);
+            return res.status(500).send('Error al buscar horarios');
         }
-        console.log('Query results:', results); // Aquí results está definido
         res.json(results);
     });
 });

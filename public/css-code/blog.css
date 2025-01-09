@@ -185,6 +185,22 @@ html {
     margin-top: 10px; 
     line-height: 1.5;
 }
+.wave-container {
+    position: relative;
+    width: 100%;
+    line-height: 0; /* Elimina espacios verticales */
+    margin: 0; /* Asegura que no haya márgenes adicionales */
+}
+
+.wave-container svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.mission-section {
+    margin-top: -5px; /* Superpone ligeramente la sección para eliminar cualquier espacio visible */
+}
 /* Seccion Departamento: Granada */
 .granada-section {
     display: flex;
@@ -209,14 +225,15 @@ html {
 
 /* Seccion en index.html */
 .about-section {
-    background-color: #FFFFFF;
+    background-color: #ffff;
     display: flex;
     justify-content: space-between;
-    padding: 100px;
+    padding: 100px 0px 50px;
+    gap: 20px !important;
 }
 
 .about-left {
-    width: 35%;
+    width: 55%;
     padding-right: 70px;
     margin-left: 50px;
     text-align: justify;
@@ -261,70 +278,72 @@ html {
     background-color: #41695d;
     color: #fff;
 }
-.about-right {
-    width: 80%;
-    position: relative;
-}
 
-.about-image {
-    width: 55%;
+.about-right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    flex: 0 0 48%; /* Cada imagen ocupa el 48% del carrusel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1%; 
+  }
+  
+  .carousel-item img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.about-rectangle {
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .carousel-item img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Agrega sombra */
+  }
+  
+  .carousel-control {
     position: absolute;
-    top: 130px;
-    left: 420px;
-    width: 45%;
-    height: 80%;
-    background-color: #41695d;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.about-icons-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    padding-left: 20px;
-    height: 100%;
-}
-
-.about-icon-item {
-    display: flex;
-    align-items: flex-start;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.about-icon-img {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-}
-
-.about-icon-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.about-icon-title {
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    font-size: 24px;
-    color: #F2F2F2;
-    margin: 0;
-}
-
-.about-icon-description {
-    font-size: 16px;
-    color: #C6C6C6;
-    margin-top: 10px;
-    line-height: 1.5;
-}
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+  }
+  
+  .carousel-control.prev {
+    left: 10px;
+  }
+  
+  .carousel-control.next {
+    right: 10px;
+  }
+  
 /* Seccion: About Baku (index.html */
 @media screen and (min-width: 820px) and (max-width: 1366px) {
 
@@ -404,49 +423,22 @@ html {
         margin-left: 0;
         padding-right: 0;
     }
-
-    .about-image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+    .carousel {
+        margin-bottom: 30px;
     }
 
-    .about-rectangle {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
+    .carousel-item {
+        flex: 0 0 90%; 
+        margin-right: 5%; 
     }
 
-    .about-left {
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .carousel-item img {
+        border-radius: 10px; 
     }
 
-    .about-subtitle, .about-description {
-        font-size: 90%;
-    }
-
-    .about-icon-description {
-        font-size: 12px !important;
-        margin-right: 10px;
-        margin-bottom: 20px;
-    }
-
-    .about-icon-title {
-        font-size: 20px !important;
-        margin-top: 10px;
-        font-family: 'Poppins, sans-serif' !important;
-        font-weight: 700;
-        letter-spacing: 1.1px;
-    }
-
-    .about-icon-img {
-        margin-top: 10px;
-        width: 40px !important;
-        height: auto !important;
+    .carousel-control {
+        font-size: 18px; 
+        padding: 8px; 
     }
 }
 /* Aventuras - seccion: San Juan del sur */
@@ -901,55 +893,75 @@ html {
     .surf-right-text {
         display: none !important; /* Oculta el texto decorativo en iPad Pro */
     }
-    /* Sección: Main/Principal  */
-    .section-principal {
-        flex-direction: column; 
-        padding: 40px; 
-        justify-content: center;
-        align-items: center;
+   /* Sección: Main/Principal en index.html*/
+   .about-section {
+    flex-direction: row !important; 
+    padding: 40px 20px !important; 
+    gap: 10px !important; 
+    background-color: #ffff;
+}
+
+    .about-left {
+        width: 50% !important; 
+        margin-left: 0 !important;
+        padding-right: 10px !important; 
+        text-align: justify !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
     }
 
-    .left-section, .right-section {
-        width: 100%; 
-        margin-left: 0;
-        padding-right: 0;
-        margin-bottom: 20px; 
+    .about-subtitle {
+        font-size: 18px !important; 
+        margin-bottom: 5px !important; 
+        letter-spacing: 1.5px !important;
     }
 
-    .imagen-san-juan {
-        width: 80%; 
-        height: auto; 
-        object-fit: cover;
+    .about-title {
+        font-size: 22px !important;
+        margin-bottom: 15px !important;
+        letter-spacing: 1.5px !important;
     }
 
-    .rectangulo {
-        position: relative; 
-        top: 0;
-        left: 0;
-        width: 100%; /* Asegura que el rectángulo también ocupe todo el ancho */
-        height: auto; 
-        margin-top: 20px; 
+    .about-description {
+        font-size: 18px !important; 
+        line-height: 1.8 !important; 
     }
 
-    .subtitulo, .descripcion {
-        font-size: 100%; 
+    .about-right {
+        width: 50% !important; 
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 
-    .icono-descripcion {
-        font-size: 16px;
-        margin-right: 10px;
-        margin-bottom: 20px;
+    .carousel {
+        margin: 0 10px !important; 
+        padding: 10px 0 !important; 
     }
 
-    .icono-titulo {
-        font-size: 22px;
-        margin-top: 10px;
+    .carousel-item {
+        flex: 0 0 48% !important;
+        margin-right: 2% !important; 
     }
 
-    .icono-img {
-        margin-top: 10px;
+    .carousel-item img {
+        border-radius: 10px !important;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
     }
- 
+
+    .carousel-control {
+        font-size: 20px !important; 
+        padding: 10px !important; 
+    }
+
+    .carousel-control.prev {
+        left: 10px !important; 
+    }
+
+    .carousel-control.next {
+        right: 10px !important; 
+    }   
 }
 
 @media screen and (min-width: 1367px) {
@@ -1091,96 +1103,73 @@ html {
     }
 
 /*Seccion principal */
-    .section-principal {
-        flex-direction: column; 
-        padding: 50px; 
-        justify-content: center;
-        align-items: center;
+    .about-section {
+        flex-direction: row !important;
+        padding: 40px -50px 20px !important; /* Padding reducido en la parte inferior */
+        gap: 20px !important;
+        background-color: #ffff !important;
     }
 
-    .left-section, .right-section {
-        width: 100%; 
-        margin-left: 0;
-        padding-right: 0;
-        margin-bottom: 30px; 
+    .about-left {
+        width: 50% !important;
+        margin-left: 0 !important;
+        padding-right: 20px !important;
+        text-align: justify !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
     }
 
-    .imagen-san-juan {
-        width: 80%; 
-        height: auto;
-        object-fit: cover;
-        display: block;
-        margin: 0 auto;
+    .about-subtitle {
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
+        letter-spacing: 2px !important;
     }
 
-    .rectangulo {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%; 
-        height: auto; 
-        margin-top: 30px; 
+    .about-title {
+        font-size: 26px !important;
+        margin-bottom: 20px !important;
+        letter-spacing: 2px !important;
     }
 
-    .subtitulo, .titulo, .descripcion {
-        font-size: 110%; 
-        text-align: center; 
+    .about-description {
+        font-size: 18px !important;
+        line-height: 2 !important;
     }
 
-    .icono-descripcion {
-        font-size: 16px;
-        margin-right: 10px;
-        margin-bottom: 15px;
+    .about-right {
+        width: 50% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 
-    .icono-titulo {
-        font-size: 24px;
-        margin-top: 10px;
+    .carousel {
+        margin: 0 20px 10px !important; /* Margen inferior reducido */
+        padding: 20px 0 !important;
     }
 
-    .icono-img {
-        margin-top: 15px;
+    .carousel-item {
+        flex: 0 0 45% !important;
+        margin-right: 5% !important;
     }
 
-    .icono-item {
-        margin-bottom: 20px;
-    }
-/*Seccion: Surf */
- .surf-section {
-        display: flex;
-        flex-direction: row; 
-        justify-content: space-between; 
-        padding: 40px; 
+    .carousel-item img {
+        border-radius: 12px !important;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
     }
 
-    .surf-left, .surf-right {
-        width: 48%; 
-        margin-left: 0;
-        padding-right: 0;
+    .carousel-control {
+        font-size: 24px !important;
+        padding: 12px !important;
     }
 
-    .surf-left {
-        margin-top: 0; 
-        margin-bottom: 0;
-        text-align: left;
+    .carousel-control.prev {
+        left: 15px !important;
     }
 
-    .imagen-surf {
-        width: 100%; 
-        height: auto;
-        object-fit: cover;
-        margin-bottom: 20px;
-    }
-
-    .subtitulo-surf, .descripcion-surf {
-        font-size: 100%; 
-    }
-
-    .titulo-surf {
-        font-size: 40px; 
-    }
-
-    .surf-right-text {
-        display: none; 
+    .carousel-control.next {
+        right: 15px !important;
     }
 }
+
