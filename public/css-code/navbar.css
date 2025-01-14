@@ -1,11 +1,10 @@
 /* General Navbar Styles */
 #navbar {
     width: 100%;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 100;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar {
@@ -47,13 +46,12 @@
     font-size: 30px;
     cursor: pointer;
 }
-
 @media (max-width: 768px) {
     .menu {
         display: none; /* Ocultar el menú por defecto en móviles */
         flex-direction: column;
         background-color: white;
-        position: absolute;
+        position: relative;
         top: 60px; /* Justo debajo del navbar */
         right: 20px;
         padding: 10px;
@@ -74,5 +72,9 @@
 
     .menu-toggle {
         display: block; /* Mostrar el botón ☰ en móviles */
+    }
+    #navbar {
+        width: 100%;
+        position: relative;
     }
 }

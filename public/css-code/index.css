@@ -1,96 +1,102 @@
-    body {
-        margin: 0;
-        padding: 0;
-    }
-   
-/* Container for layout */
-header {
-        width: 100%;
-        position: fixed; /* Posicionarlo sobre el fondo */
-        top: 0;
-        left: 0;
-        z-index: 100;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+body {
+    margin: 0;
+    padding: 0;
 }
-    .menu a,
+   
+/* HEADER */
+header {
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu a,
     .logo {
     color: white;
     transition: color 0.3s ease;
-    }
+}
 
-/* Estilos cuando se hace scroll */
 body.scrolled header {
-    background-color: white; /* Fondo blanco */
+    background-color: white; 
  }
 
-    body.scrolled .menu a,
-    body.scrolled .logo {
-    color: black; /* Texto negro para menú y logo */
-    }
+body.scrolled .menu a,
+body.scrolled .logo {
+    color: black; 
+}
 
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-        background-color: transparent;
-        font-family: 'Poppins';
-    }
-    .logo {
-        color: white;
-        font-size: 30px;
-        font-weight: bold;
-    }
-    .menu {
-        display: flex;
-        gap: 20px;
-    }
-    .menu a {
-        color: white;
-        text-decoration: none !important;
-        font-size: 18px;
-        font-family: 'Poppins';
-    }
-    .menu a:hover {
-        text-decoration: underline;
-    }
-    .menu-toggle {
-        display: none; 
-        background: none;
-        border: none;
-        color: white;  
-        font-size: 30px;
-        cursor: pointer;
-    }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: transparent;
+    font-family: 'Poppins';
+}
+
+.logo {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
     
-    .campo-busqueda {
-        position: relative;
-      }
+.menu a {
+    color: white;
+    text-decoration: none !important;
+    font-size: 18px;
+    font-family: 'Poppins';
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: white;  
+    font-size: 30px;
+    cursor: pointer;
+}
+    
+.campo-busqueda {
+    position: relative;
+}
  
-    .homepage {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-image: url('imagenes/vistaOmepete1.jpg');
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        text-align: center;
-        color: white;
-    }
-    .homepage::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.2); /* Capa negra con opacidad mínima */
-        pointer-events: none; /* Permite interactuar con elementos debajo */
-        z-index: 1;
-    }   
+.homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('imagenes/vistaOmepete1.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.homepage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); 
+    pointer-events: none; 
+    z-index: 1;
+}   
 
 .wave-container1 {
     position: absolute;
@@ -107,7 +113,7 @@ body.scrolled header {
 }
 
 .formulario-busqueda-horizontal {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    background-color: rgba(255, 255, 255, 0.8); 
     border-radius: 10px;
     padding: 20px 20px;
     box-shadow: 0 4px 10px rgba(252, 249, 249, 0.1);
@@ -117,7 +123,6 @@ body.scrolled header {
     width: auto; 
     z-index: 2;
     position: relative;
-
 }
 
 .formulario-busqueda-horizontal input {
@@ -143,14 +148,12 @@ body.scrolled header {
     cursor: pointer;
     transition: background-color 0.1s ease;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .boton-busqueda:hover {
     background-color: #c96b4f;
 }
 
-/* Title and subtitle styles */
 .main-title1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -171,10 +174,10 @@ body.scrolled header {
     position: relative;
 }
     
-/* Estilo del contenedor de opciones */
+/* Menu desplegable en formulario - index.html */
 .dropdown-options {
     position: absolute;
-    top: calc(100% + 5px); /* Debajo del campo de entrada */
+    top: calc(100% + 5px); 
     left: 0;
     right: 0;
     background-color: #ffffff;
@@ -184,13 +187,12 @@ body.scrolled header {
     overflow-y: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    display: none; /* Oculto por defecto */
+    display: none; 
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-/* Estilo de las opciones */
 .dropdown-options .dropdown-item {
     padding: 10px 15px;
     font-size: 14px;
@@ -200,42 +202,40 @@ body.scrolled header {
     transition: background-color 0.2s ease-in-out;
 }
 .dropdown-options .active-item {
-    background-color: #dfe6e9; /* Fondo de la opción activa */
-    color: #2d3436; /* Color del texto */
+    background-color: #dfe6e9; 
+    color: #2d3436; 
 }
 
 
-/* Estilo al pasar el mouse */
 .dropdown-options .dropdown-item:hover {
     background-color: #f0f0f0;
 }
 
-/* Para asegurarse de que el input no interfiera */
 .campo-busqueda {
     position: relative;
 }
 
-    /* Contribucion de info */
-    .contribucion-section {
+/* Seccion #3 - Contribucion - index.html */
+.contribucion-section {
     text-align: center;
     padding: 40px;
     background-color: #41695d;
     color: #ffffff;
-    }
+}
 
-    .contribucion-section h3 {
-        font-family: 'Poppins', sans-serif;
-        margin-bottom: 30px;
-        font-size: 25px;
-    }
+.contribucion-section h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
 
-    .contribucion-container {
+.contribucion-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
-    }
+}
 
-    .contribucion-button {
+.contribucion-button {
     display: block;
     padding: 20px;
     border-radius: 10px;
@@ -245,21 +245,24 @@ body.scrolled header {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: bold;
-    }
+}
 
-    .blue {
+.blue {
     background-color: #8cb4a8;
-    }
-    .blue:hover {
-    background-color: #ff6f61; 
-    }
+}
 
-    .orange {
-    background-color: #548578;
-    }
-    .orange:hover {
+.blue:hover {
     background-color: #ff6f61; 
-    }
+}
+
+.orange {
+    background-color: #548578;
+}
+
+.orange:hover {
+    background-color: #ff6f61; 
+}
+
 /* acerca de baku */
 #about-baku {
     display: flex;
@@ -269,19 +272,18 @@ body.scrolled header {
     background-color: #add8e6 !important;
 }
 
-/* Ola superior */
 .wave {
-    display: block; /* Asegúrate de que no se comporte como inline */
+    display: block; 
     margin: 0;
     padding: 0;
-    line-height: 0; /* Esto elimina posibles espacios en blanco */
+    line-height: 0; 
 }
-/* Contenido del about-baku */
+
 .content-wrapper {
     display: flex;
     width: 100%;
     max-width: 1200px;
-    }
+}
 
 .text-content {
     flex: 1;
@@ -291,39 +293,63 @@ body.scrolled header {
     align-items: center; 
     text-align: center;
     padding: 20px;
-    z-index: 2; /* Sobrepone el contenido a la ola */
+    z-index: 2; 
 }
 .description-text {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; 
     font-size: 18px;
     margin-bottom: 30px; 
-    }
+}
 
-    .button-link  {
-        display: inline-block;
-        font-family: 'Poppins', sans-serif;
-        background-color: #FF8D21;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 15px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+.about-subtitle {
+    color: #c96b4f !important;
+    font-weight: 600 !important;
+    font-family: 'Poppins' !important;
+    font-size: 18px !important;
+}
+.about-btn1 {
+    display: inline-block; 
+    padding: 10px 40px; 
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #c96b4f;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    max-width: fit-content;
+    width: auto;
 
-    .button-link:hover {
-        background-color: #2979FF;
-        color: #F2F5FF; 
-    }
+}
 
+.button-link  {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FF8D21;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #2979FF;
+    color: #F2F5FF; 
+}
 
 .image-content {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2; /* Asegura que la imagen esté sobre la ola */
+    z-index: 2; 
 }
 
 .image-content img {

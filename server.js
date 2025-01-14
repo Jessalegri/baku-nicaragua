@@ -526,3 +526,6 @@ app.post('/submit-calificacion', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+app.get('/sobreBaku', (req, res) => {
+    res.render('sobreBaku', { title: 'Acerca de Baku' });
+});

@@ -1,0 +1,194 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .wave-container {
+    margin: 0;
+    padding: 0;
+    margin-top: -130px; 
+  }
+  .wave-container svg {
+    display: block;
+  }
+  .hotels-container {
+    background-color: #F9F9F9; 
+  }
+  
+  .image-text-section {
+    display: flex; 
+    justify-content: center;
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 0 10%; 
+    text-align: left; 
+    padding-top: 30px;  
+    height: auto;
+    background-color: #F9F9F9;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  /* Espacio entre hoteles para los siguientes bloques */
+  .image-text-section:not(:first-of-type) {
+    margin-top: 5rem; /* Ajusta según el espacio deseado */
+  }
+  .hotels-container div.image-text-section.third-hotel {
+    background-color: #fff !important;
+  }
+  
+  
+  /* Imagen ocupa el 30% */
+  .image-container {
+    flex: 0 0 35%; /* Imagen ocupa el 30% del ancho */
+    display: flex;
+    margin-right: 3%;
+    justify-content: center; /* Centra la imagen dentro de su contenedor */
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+  }
+  
+  /* Texto ocupa el 70% */
+  .text-container {
+    flex: 0 0 45%; /* El texto ocupa el 60% */
+    padding-left: 20px;
+  }
+  
+  /* Estilos para el título y la descripción */
+  .hotel-title {
+    font-size: 40px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #2d2d2d;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 2.0;
+    color: rgb(110, 110, 110)
+  }
+  
+  /* Estilos para las secciones de temporada */
+  .season-title {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .season-info {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Estilo del botón */
+  .more-info-btn {
+    display: inline-block;
+    margin-top: 20px;
+    border-style: solid;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1em;
+    padding: 20px 20px;
+    border-radius: 6px;
+    background-color: #c96b4f;
+    color: white;
+    font-family: 'Montserrat', Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .more-info-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  /* Categorias intro - botones (Hoteles) */ 
+  .subtitle-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #c96b4f;
+    margin-bottom: 5px;     
+    padding-bottom: 10px;   
+    padding-top: 20px; 
+    font-weight: 400;
+  }
+  
+  .main-title-intro {
+    font-size: 1.9rem;
+    padding-bottom: 22px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-top: 5px;
+    text-align: uppercase;
+    display: block;
+    width: 100%;
+    font-family:'Montserrat', Arial, sans-serif;
+    text-align: center;
+    color:#333;
+  }
+  
+  .category-menu-intro {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; 
+    padding: 10px;
+  }
+  .category-intro {
+    display: inline-block;
+    margin-bottom: 10px;
+    background-color: #548578;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 40px;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+  }
+  .category:hover {
+    background-color: #41695d;
+    transform: scale(1.05);
+  }
+  .intro-destinations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-image: url('imagenes/vistaOmepete1.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Necesario para el pseudo-elemento ::before */
+    text-align: center;
+    color: white;
+    margin: 0; /* Elimina márgenes externos si es necesario */
+    padding: 0; /* Elimina padding si es necesario */
+  }
+  
+  .intro-destinations::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Capa superpuesta semitransparente */
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .special-hotels {
+    /* Estilos específicos para esta sección */
+    background-color: #ffff !important;
+    padding: 2rem 0;
+  }
+  .image-text-section.third-hotel {
+    background-color: #ffff; /* Reemplaza #ffcccc con el color deseado */
+  }
+  

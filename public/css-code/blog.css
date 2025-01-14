@@ -130,8 +130,6 @@ html {
     scroll-margin-top: 100px; /* Ajusta el desplazamiento para que no quede oculto debajo de la barra de navegación */
 }
 
-
-
 .rectangulo {
     position: absolute;
     top: 130px; 
@@ -197,9 +195,26 @@ html {
     width: 100%;
     height: auto;
 }
-
+/* Section: Mision - SobreBaku.ejs */
 .mission-section {
-    margin-top: -5px; /* Superpone ligeramente la sección para eliminar cualquier espacio visible */
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+    margin-top: -5px;
+}
+
+.wave-container-top {
+    position: absolute;
+    top: -20px;  /* Ajusta el valor para colocar la wave más arriba */
+    left: 0;
+    width: 100%;
+    z-index: -1;  /* Asegúrate de que la wave esté detrás del contenido */
+}
+
+.wave-container-top svg {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 /* Seccion Departamento: Granada */
 .granada-section {
@@ -255,7 +270,7 @@ html {
 }
 
 .about-title {
-    font-family: 'Poppins, sans-serif';
+    font-family: 'Poppins', sans-serif;    
     font-weight: 700;
     color: #313131;
     font-size: 24px;
@@ -298,7 +313,7 @@ html {
   }
   
   .carousel-item {
-    flex: 0 0 48%; /* Cada imagen ocupa el 48% del carrusel */
+    flex: 0 0 48%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -440,6 +455,7 @@ html {
         font-size: 18px; 
         padding: 8px; 
     }
+
 }
 /* Aventuras - seccion: San Juan del sur */
 .surf-section {
@@ -513,6 +529,17 @@ html {
     justify-content: space-between;
     padding: 100px;
 }
+/* Estilo para el wave */
+.sailing-section svg {
+    width: 100%;  /* Asegura que el wave ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Elimina cualquier espacio extra */
+    position: absolute; /* Asegura que el wave esté en la parte superior de la sección */
+    top: 0px; /* Lo posiciona en la parte superior */
+    left: 0;
+    z-index: -1; /* Envía el wave al fondo, por debajo del contenido */
+}
+
 .sailing-left-text {
     width: 30%;
     padding-right: 50px;

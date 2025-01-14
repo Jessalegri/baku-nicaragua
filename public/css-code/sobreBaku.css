@@ -157,8 +157,6 @@ body {
     text-align: justify; 
     margin-bottom: 1.5em;
 }
-
-/* Texto "Frase" Baku */
 .seccion-sugerencias {
     background-color: #FF8D21; 
     padding: 40px 20px; 
@@ -255,14 +253,31 @@ body {
     margin-right: 8px;
 }
 
-/* Seccion: Mision - Sobre Baku */
+/* Sección de Misión */
 .mission-section {
     background-color: rgb(242, 242, 242);
     display: flex;
     justify-content: space-between;
     padding: 100px;
+    position: relative; /* Necesario para posicionar el wave dentro de la sección */
 }
 
+/* Wave en la parte inferior */
+.wave-container-bottom {
+    position: absolute;
+    bottom: 0; /* Coloca el wave en la parte inferior */
+    left: 0;
+    width: 100%;
+    z-index: -1; /* Envía el wave al fondo */
+}
+
+.wave-container-bottom svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contenido de la misión */
 .mission-left-text {
     width: 30%;
     padding-right: 50px;
@@ -271,7 +286,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
-    font-family: 'Poppins, sans-serif';
+    font-family: 'Poppins', sans-serif;
     font-size: 60px;
     color: rgb(65, 105, 94);
     letter-spacing: 2px;
@@ -294,7 +309,7 @@ body {
 }
 
 .titulo-mission {
-    font-family: 'Poppins, sans-serif';
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: #313131;
     font-size: 34px;
@@ -520,6 +535,9 @@ body {
 .statistics-section {
     background-color: #41695D;
     padding: 40px 20px;
+    position: relative; /* Asegura que el wave esté posicionado dentro de esta sección */
+    overflow: hidden;  
+    z-index: 1;
 }
 
 .statistics-container {
