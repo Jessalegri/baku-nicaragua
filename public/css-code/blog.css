@@ -459,7 +459,7 @@ html {
 }
 /* Aventuras - seccion: San Juan del sur */
 .surf-section {
-    background-color: rgb(242, 242, 242);
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 100px;

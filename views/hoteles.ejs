@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros hoteles favoritos en Nicaragua</title>
+    <link rel="stylesheet" href="css-code/hotel.css">
+    <link rel="stylesheet" href="css-code/navbar.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+     <!-- Incluir el navbar -->
+     <%- include('navbar') %>
+     <section class="intro-destinations">
+        <p class="subtitle-intro">Nuestros hoteles y hostales favoritos en Nicaragua</p>
+        <h3 class="main-title-intro">¿Cuál será tu próximo destino?</h3>
+        <nav class="category-menu-intro">
+          <button class="category-intro" onclick="scrollToSection('santa-maria')">San Juan del Sur</button>
+          <button class="category-intro" onclick="scrollToSection('león')">León</button>
+          <button class="category-intro" onclick="scrollToSection('granada')">Granada</button>
+          <button class="category-intro">Ometepe</button>
+          <button class="category-intro">Ver más</button>
+        </nav>
+      </section>      
+
+    <!-- Wave al inicio de la sección -->
+    <div class="wave-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 20 1400 300"><path fill="#F9F9F9" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,208C384,213,480,235,576,250.7C672,267,768,277,864,277.3C960,277,1056,267,1152,250.7C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <section class="hotels-container">
+      <!-- Primer hotel -->
+      <div class="image-text-section">
+        <div class="image-container">
+          <div class="carousel-container">
+              <div class="carousel">
+                  <img src="css-code/imagenes/laSantaMaria.png" alt="Hotel La Santa Maria" class="carousel-image">
+                  <img src="css-code/imagenes/hotelPlaaMarbella.png" alt="Interior de hotel La santa Maria" class="carousel-image">
+                  <img src="css-code/imagenes/tribalHotel3.png" alt="Hotel La Santa Maria en San Juan Del Sur" class="carousel-image">
+              </div>
+              <!-- Botones de navegación -->
+              <button class="carousel-control prev" aria-label="Anterior">❮</button>
+              <button class="carousel-control next" aria-label="Siguiente">❯</button>
+          </div>
+      </div>      
+        <div class="text-container" id="santa-maria">          
+          <h2 class="hotel-title">La Santa Maria</h2>
+          <p class="description">
+              Si buscas un lugar tranquilo y moderno en San Juan del Sur, este hotel es perfecto. Rodeado de áreas verdes, ofrece las mejores vistas de los atardeceres de la ciudad.
+              <br><br>
+              Con habitaciones, apartamentos y villas, también cuenta con un restaurante, coworking, gimnasio y espacios para relajarte. Si tienes suerte, podrás ver un par de aves hermosas y otros animales durante tu estadía.
+              <br><br>
+              Está cerca del centro, pero lo suficientemente alejado para disfrutar de la tranquilidad.
+          </p>
+          <h3 class="season-title">Habitaciones</h3>
+          <p class="season-info">Habitaciones desde $119 USD + taxes | Hasta $149 USD + taxes </p>
+          <h3 class="season-title">Apartamentos</h3>
+          <p class="season-info">Apartamentos desde $215 USD + taxes | Hasta $305 USD + taxes</p>
+          <a href="https://lsmresort.com/boutique-hotel/" class="more-info-btn">More information</a>
+        </div>
+      </div>
+
+      <!-- Wave colocado después del segundo hotel -->
+      <div class="wave-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#ffff" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,208C384,213,480,235,576,250.7C672,267,768,277,864,277.3C960,277,1056,267,1152,250.7C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="special-hotels">
+      <!-- Granada -->
+      <div class="image-text-section third-hotel">
+        <div class="image-container">
+          <div class="carousel-container">
+              <div class="carousel">
+                  <img src="css-code/imagenes/tribalHotel.png" alt="Imagen 1 del Tribal Hotel" class="carousel-image">
+                  <img src="css-code/imagenes/hotelPlaaMarbella.png" alt="Imagen 2 del Tribal Hotel" class="carousel-image">
+                  <img src="css-code/imagenes/tribalHotel3.png" alt="Imagen 3 del Tribal Hotel" class="carousel-image">
+              </div>
+              <!-- Botones de navegación -->
+              <button class="carousel-control prev" aria-label="Anterior">❮</button>
+              <button class="carousel-control next" aria-label="Siguiente">❯</button>
+          </div>
+      </div>      
+          <div class="text-container"  id="granada">            
+            <h2 class="hotel-title">Tribal Hotel</h2>
+            <p class="description">
+              En el corazón de la ciudad colonial de Granada, Tribal Hotel combina tranquilidad, estilo y detalles que evocan los diseños de Copacabana. Es un lugar pensado para desconectarse y disfrutar de la belleza de su entorno.
+              <br><br>
+              Su jardín tropical, con una piscina rodeada de azulejos únicos y camas al aire libre estilo cabaña, invita al descanso. 
+              Con terrazas privadas y un ambiente acogedor, Tribal es el lugar perfecto para conectar con la esencia de Granada.
+            </p>
+            <h3 class="season-title">Habitaciones</h3>
+            <p class="season-info">Habitaciones desde $72 USD | Hasta $140 USD</p>
+            <a href="http://tribal-hotel.com/" class="more-info-btn">More information</a>
+          </div>
+      </div>
+      <!-- Tercer hotel -->
+      <div class="image-text-section third-hotel">
+        <div class="image-container">
+          <div class="carousel-container">
+              <div class="carousel">
+                  <img src="css-code/imagenes/hotelPlaaMarbella.png" alt="Imagen 1 del Hotel Plaza Marbella" class="carousel-image">
+                  <img src="css-code/imagenes/tribalHotel.png" alt="Imagen 2 del Hotel Plaza Marbella" class="carousel-image">
+                  <img src="" alt="Imagen 3 del Hotel Plaza Marbella" class="carousel-image">
+              </div>
+              <!-- Botones para navegar -->
+              <button class="carousel-control prev" aria-label="Anterior">❮</button>
+              <button class="carousel-control next" aria-label="Siguiente">❯</button>
+          </div>
+      </div>
+        <div class="text-container">
+          <h2 class="hotel-title">Hotel Plaza Marbella</h2>
+          <p class="description">
+              Plaza Marbella es una excelente opción para viajeros y nómadas digitales que buscan un espacio cómodo y funcional en Granada. Ubicado en el centro de la ciudad, a pocas cuadras de la catedral y rodeado de restaurantes y actividades, es perfecto para explorar todo lo que Granada tiene para ofrecer.
+              <br><br>
+              El hotel cuenta con un buen espacio para relajarte o trabajar, y su conexión a internet es ideal para quienes necesitan estar conectados. También ofrece la opción de hospedarte en un condominio, perfecto si planeas extender tu estadía en la ciudad y quieres sentirte como en casa.
+          </p>
+          <h3 class="season-title">Habitaciones</h3>
+          <p class="season-info">Habitaciones desde $72 USD | Hasta $140 USD</p>
+          <a href="https://plazamarbellagranada.com/" class="more-info-btn">More information</a>
+        </div>
+      </div>
+    </section>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const images = document.querySelectorAll('.carousel-image');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100; // Mueve el carrusel por porcentaje
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+});
+
+<!--Funcion de los botones-->
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+</script>
+</html>

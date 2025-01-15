@@ -70,8 +70,8 @@
             <!-- Lista de elementos del menú -->
             <nav class="menu">
                 <a href="/sobreBaku">Nosotros</a>
-                <a href="/terminales">Ciudades</a>
-                <a href="/contact">Destinos</a>
+                <a href="/terminales">Terminales</a>
+                <!-- a href="/contact">Destinos</a>-->
                 <a href="/contact">Contacto</a>
             </nav>
         </div>
@@ -134,17 +134,13 @@
       </div>
       
 </section>
-
-<!-- Nueva sección -->
 <div class="wave-container">
-    <!-- Ola superior -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#F9F9F9" fill-opacity="1" d="M0,192L48,192C96,192,192,192,288,202.7C384,213,480,235,576,240C672,245,768,235,864,229.3C960,224,1056,224,1152,218.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>      
 </div>
 <div class="section-route">
   <div class="route-container">
-      <!-- Columna de texto -->
       <div class="route-text">
         <p class="preheader">Comunidad</p>
         <h2 class="route-title">Comparte tu conocimiento y conecta Nicaragua</h2>
@@ -153,7 +149,6 @@
         </p>
         <a class="route-button" href="/itineraries">Discover all itineraries</a>
       </div>
-      <!-- Sección de contribuciones -->
       <div class="contribution-container">
         <!-- Opción 1 -->
         <a href="/agregarHorario" class="contribution-card blue">
@@ -210,7 +205,7 @@
         </div>
         <!-- Article 2 -->
         <div class="gallery-item">
-            <a href="hoteles.html">
+            <a href="hoteles">
                 <img src="css-code/imagenes/imagenes-galeria/catedralDeLeon.jpeg" alt="Favorite Hostels & Hotels">
                 <div class="title">Nuestros Hoteles y Hostales favoritos en Nicaragua</div>
             </a>
@@ -224,21 +219,21 @@
         </div>
         <!-- Article 4 -->
         <div class="gallery-item">
-            <a href="https://travelrebels.com/nicaragua/itinerary-nicaragua/">
+            <a href="/enDesarrollo">
                 <img src="css-code/imagenes/imagenes-galeria/granada.jpeg" alt="The Ultimate Itinerary for Nicaragua">
                 <div class="title">Nuestros restaurantes favoritos en Nicaragua</div>
             </a>
         </div>
         <!-- Article 5 -->
         <div class="gallery-item">
-            <a href="https://travelrebels.com/hostel-hotel-nicaragua/">
+            <a href="/enDesarrollo">
                 <img src="css-code/imagenes/imagenes-galeria/lagunaDeApoyo.jpeg" alt="Favorite Hostels & Hotels">
                 <div class="title">La ciudad de lagos y volcanes: Explora las mejores experiencias volcanicas de Nicaragua </div>
             </a>
         </div>
         <!-- Article 6 -->
         <div class="gallery-item">
-            <a href="https://travelrebels.com/nicaragua/traveling-nicaragua/">
+            <a href="/enDesarrollo">
                 <img src="css-code/imagenes/imagenes-galeria/sanJuanDelSur.jpeg" alt="Travel Tips">
                 <div class="title">Viajando por Nicaragua: 5 cosas que debes de saber</div>
             </a>
@@ -255,7 +250,9 @@
         <h1 class="footer-logo">Baku Nicaragua</h1>
         <p class="footer-slogan">Descubre Nicaragua de manera auténtica: una guía de transporte público para cada aventura.</p>
         <div class="footer-social-icons">
-            <img src="css-code/imagenes/iconos/camera.png" alt="Facebook" class="social-icon">
+            <a href="https://www.facebook.com/profile.php?id=61571830779731" target="_blank">
+                <img src="css-code/imagenes/iconos/camera.png" alt="Facebook" class="social-icon">
+            </a>            
             <img src="css-code/imagenes/iconos/social.png" alt="Twitter" class="social-icon">
             <a href="https://github.com/Jessalegri/baku-nicaragua.git" target="_blank">
                 <img src="css-code/imagenes/iconos/githubWhite.png" alt="GitHub" class="social-icon">
@@ -289,8 +286,10 @@
     <div class="footer-column">
         <h2>Newsletter</h2>
         <p class="newsletter-paragraph">Descubre Nicaragua de manera auténtica: una guía de transporte público para cada aventura.</p>
-        <input type="email" placeholder="Tu correo electrónico" class="newsletter-input">
-        <button class="newsletter-btn">Suscribirse</button>
+        <form action="/subscribe" method="POST" id="newsletter-form">
+            <input type="email" name="email" placeholder="Tu correo electrónico" class="newsletter-input" required>
+            <button type="submit" class="newsletter-btn">Suscribirse</button>
+        </form>
     </div>
 </footer>
 

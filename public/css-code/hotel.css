@@ -37,7 +37,7 @@ body {
   
   /* Imagen ocupa el 30% */
   .image-container {
-    flex: 0 0 35%; /* Imagen ocupa el 30% del ancho */
+    flex: 0 0 40%; /* Imagen ocupa el 30% del ancho */
     display: flex;
     margin-right: 3%;
     justify-content: center; /* Centra la imagen dentro de su contenedor */
@@ -49,7 +49,15 @@ body {
     max-width: 500px;
     object-fit: cover; /* Ajusta la imagen sin distorsionarla */
   }
-  
+  /* Carrusel */
+.carousel-container {
+  position: relative;
+  width: 100%; /* Ocupa todo el ancho disponible del contenedor */
+  max-width: 500px; /* Tamaño máximo como la imagen original */
+  overflow: hidden; /* Oculta imágenes fuera del marco */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
   /* Texto ocupa el 70% */
   .text-container {
     flex: 0 0 45%; /* El texto ocupa el 60% */
@@ -72,7 +80,7 @@ body {
   
   /* Estilos para las secciones de temporada */
   .season-title {
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 10px;
     font-weight: bold;
   }
@@ -104,7 +112,6 @@ body {
     background-color: #0056b3;
   }
   
-  
   /* Categorias intro - botones (Hoteles) */ 
   .subtitle-intro {
     text-align: center;
@@ -117,7 +124,7 @@ body {
   }
   
   .main-title-intro {
-    font-size: 1.9rem;
+    font-size: 3.5rem;
     padding-bottom: 22px;
     margin-bottom: 10px;
     font-weight: 700;
@@ -144,51 +151,170 @@ body {
     line-height: 1;
     font-weight: 700;
     font-size: 18px;
-    transition: 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     border-radius: 40px;
     color: #fff;
     padding: 12px 30px;
     border: none;
     cursor: pointer;
   }
-  .category:hover {
-    background-color: #41695d;
-    transform: scale(1.05);
+  .category-intro:hover {
+      background-color: #41695d;
+      transform: scale(1.1); /* Incrementa el tamaño ligeramente */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Agrega sombra al hacer hover */
+  }
+  
+  .category-intro:active {
+      transform: scale(1); /* Vuelve al tamaño original al hacer clic */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
   }
   .intro-destinations {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    background-image: url('imagenes/vistaOmepete1.jpg'); /* Ruta de la imagen de fondo */
     background-size: cover;
     background-position: center;
-    position: relative; /* Necesario para el pseudo-elemento ::before */
+    position: relative; 
     text-align: center;
     color: white;
-    margin: 0; /* Elimina márgenes externos si es necesario */
-    padding: 0; /* Elimina padding si es necesario */
-  }
-  
-  .intro-destinations::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2); /* Capa superpuesta semitransparente */
-    pointer-events: none;
-    z-index: 1;
+    margin: 0; 
+    padding: 0; 
+    padding-top: 60px !important;
   }
   
   .special-hotels {
-    /* Estilos específicos para esta sección */
     background-color: #ffff !important;
     padding: 2rem 0;
   }
   .image-text-section.third-hotel {
-    background-color: #ffff; /* Reemplaza #ffcccc con el color deseado */
+    background-color: #ffff; 
   }
   
+/* Imágenes del carrusel */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; 
+  filter: brightness(1.0) saturate(1.0); 
+  transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease; 
+}
+.carousel-image:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+/* Botones de navegación  - carrusel */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .image-text-section {
+      flex-direction: column; /* Cambia a diseño vertical */
+      padding: 10px; 
+  }
+  .image-container {
+      flex: 0 0 auto; 
+      margin-right: 0;
+      margin-bottom: 20px; 
+  }
+  .text-container {
+      flex: 0 0 auto; 
+      margin-left: 0 !important;
+      margin-right: 10px !important;
+      text-align: left; /* Texto centrado en pantallas pequeñas */
+  }
+  .hotel-title {
+      font-size: 30px; /* Ajusta el tamaño del título */
+  }
+  .description {
+    line-height: 1.7;
+      font-size: 14px; /* Ajusta el tamaño de la descripción */
+  }
+  .wave-container {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px !important; /* Aumenta este valor para mover la wave más abajo */
+  }
+  .season-info{
+    color: rgb(110, 110, 110);
+  }
+  .image-text-section.third-hotel{
+    margin-top: 5px !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .image-text-section {
+    flex-direction: column; /* Asegura que la imagen y el texto estén en fila */
+  }
+
+  .image-container {
+    flex: 0 0 60%; /* La imagen ocupa el 60% del ancho */
+    margin-bottom: 30px; /* Espaciado entre la imagen y el texto */
+  }
+
+  .image {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    max-width: none; /* Elimina cualquier límite en el ancho */
+  }
+
+  .text-container {
+    flex: 0 0 40%; /* El texto ocupa el 40% restante */
+  }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .image-text-section {
+    margin-left: 15px;
+    margin-right: 40px;
+    flex-direction: row; /* Cambia a fila para iPad Pro */
+  }
+
+  .image-container {
+    flex: 0 0 60%; /* La imagen ocupa el 70% del ancho */
+    margin-right: 5px; /* Espaciado entre la imagen y el texto */
+  }
+
+  .image {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    max-width: none; /* Elimina cualquier límite en el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  .text-container {
+    flex: 0 0 65%; /* El texto ocupa el 30% restante */
+  }
+  .description {
+    line-height: 1.6;
+    font-size: 16px; /* Ajusta el tamaño de la descripción */
+  }
+}

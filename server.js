@@ -53,10 +53,12 @@ app.get('/api/ciudades', (req, res) => {
         res.json(ciudades);
     });
 });
+
 // Ruta personalizada para servir san-juan-del-sur.html en /sanjuandelsur
 app.get('/sanjuandelsur', (req, res) => {
     res.sendFile(__dirname + '/public/san-juan-del-sur.html');
 });
+
 
 const mysql = require('mysql2');
 const pool = mysql.createPool({
@@ -186,7 +188,6 @@ app.get('/nueva-terminal', (req, res) => {
         }
     });
 });
-
 
 // Ruta POST para agregar una nueva terminal
 app.post('/nueva-terminal', (req, res) => {
@@ -376,7 +377,6 @@ app.get('/terminales', (req, res) => {
     });
 });
 
-
 // Ruta para buscar horarios de buses
 app.post('/buscar-horarios', (req, res) => {
     const { ciudadOrigen, ciudadDestino } = req.body;
@@ -463,6 +463,11 @@ app.get('/ver-horarios/:ciudadId', (req, res) => {
         res.json(results);
     });
 });
+// Pagina en desarrollo
+app.get('/enDesarrollo', (req, res) => {
+    res.render('enDesarrollo');
+});
+
 
 
 // Ruta para mostrar el formulario de calificación
@@ -521,6 +526,33 @@ app.post('/submit-calificacion', (req, res) => {
         res.redirect('/confirmacion?mensaje=Calificación agregada con éxito');
     });
 });
+// Ruta para manejar las suscripciones al newsletter
+app.post('/subscribe', (req, res) => {
+    const email = req.body.email;
+
+    if (!email) {
+        return res.status(400).send('El correo electrónico es obligatorio.');
+    }
+
+    const query = 'INSERT INTO NewsletterSubscribers (email) VALUES (?)';
+    pool.query(query, [email], (error, results) => {
+        if (error) {
+            if (error.code === 'ER_DUP_ENTRY') {
+                return res.redirect('/suscripcion?mensaje=Ya estás suscrito.');
+            }
+            console.error('Error al insertar en la tabla NewsletterSubscribers:', error);
+            return res.status(500).send('Hubo un error al registrar tu correo.');
+        }
+
+        res.redirect('/suscripcion');
+    });
+});
+
+app.get('/suscripcion', (req, res) => {
+    res.render('suscripcion'); // Renderiza el archivo suscripcion.ejs
+});
+
+
 
 // Iniciar el servidor
 app.listen(port, () => {
@@ -528,4 +560,7 @@ app.listen(port, () => {
 });
 app.get('/sobreBaku', (req, res) => {
     res.render('sobreBaku', { title: 'Acerca de Baku' });
+});
+app.get('/hoteles', (req, res) => {
+    res.render('hoteles', { title: 'Nuestros hoteles favoritos en Nicaragua' });
 });

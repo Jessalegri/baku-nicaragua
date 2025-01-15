@@ -152,7 +152,7 @@ p span {
 
 /* Estilo para el botón de volver */
 .go-back-button {
-    background-color: #8cb4a8;  
+    background-color: #c96b4f; 
     color: white;  
     border: none;  
     border-radius: 5px; 
@@ -166,7 +166,7 @@ p span {
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
 .go-back-button:hover {
-    background-color: #ff6f61;
+    background-color: #548578;
     transform: scale(1.05); 
 }
 .header-container h1 {

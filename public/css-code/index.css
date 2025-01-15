@@ -323,9 +323,8 @@ body.scrolled .logo {
     cursor: pointer;
     max-width: fit-content;
     width: auto;
-
 }
-
+                    
 .button-link  {
     display: inline-block;
     text-align: center;

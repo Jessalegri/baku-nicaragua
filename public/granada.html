@@ -9,14 +9,23 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Explora San Juan del Sur</title>
             <link rel="stylesheet" href="css-code/blog.css">
+            <link rel="stylesheet" href="css-code/navbar.css">
             <link rel="stylesheet" href="css-code/footer.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
         </head>
-        <body>
-    <!-- Sección Principal de Granada -->
+<body>
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('/navbar-for-san-juan')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>    <!-- Sección Principal de Granada
     <div class="section-principal granada-section">
         <div class="left-section">
             <p class="subtitulo">CIUDAD COLONIAL</p>
@@ -29,7 +38,7 @@
             <img src="css-code/imagenes/iglesiasGranadaCity.jpg" alt="Judith en San Juan del Sur" class="imagen-san-juan">
         </div>
     </div>
-
+ -->
             <div class="surf-section">
                 <!-- Primera Cuadrilla -->
                 <div class="surf-left">
@@ -46,12 +55,12 @@
                 
                 <!-- Tercera Cuadrilla - Oculta en móviles -->
                 <div class="surf-right-text">
-                    <h2 class="surf-text">Baku Destino</h2>
+                    <h2 class="surf-text">Volcanes</h2>
                 </div>
             </div>
             <div class="sailing-section">
                 <div class="sailing-left-text">
-                    <h2 class="titulo-sailing-left">Explora el Pacífico</h2>
+                    <h2 class="titulo-sailing-left">Jungla</h2>
                 </div>
             
                 <div class="sailing-center">

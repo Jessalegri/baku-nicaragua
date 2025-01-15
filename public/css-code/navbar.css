@@ -21,6 +21,12 @@
     font-size: 30px;
     font-weight: bold;
 }
+.logo a {
+    text-decoration: none;
+    color: inherit; 
+    cursor: pointer; 
+    font-family: 'Poppins', sans-serif;
+}
 
 .menu {
     display: flex; /* Por defecto en pantallas grandes */
