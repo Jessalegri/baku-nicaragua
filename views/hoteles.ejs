@@ -39,8 +39,8 @@
           <div class="carousel-container">
               <div class="carousel">
                   <img src="css-code/imagenes/laSantaMaria.png" alt="Hotel La Santa Maria" class="carousel-image">
-                  <img src="css-code/imagenes/hotelPlaaMarbella.png" alt="Interior de hotel La santa Maria" class="carousel-image">
-                  <img src="css-code/imagenes/tribalHotel3.png" alt="Hotel La Santa Maria en San Juan Del Sur" class="carousel-image">
+                  <img src="css-code/imagenes/laSantaMariaArea.png" alt="Interior de hotel La santa Maria" class="carousel-image">
+                  <img src="css-code/imagenes/avesLSM.png" alt="Hotel La Santa Maria en San Juan Del Sur" class="carousel-image">
               </div>
               <!-- Botones de navegación -->
               <button class="carousel-control prev" aria-label="Anterior">❮</button>
@@ -79,8 +79,8 @@
           <div class="carousel-container">
               <div class="carousel">
                   <img src="css-code/imagenes/tribalHotel.png" alt="Imagen 1 del Tribal Hotel" class="carousel-image">
-                  <img src="css-code/imagenes/hotelPlaaMarbella.png" alt="Imagen 2 del Tribal Hotel" class="carousel-image">
-                  <img src="css-code/imagenes/tribalHotel3.png" alt="Imagen 3 del Tribal Hotel" class="carousel-image">
+                  <img src="css-code/imagenes/hotelTribalHabitacion.png" alt="Imagen 2 del Tribal Hotel" class="carousel-image">
+                  <img src="css-code/imagenes/hotelTribalInterior.png" alt="Imagen 3 del Tribal Hotel" class="carousel-image">
               </div>
               <!-- Botones de navegación -->
               <button class="carousel-control prev" aria-label="Anterior">❮</button>
@@ -95,8 +95,8 @@
               Su jardín tropical, con una piscina rodeada de azulejos únicos y camas al aire libre estilo cabaña, invita al descanso. 
               Con terrazas privadas y un ambiente acogedor, Tribal es el lugar perfecto para conectar con la esencia de Granada.
             </p>
-            <h3 class="season-title">Habitaciones</h3>
-            <p class="season-info">Habitaciones desde $72 USD | Hasta $140 USD</p>
+            <h3 class="season-title">Habitaciones/Villas</h3>
+            <p class="season-info">Habitaciones desde $145 USD | Hasta $345 USD</p>
             <a href="http://tribal-hotel.com/" class="more-info-btn">More information</a>
           </div>
       </div>
@@ -106,8 +106,6 @@
           <div class="carousel-container">
               <div class="carousel">
                   <img src="css-code/imagenes/hotelPlaaMarbella.png" alt="Imagen 1 del Hotel Plaza Marbella" class="carousel-image">
-                  <img src="css-code/imagenes/tribalHotel.png" alt="Imagen 2 del Hotel Plaza Marbella" class="carousel-image">
-                  <img src="" alt="Imagen 3 del Hotel Plaza Marbella" class="carousel-image">
               </div>
               <!-- Botones para navegar -->
               <button class="carousel-control prev" aria-label="Anterior">❮</button>
@@ -130,35 +128,32 @@
 </body>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel');
-    const images = document.querySelectorAll('.carousel-image');
-    const prevButton = document.querySelector('.carousel-control.prev');
-    const nextButton = document.querySelector('.carousel-control.next');
+    const carousels = document.querySelectorAll('.carousel-container'); // Selecciona todos los contenedores de carruseles
 
-    let currentIndex = 0;
+    carousels.forEach(carouselContainer => {
+        const carousel = carouselContainer.querySelector('.carousel');
+        const images = carouselContainer.querySelectorAll('.carousel-image');
+        const prevButton = carouselContainer.querySelector('.carousel-control.prev');
+        const nextButton = carouselContainer.querySelector('.carousel-control.next');
 
-    function updateCarousel() {
-        const offset = -currentIndex * 100; // Mueve el carrusel por porcentaje
-        carousel.style.transform = `translateX(${offset}%)`;
-    }
+        let currentIndex = 0;
 
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-        updateCarousel();
-    });
+        function updateCarousel() {
+            const offset = -currentIndex * 100; // Mueve el carrusel por porcentaje
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
 
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-        updateCarousel();
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
     });
 });
 
-<!--Funcion de los botones-->
-function scrollToSection(id) {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-}
 </script>
 </html>
