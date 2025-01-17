@@ -18,12 +18,14 @@
         <p class="subtitle-intro">Nuestros hoteles y hostales favoritos en Nicaragua</p>
         <h3 class="main-title-intro">¿Cuál será tu próximo destino?</h3>
         <nav class="category-menu-intro">
+          <!-- Asegúrate de que los IDs aquí existan -->
           <button class="category-intro" onclick="scrollToSection('santa-maria')">San Juan del Sur</button>
           <button class="category-intro" onclick="scrollToSection('león')">León</button>
           <button class="category-intro" onclick="scrollToSection('granada')">Granada</button>
-          <button class="category-intro">Ometepe</button>
-          <button class="category-intro">Ver más</button>
-        </nav>
+          <button class="category-intro" onclick="scrollToSection('ometepe')">Ometepe</button>
+          <button class="category-intro" onclick="scrollToSection('ver-mas')">Ver más</button>
+      </nav>
+  
       </section>      
 
     <!-- Wave al inicio de la sección -->
@@ -155,5 +157,15 @@
     });
 });
 
+  // Define la función scrollToSection
+  function scrollToSection(id) {
+      const element = document.getElementById(id); // Busca el elemento con el ID proporcionado
+      if (element) {
+          element.scrollIntoView({ behavior: 'smooth' }); // Realiza un scroll suave al elemento
+      } else {
+          console.error(`Elemento con ID "${id}" no encontrado`);
+      }
+  }
 </script>
+
 </html>
