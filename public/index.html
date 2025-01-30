@@ -198,7 +198,7 @@
     <section class="gallery">
         <!-- Article 1 -->
         <div class="gallery-item">
-            <a href="san-juan-del-sur.html">
+            <a href="surf.html">
                 <img src="css-code/imagenes/imagenes-galeria/VolcanEnOmetepe.jpg" alt="The Ultimate Itinerary for Nicaragua">
                 <div class="title">Itinerario de actividades en San Juan del sur</div>
             </a>
@@ -306,6 +306,17 @@
             document.body.classList.remove('scrolled');
           }
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const boton = document.querySelector('.about-btn1');
+        if (boton) {
+          boton.addEventListener('click', (e) => {
+            console.log('Botón clickeado');
+            // Redirigir manualmente a /sobreBaku
+            window.location.href = '/sobreBaku';
+          });
+        }
+      });
       </script>
 </body>
 </html>
