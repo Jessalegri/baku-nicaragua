@@ -32,6 +32,11 @@ app.use((req, res, next) => {
     }
     next();
 });
+// SJDS.html para navbar
+app.get('/sanjuandelsur', (req, res) => {
+    res.render('SJDS');
+});
+
 // Ruta para servir sitemap.xml
 app.get('/sitemap.xml', (req, res) => {
     res.sendFile(__dirname + '/sitemap.xml');

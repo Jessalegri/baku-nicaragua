@@ -1,23 +1,118 @@
-/* Hero/Homepage */
+/* Navbar */
+#navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: transparent; 
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+#navbar.scrolled {
+    background-color: white !important;
+}
+/* Navbar inicial transparente */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.navbar.scrolled {
+    background-color: white !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+.logo {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+#navbar.scrolled .logo a {
+    color: black !important;
+}
+.menu {
+    display: flex;
+    gap: 20px;
+    background: transparent;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Poppins';
+}
+.menu a:hover {
+    text-decoration: underline;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+}
+#navbar.scrolled .menu a{
+    color: black !important;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Oculta el scroll horizontal */
+    max-width: 100%; /* Evita que los elementos sobrepasen el ancho */
+}
 .homepage-hero {
     width: 100%;
     height: 100vh;
-    background: url("imagenes/homepageSJDS/volcan.jpg") no-repeat center center;
-    background-size: cover;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative; /* para anclar la ola con position:absolute si se requiere */
+    background: url("imagenes/homepageSJDS/download.jpeg") no-repeat center center;
+    background-size: cover;
+}
+.homepage-hero::before {
+    content: "";
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Oscuridad mínima */
+    z-index: 1; /* Coloca la capa sobre la imagen */
+}
+h1{
+    font-size: 62px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    text-align: left; 
+    letter-spacing: 1.5px; 
+    max-width: 55%; 
+    bottom: -10%; 
+    left: -10%;
+}
+.homepage-hero > * {
+    position: relative;
+    z-index: 2;
 }
 .homepage-wave {
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
-    line-height: 0; /* elimina espacios blancos alrededor del SVG */
+    line-height: 0; 
 }
-/* Estilos para la sección de Sunday Funday - Entretenimiento */
 .entertainment-section {
     background-color: #fff;
     display: flex;
@@ -25,7 +120,6 @@
     padding: 100px;
     position: relative;
 }
-/* Cuadrilla Izquierda */
 .entertainment-left {
     width: 45%;
     padding-right: 70px; 
@@ -35,10 +129,11 @@
     align-items: flex-start;
 }
 .subtitulo-entertainment {
-    font-family: 'Poppins, sans-serif';  
-    color: rgb(65, 105, 94);
+    font-family: 'Montserrat', sans-serif;    
+    color: #e5652e;
     margin-bottom: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-size: 20px;
     text-align: left !important;
 }
 .titulo-entertainment {
@@ -56,7 +151,6 @@
     text-align: justify;
 
 }
-/* Segunda Cuadrilla (Derecha) */
 .entertainment-right {
     width: 75%;
     position: relative;
@@ -117,7 +211,6 @@
     border-radius: 4px;
     text-decoration: none;
 }
-
 .btn-compra:hover {
     background-color: rgb(50,80,72);
 }
@@ -145,7 +238,6 @@
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-/* Columna Derecha (Contenido) */
 .tickets-right {
     width: 45%;
     display: flex;
@@ -154,7 +246,6 @@
     margin-left: 40px;
     align-items: center;
 }
-
 .tickets-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
@@ -168,7 +259,6 @@
     line-height: 1.8;
     margin-bottom: 30px;
 }
-/* Botón con tamaño ajustado */
 .btn-tickets {
     display: inline-block; 
     font-family: 'Montserrat', sans-serif;
@@ -228,7 +318,6 @@
     transform: scale(1.05);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
-
 .coffee-right {
     width: 50%;
     padding-left: 40px;
@@ -239,7 +328,6 @@
     color: #e5652e;
     margin-bottom: 10px;
 }
-
 .titulo-coffee {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
@@ -283,22 +371,18 @@
     background-color: #fefefe;
     margin-top: 50px; 
 }
-
-/* Texto centrado */
 .tuanis-text {
     text-align: center;
     margin-top: -100px;
     max-width: 800px; 
     margin-bottom: 30px; 
 }
-
 .subtitulo-tuanis {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     color: #e5652e;
     margin-bottom: 10px;
 }
-
 .titulo-tuanis {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
@@ -306,7 +390,6 @@
     margin-bottom: 15px;
     letter-spacing: 1px;
 }
-
 .descripcion-tuanis {
     font-family: "Source Sans Pro", sans-serif;
     color: #6e6e6e;
@@ -347,7 +430,6 @@
     height: auto;
     margin-top: -310px;
 }
-
 /* Sección del Mirador */
 .mirador-section {
     display: flex;
@@ -358,8 +440,6 @@
     margin-bottom: 40px;
 
 }
-
-/* Columna Izquierda (Imágenes) */
 .mirador-left {
     width: 50%;
     display: flex;
@@ -369,7 +449,6 @@
 .mirador-imagen:first-child {
     margin-right: 10px; /* Agregar espacio solo a la primera imagen */
 }
-
 .mirador-imagen {
     width: 45%;
     object-fit: cover;
@@ -389,14 +468,12 @@
     margin-left: 0x !important;
     align-items: left;
 }
-
 .subtitulo-mirador {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     color: #e5652e;
     margin-bottom: 10px;
 }
-
 .titulo-mirador {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
@@ -404,7 +481,6 @@
     margin-bottom: 20px;
     letter-spacing: 1px;
 }
-
 .descripcion-mirador {
     font-family: "Source Sans Pro", sans-serif;
     color: #6e6e6e;
@@ -420,21 +496,17 @@
     margin-top: -200px; 
     background-color: #fefefe;
 }
-
-/* Columna Izquierda (Texto) */
 .transport-left {
     width: 50%;
     text-align: left;
     padding-right: 50px;
 }
-
 .subtitulo-transport {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     color: #e5652e;
     margin-bottom: 10px;
 }
-
 .titulo-transport {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
@@ -442,7 +514,6 @@
     margin-bottom: 15px;
     letter-spacing: 1px;
 }
-
 .descripcion-transport {
     font-family: "Source Sans Pro", sans-serif;
     color: #6e6e6e;
@@ -450,21 +521,17 @@
     font-size: 16px;
     text-align: justify;
 }
-
-/* Columna Derecha (Imágenes) */
 .transport-right {
     width: 50%;
     display: flex;
     align-items: center;
     margin-left: 50px;
 }
-
 .transport-collage {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
-
 .transport-imagen {
     width: 100%;
     height: 400px;
@@ -472,12 +539,10 @@
     border-radius: 5px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-
 .transport-imagen:hover {
     transform: scale(1.05);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
-/* Botón de South Wind Travel */
 .btn-transport {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
@@ -493,24 +558,26 @@
     text-decoration: none;
     margin-top: 15px;
 }
-
 .btn-transport:hover {
     background-color: #034c38;
 }
-/* Wave en la parte inferior de la sección anterior */
 .homepage-wave-bottom {
     width: 100%;
     line-height: 0; /* Elimina espacios en blanco alrededor del SVG */
     margin-top: -40px; /* Ajusta para integrarlo visualmente con la siguiente sección */
     position: relative;
 }
-
 .homepage-wave-bottom svg {
     display: block;
     width: 100%;
     height: auto;
 }
-
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px; 
+        max-width: 90%; 
+    }
+}
 /* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
     .entertainment-section {
@@ -541,47 +608,44 @@
         padding: 40px 20px;
         align-items: center;
     }
-/* Columna Izquierda (Imagen) */
     .tickets-left {
-        width: 100%;
-        flex-direction: column;
-        gap: 20px;
-        margin-bottom: 20px;
-        align-items: center;
-        order: 2;                                 
+            width: 100%;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+            order: 2;                                 
 
     }
-
     .tickets-image {
-        width: 100%; 
+            width: 100%; 
     }
-.tickets-right {
-    width: 100%;
-    margin-left: 0;
-    align-items: center;
-    text-align: left;
-    order: 1;   
-                                  
-}
-.tickets-title {
-    font-size: 24px;
-    margin-bottom: 15px;
-    margin-top: 0px;
-}
-
-.tickets-description {
-    font-size: 16px;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-.btn-tickets {
-        padding: 10px 20px;
-        font-size: 14px;
-        margin-bottom: 25px;
-}
-.homepage-wave1 {
-        margin-top: -70px;   
-}
+    .tickets-right {
+            width: 100%;
+            margin-left: 0;
+            align-items: center;
+            text-align: left;
+            order: 1;   
+                                        
+    }
+    .tickets-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            margin-top: 0px;
+    }
+    .tickets-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+    }
+    .btn-tickets {
+                padding: 10px 20px;
+                font-size: 14px;
+                margin-bottom: 25px;
+    }
+    .homepage-wave1 {
+                margin-top: -70px;   
+    }
 /* Sección de Ding Repair Coffee */
     .coffee-section {
         flex-direction: column;
@@ -688,24 +752,19 @@
 /* Seccion - South Wind Travel*/
 .transport-section {
     flex-direction: column;
-    padding: 40px 20px;
+    padding: 40px 15px;
     align-items: center;
     margin-top: -20px; 
-    width: 100%;
 }
-
 .transport-left {
     width: 100%;
     text-align: left;
-    margin: 0 auto 20px auto;
-    padding: 0 0px;
+    padding: 0px 10px;
 }
 .subtitulo-transport,
 .titulo-transport {
     text-align: left;
-    margin-left: 10px;
 }
-
 .descripcion-transport {
     text-align: justify;
     font-size: 16px;
@@ -716,25 +775,86 @@
     justify-content: center;
 }
 .transport-collage {
-    display: flex;
-    flex-direction: column; 
-    gap: 10px;
-    margin-left: -30px !important;
     width: 100%;
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+    margin-left: -50px !important;
 }
-
-    .transport-imagen {
-        width: 90%; 
-        height: 200px; 
-        object-fit: cover;
-        border-radius: 5px;
+.transport-imagen:nth-child(2) {
+    display: none;
+}
+.transport-imagen:first-child {
+    width: 95%;
+    height: 420px; 
+    margin: 0;
+    display: block;
+}
+.btn-transport {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px 15px; 
+    font-size: 14px;
+    text-align: center;
+    margin: 25px auto 30px auto; 
+    width: fit-content; 
+    min-width: fit-content; 
+    border-radius: 5px;
+}
+/* Navbar*/
+    .navbar {
+        padding: 15px 20px;
     }
-
-    .btn-transport {
-        width: 80%;
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 200;
+    }
+    .menu.open {
+        display: flex;
+    }
+    .menu a {
+        color: white;
+        padding: 10px 0;
         text-align: center;
+        font-size: 16px;
+    }
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        color: white;
+    }
+    #navbar.scrolled .menu-toggle {
+        color: black !important;
+    }
+    /*SJDS Intro*/
+    .sjds-intro {
+        padding: 50px 15px;
+    }
+    .sjds-titulo {
+        font-size: 26px;
+    }
+    .sjds-descripcion {
         font-size: 14px;
+        text-align: left;
+    }
+    /*Homepage info*/
+    h1 {
+        font-size: 30px; 
+        text-align: left; 
+        max-width: 80%; 
+        margin-left: 20% !important;
+        line-height: 1.3; 
     }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -892,10 +1012,12 @@
         padding: 0;
         margin-bottom: 30px;
     }
-
     .subtitulo-mirador,
     .titulo-mirador {
         text-align: left; 
+    }
+    .titulo-mirador{
+        text-align: left !important;
     }
 
     .descripcion-mirador {
@@ -923,9 +1045,79 @@
         object-fit: cover;
         border-radius: 5px;
     }
+    .transport-section {
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 20px;
+        margin-top: -10px;
+    }
+    .transport-left {
+        width: 60%;
+        text-align: left;
+        padding: 0 2%;
+    }
+    .subtitulo-transport,
+    .titulo-transport {
+        text-align: left;
+        margin-left: 0;
+    }
+    .descripcion-transport {
+        text-align: justify;
+        font-size: 16px;
+        margin: 0;
+    }
+    .transport-imagen:nth-child(2) {
+        display: none;
+    }
+    .transport-right {
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px;
+    }
+    .transport-imagen:first-child {
+        width: 100%;
+        height: 400px !important; 
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .transport-collage {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .transport-imagen:first-child {
+        width: 90%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .btn-transport {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 16px;
+        font-size: 14px;
+        text-align: center;
+        margin: 20px auto;
+        width: fit-content;
+        min-width: fit-content;
+        border-radius: 5px;
+    }
+    h1 {
+        font-size: 42px;
+        text-align: left; 
+        max-width: 80%;  
+        line-height: 1.3;
+        margin-left: 20%;
+    }
+
 }
 @media (min-width: 1280px) and (max-width: 1366px) {
-    /* Sección de Entretenimiento */
     .entertainment-section {
         padding: 20px 0px;
     }
@@ -946,8 +1138,6 @@
         font-size: 18px;
         line-height: 2.0;
     }
-
-    /* Cuadrilla Derecha */
     .entertainment-right {
         width: 60%;
         display: flex;
@@ -956,20 +1146,14 @@
         margin-left: -10px !important;
         margin-right: 20px;
     }
-
-    /* Imagen en la Cuadrilla Derecha */
     .imagen-entertainment {
         width: 100%; 
     }
-
-    /* Botón de Compra de Entradas */
     .btn-compra {
         padding: 14px 28px !important;
         font-size: 18px; 
 
     }
-
-    /* Botones de Navegación del Carrusel */
     #prevBtn, #nextBtn {
         font-size: 2.2rem;
         padding: 12px 18px;
@@ -980,13 +1164,10 @@
         line-height: 1.8;
         margin-bottom: 35px;
     }
-
     .tickets-title {
         font-size: 34px;
         margin-bottom: 25px;
     }
-
-    /* Botón de Entradas */
     .btn-tickets {
         padding: 14px 32px;
         font-size: 16px;
