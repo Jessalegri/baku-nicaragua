@@ -8,15 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
-<%- include('navbar') %> <!-- Incluir navbar al inicio de la página -->
+<%- include('navbar') %> 
 
 <div class="terminales-section">
-    <!-- Primera cuadrilla: Título -->
     <div class="terminales-left-text">
         <h2 class="titulo-terminales">Terminales Baku</h2>
     </div>
 
-    <!-- Segunda cuadrilla: Formulario -->
     <div class="terminales-form">
         <form action="/nueva-terminal" method="POST">
             <label for="ciudad">Seleccionar Ciudad:</label>
@@ -57,9 +55,8 @@
 </div>
 
 <script>
-    // Mostrar o esconder el campo para agregar una nueva terminal
     document.getElementById('add-terminal').addEventListener('click', function() {
         document.getElementById('nueva-terminal-container').style.display = 'block';
-        document.getElementById('nombre_terminal').disabled = true; // Desactivar el select de terminal
+        document.getElementById('nombre_terminal').disabled = true; 
     });
 </script>

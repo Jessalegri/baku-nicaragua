@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             function populateDropdown(input, dropdown, options, nextFocus = null) {
                 let currentFocus = -1;
 
-                // Mostrar menú desplegable
                 function showDropdown() {
                     dropdown.innerHTML = '';
                     options.forEach(option => {
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             input.value = option;
                             dropdown.style.display = 'none';
                             if (nextFocus) {
-                                nextFocus.focus(); // Enfocar el siguiente campo o botón
+                                nextFocus.focus(); 
                             }
                         });
                         dropdown.appendChild(li);
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 input.addEventListener('focus', () => {
                     currentFocus = -1;
-                    showDropdown(); // Mostrar opciones al enfocar
+                    showDropdown(); 
                 });
 
                 input.addEventListener('input', () => {
@@ -84,14 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else if (nextFocus) {
                             nextFocus.focus();
                             if (nextFocus === inputDestino) {
-                                showDropdown(); // Mostrar opciones al saltar a destino
+                                showDropdown(); 
                             }
                         }
                     }
                 });
 
                 input.addEventListener('click', () => {
-                    showDropdown(); // Mostrar menú desplegable al hacer clic
+                    showDropdown(); 
                 });
 
                 document.addEventListener('click', (e) => {
@@ -112,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     items.forEach(item => item.classList.remove('active-item'));
                 }
 
-                // Asegurar que el ítem seleccionado esté visible
                 function scrollIntoView(item, container) {
                     const containerRect = container.getBoundingClientRect();
                     const itemRect = item.getBoundingClientRect();
@@ -125,16 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Configurar dropdown para origen y destino
             populateDropdown(inputOrigen, dropdownOrigen, ciudades, inputDestino);
             populateDropdown(inputDestino, dropdownDestino, ciudades, botonBuscar);
 
-            // Enfocar destino y mostrar opciones al presionar Enter en origen
             inputOrigen.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter') {
                     event.preventDefault();
                     inputDestino.focus();
-                    dropdownDestino.innerHTML = ''; // Limpiar el menú antes de mostrarlo
+                    dropdownDestino.innerHTML = '';
                     ciudades.forEach(option => {
                         const li = document.createElement('li');
                         li.textContent = option;
@@ -142,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         li.addEventListener('click', () => {
                             inputDestino.value = option;
                             dropdownDestino.style.display = 'none';
-                            botonBuscar.focus(); // Saltar al botón de buscar después de seleccionar
+                            botonBuscar.focus(); 
                         });
                         dropdownDestino.appendChild(li);
                     });
@@ -156,11 +152,10 @@ function scrollIntoView(item, container) {
     const containerRect = container.getBoundingClientRect();
     const itemRect = item.getBoundingClientRect();
 
-    // Ajustar el desplazamiento directamente sin animación
     if (itemRect.top < containerRect.top) {
-        container.scrollTop -= (containerRect.top - itemRect.top) + 5; // Ajuste inmediato
+        container.scrollTop -= (containerRect.top - itemRect.top) + 5; 
     } else if (itemRect.bottom > containerRect.bottom) {
-        container.scrollTop += (itemRect.bottom - containerRect.bottom) + 5; // Ajuste inmediato
+        container.scrollTop += (itemRect.bottom - containerRect.bottom) + 5; 
     }
 }
 

@@ -3,13 +3,11 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Configuración de EJS
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Middleware para redirigir URLs con .html a la versión sin la extensión
 app.use((req, res, next) => {
     if (req.url.endsWith('.html')) {
         const newUrl = req.url.slice(0, -5); 
@@ -24,7 +22,6 @@ app.use(express.static('public', {
     extensions: ['html'],
 }));
 
-// Redirección de /san-juan-del-sur a /sanjuandelsur
 app.use((req, res, next) => {
     if (req.url === '/san-juan-del-sur') {
         console.log(`Redirigiendo ${req.url} → /sanjuandelsur`);
