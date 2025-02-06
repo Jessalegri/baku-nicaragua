@@ -33,6 +33,9 @@ app.use((req, res, next) => {
 app.get('/sanjuandelsur', (req, res) => {
     res.render('SJDS');
 });
+app.get('/hoteles', (req, res) => {
+    res.render('hoteles'); // Asegúrate de que 'hoteles.ejs' esté en la carpeta 'views'
+});
 
 // Ruta para servir sitemap.xml
 app.get('/sitemap.xml', (req, res) => {
