@@ -1,13 +1,15 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #fff;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+.header-container{
+    background-color: #fff !important;
+}
 #resultados {
     width: 80%;  /* Ajusta el ancho del contenedor principal */
     margin-top: 0px;
@@ -93,25 +95,30 @@ p {
 }
 
 p strong {
-    color: #000; /* Encabezados en negro */
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 444 !important;
+    color: black; /* Encabezados en negro */
     font-weight: bold; /* Negrita para mayor énfasis */
     display: inline-block; /* Asegura que el texto se alinee correctamente */
 }
 
 p span {
-    color: gray; /* Respuestas en gris oscuro */
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: black; /* Respuestas en gris oscuro */
     margin-left: 5px; /* Espacio entre encabezado y respuesta */
     font-weight: normal; /* Fuente normal para el contenido */
 }
 
 /* Estilo para tarjetas impares */
 .resultado-container:nth-child(odd) .ruta-bar {
-    background-color: #548578; /* Color azul */
+    background-color: #29333a; /* Color azul */
 }
 
 /* Estilo para tarjetas pares */
 .resultado-container:nth-child(even) .ruta-bar {
-    background-color: #8cb4a8; 
+    background-color: #548578; 
 }
 
 .no-result {
@@ -152,7 +159,7 @@ p span {
 
 /* Estilo para el botón de volver */
 .go-back-button {
-    background-color: #c96b4f; 
+    background-color:#548578;
     color: white;  
     border: none;  
     border-radius: 5px; 
@@ -166,11 +173,12 @@ p span {
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
 .go-back-button:hover {
-    background-color: #548578;
+    background-color: #8cb4a8; ;
     transform: scale(1.05); 
 }
 .header-container h1 {
     flex-grow: 1;  
+    background-color: #fff;
     text-align: center;  
     margin: 0;  
     font-family: 'Roboto', sans-serif; 

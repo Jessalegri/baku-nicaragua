@@ -59,8 +59,8 @@
     <header>
         <div class="navbar">
             <div class="logo">BAKU</div>
-            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-            <nav class="menu">
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+            <nav class="menu" id="mobileMenu">
                 <a href="/sobreBaku">Nosotros</a>
                 <a href="/SJDS.html">Destinos</a>
                 <a href="/contact">Contacto</a>
@@ -72,7 +72,7 @@
     <main class="homepage">
         <div class="content">
             <h1 class="main-title1">EL COMIENZO DE TU<br>PRÓXIMA AVENTURA</h1>
-            <p class="subtitleIndex">Explora Nicaragua con nuestra guía de transporte público y experiencias locales</p>
+            <p class="subtitleIndex">Encuentra horarios de buses en Nicaragua para tu proximo viaje</p>
             <div class="form-container">
                 <div class="form-container">
                     <form class="formulario-busqueda-horizontal" id="buscar-transporte">
@@ -140,7 +140,7 @@
         <a href="/agregarHorario" class="contribution-card blue">
             <div class="contribution-content">
                 <h3 class="contribution-title">Horarios</h3>
-                <p class="contribution-description">Agrega información sobre los horarios para ayudar a otros usuarios.</p>
+                <p class="contribution-description">Agrega nuevos horarios para ayudar a otros usuarios.</p>
             </div>
         </a>
         <a href="/nueva-terminal" class="contribution-card orange">
@@ -152,7 +152,7 @@
         <a href="/seleccionar-ciudad" class="contribution-card blue">
             <div class="contribution-content">
                 <h3 class="contribution-title">Calificar Horarios</h3>
-                <p class="contribution-description">Evalúa la precisión de los horarios para mejorar la experiencia de todos.</p>
+                <p class="contribution-description">Evalúa los horarios de buses para mejorar la experiencia de todos.</p>
             </div>
         </a>
         <a href="#" class="contribution-card orange">
@@ -261,6 +261,10 @@
     <script src="js/search-button.js"></script>
     <script src="js/loadCities.js"></script>
     <script src="js/carrusel.js"></script>
+    <script src="js/navbarMovil.js"></script>
+    <script src="js/navbarMovil.js"></script>
+
+
     <script>
         window.addEventListener('scroll', function() {
           if (window.scrollY > 50) { 
@@ -280,6 +284,14 @@
           });
         }
       });
+        function toggleMenu() {
+        var menu = document.getElementById("mobileMenu");
+        if (window.getComputedStyle(menu).display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
       </script>
 </body>
 </html>

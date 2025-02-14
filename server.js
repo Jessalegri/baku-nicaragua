@@ -96,13 +96,6 @@ app.get('/contact', (req, res) => {
     res.sendFile(__dirname + '/public/contact.html');
 });
 
-// Ruta para renderizar terminales.ejs
-app.get('/terminales', (req, res) => {
-    // Si necesitas pasar datos a la vista, aquí es donde lo harías
-    res.render('terminales', { title: 'Terminales', terminales: [] }); // Enviar terminales vacío por defecto si no hay datos
-});
-
-
 // Ruta para mostrar el formulario de agregar horario de autobús
 app.get('/agregarHorario', (req, res) => {
     res.render('agregarHorario', { title: 'Agregar Horario' });
@@ -123,7 +116,6 @@ app.get('/confirmacion', (req, res) => {
     const mensaje = req.query.mensaje || '';
     res.render('confirmacion', { mensaje });
 });
-
 
 // Función para agregar una ciudad y devolver su ID
 const agregarCiudad = (nombreCiudad, callback) => {
@@ -160,7 +152,19 @@ const agregarTerminal = (nombreTerminal, ciudadId, callback) => {
         }
     });
 };
-
+// Contactos
+app.post('/contacto', (req, res) => {
+    const { nombre, email, mensaje } = req.body;
+    const query = 'INSERT INTO Contactos (nombre, email, mensaje) VALUES (?, ?, ?)';
+    db.query(query, [nombre, email, mensaje], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error al guardar el mensaje');
+        } else {
+            res.status(200).send('Mensaje recibido correctamente');
+        }
+    });
+});
 // Trabajando en: TERMINALES:
 app.get('/nueva-terminal', (req, res) => {
     // Obtener todas las ciudades
@@ -367,20 +371,21 @@ app.get('/terminales', (req, res) => {
             horario_id,
             terminal_origen_id,
             terminal_destino_id,
-            DATE_FORMAT(hora_salida, '%h:%i %p') AS hora_salida, -- Formato AM/PM
+            hora_salida,
+            DATE_FORMAT(hora_salida, '%h:%i %p') AS formatted_hora_salida,
             duracion_viaje
         FROM horarios_de_buses
+        ORDER BY hora_salida ASC
     `;
     pool.query(query, (error, results) => {
         if (error) {
             console.error('Error al obtener los horarios:', error);
             return res.status(500).json({ error: 'Error al obtener los horarios' });
         }
-
-        // Renderiza la vista con los horarios en formato AM/PM
         res.render('terminales', { title: 'Terminales', horarios: results });
     });
 });
+
 
 // Ruta para buscar horarios de buses
 app.post('/buscar-horarios', (req, res) => {
@@ -396,14 +401,15 @@ app.post('/buscar-horarios', (req, res) => {
             c_destino.nombre_ciudad AS ciudad_destino,
             t_origen.nombre_terminal AS terminal_origen,
             t_destino.nombre_terminal AS terminal_destino,
-            h.hora_salida,
-            h.duracion_viaje
+            DATE_FORMAT(h.hora_salida, '%h:%i %p') AS hora_salida,
+            DATE_FORMAT(h.duracion_viaje, '%H:%i') AS duracion_viaje
         FROM horarios_de_buses h
         JOIN Terminales t_origen ON h.terminal_origen_id = t_origen.terminal_id
         JOIN Terminales t_destino ON h.terminal_destino_id = t_destino.terminal_id
         JOIN Ciudades c_origen ON t_origen.ciudad_id = c_origen.ciudad_id
         JOIN Ciudades c_destino ON t_destino.ciudad_id = c_destino.ciudad_id
         WHERE c_origen.nombre_ciudad = ? AND c_destino.nombre_ciudad = ?
+        ORDER BY (CASE WHEN HOUR(h.hora_salida) < 12 THEN 0 ELSE 1 END), h.hora_salida ASC
     `;
 
     pool.query(query, [ciudadOrigen, ciudadDestino], (error, results) => {
@@ -414,6 +420,7 @@ app.post('/buscar-horarios', (req, res) => {
         res.json(results);
     });
 });
+
 
 // Ruta para buscar terminales
 app.get('/buscar-terminales', (req, res) => {
@@ -472,8 +479,6 @@ app.get('/ver-horarios/:ciudadId', (req, res) => {
 app.get('/enDesarrollo', (req, res) => {
     res.render('enDesarrollo');
 });
-
-
 
 // Ruta para mostrar el formulario de calificación
 app.get('/calificar-horario/:id', (req, res) => {

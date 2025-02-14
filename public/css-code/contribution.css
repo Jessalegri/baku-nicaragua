@@ -157,16 +157,18 @@
   }
 
   .contribution-container {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px; 
-    justify-content: center; 
-    margin: 0; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2vh; 
+    width: 90%;
+    margin: 0;
+    justify-items: start;
   }
-
   .contribution-card {
-    padding: 10px; 
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 1.5vh;       
+    min-height: 10vh;   
+    width: 100%;
+    margin: 0;
   }
 
   .contribution-title {
@@ -218,6 +220,19 @@
     margin-right: 5%;
     width: 90%; /* Ajusta el ancho para compensar el margen */
   }
+  .contribution-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .contribution-card {
+    height: 160px; 
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+  }
 }
 @media (min-width: 769px) and (max-width: 1023px) {
   .section-route {
@@ -235,14 +250,18 @@
   .route-text {
       text-align: center; /* Centra el texto */
   }
-
   .contribution-container {
-      grid-template-columns: repeat(2, 1fr); /* 2x2 para tarjetas */
-      gap: 20px; /* Espacio uniforme entre las tarjetas */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vh;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .contribution-card {
+    padding: 1vh;
+    min-height: 10vh;
+    width: 90%;
+    margin: 0;
   }
 
-  .contribution-card {
-      padding: 15px; /* Reduce ligeramente el padding */
-      height: auto; /* Deja que crezca dinámicamente */
-  }
 }
