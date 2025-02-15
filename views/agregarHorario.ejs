@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Horario de Autobús - Baku</title>
+    <title>Agregar Horario de bus - Baku</title>
     <link rel="stylesheet" href="/css-code/index.css">
     <link rel="stylesheet" href="/css-code/agregarHorario.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,49 +12,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <%- include('navbar') %>
-    <main id="main-content">
-        <section id="agregar-horario-content" class="agregar-horario-content">
-            <div class="form-container">
-                <h1>Agregar Horario de Autobús</h1>
-                <form action="/agregar-horario" method="post" id="agregar-horario-form">
-                    <div class="form-group">
-                        <label for="ciudadOrigen">Ciudad de Origen:</label>
-                        <input type="text" id="ciudadOrigen" name="ciudadOrigen" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="terminalOrigen">Terminal de Origen:</label>
-                        <input type="text" id="terminalOrigen" name="terminalOrigen" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="terminalDestino">Terminal de Destino:</label>
-                        <input type="text" id="terminalDestino" name="terminalDestino" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="ciudadDestino">Ciudad de Destino:</label>
-                        <input type="text" id="ciudadDestino" name="ciudadDestino" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="horaSalida">Hora de Salida:</label>
-                        <input type="time" id="horaSalida" name="horaSalida" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="duracionViajeHoras">Duración del Viaje (Horas):</label>
-                        <input type="number" id="duracionViajeHoras" name="duracionViajeHoras" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="duracionViajeMinutos">Duración del Viaje (Minutos):</label>
-                        <input type="number" id="duracionViajeMinutos" name="duracionViajeMinutos" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="calificacion">Calificación:</label>
-                        <input type="number" id="calificacion" name="calificacion" required min="1" max="5">
-                    </div>
-                    <button type="submit">Agregar Horario</button>
-                </form>
+    <main class="container">
+        <section class="form-section">
+          <h1>Agregar Horario de Autobús</h1>
+          <form action="/agregar-horario" method="post" class="form">
+            <div class="form-group">
+              <label for="ciudadOrigen">Ciudad de Origen</label>
+              <input type="text" id="ciudadOrigen" name="ciudadOrigen" required>
             </div>
+            <div class="form-group">
+              <label for="terminalOrigen">Terminal de Origen</label>
+              <input type="text" id="terminalOrigen" name="terminalOrigen" required>
+            </div>
+            <div class="form-group">
+              <label for="ciudadDestino">Ciudad de Destino</label>
+              <input type="text" id="ciudadDestino" name="ciudadDestino" required>
+            </div>
+            <div class="form-group">
+              <label for="terminalDestino">Terminal de Destino</label>
+              <input type="text" id="terminalDestino" name="terminalDestino" required>
+            </div>
+            <div class="form-group">
+              <label for="horaSalida">Hora de Salida</label>
+              <input type="time" id="horaSalida" name="horaSalida" required>
+            </div>
+            <div class="form-group">
+              <label for="duracionViajeHoras">Duración del Viaje (Horas)</label>
+              <input type="number" id="duracionViajeHoras" name="duracionViajeHoras" required min="0">
+            </div>
+            <div class="form-group">
+              <label for="duracionViajeMinutos">Duración del Viaje (Minutos)</label>
+              <input type="number" id="duracionViajeMinutos" name="duracionViajeMinutos" required min="0" max="59">
+            </div>
+            <div class="form-group">
+              <label for="calificacion">Calificación</label>
+              <input type="number" id="calificacion" name="calificacion" required min="1" max="5">
+            </div>
+            <button type="submit">Agregar Horario</button>
+          </form>
         </section>
-    </main>
-
+      </main>
 </body>
 </html>

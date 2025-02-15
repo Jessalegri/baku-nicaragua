@@ -420,6 +420,37 @@ app.post('/buscar-horarios', (req, res) => {
         res.json(results);
     });
 });
+// Ruta para mostrar la página de experiencias
+app.get('/experiencia', (req, res) => {
+    const query = 'SELECT * FROM experiencias ORDER BY fecha DESC';
+
+    pool.query(query, (err, results) => {
+        if (err) {
+            console.error('Error al obtener experiencias:', err);
+            return res.status(500).send('Error al obtener experiencias.');
+        }
+        res.render('experiencia', { title: 'Experiencias', experiencias: results });
+    });
+});
+
+// Ruta para recibir experiencias enviadas por los usuarios
+app.post('/experiencia', (req, res) => {
+    const { nombre_usuario, correo_usuario, experiencia } = req.body;
+
+    if (!nombre_usuario || !experiencia) {
+        return res.status(400).send('Todos los campos requeridos.');
+    }
+
+    const query = 'INSERT INTO experiencias (nombre_usuario, correo_usuario, experiencia) VALUES (?, ?, ?)';
+
+    pool.query(query, [nombre_usuario, correo_usuario, experiencia], (err) => {
+        if (err) {
+            console.error('Error al guardar experiencia:', err);
+            return res.status(500).send('Error al guardar experiencia.');
+        }
+        res.redirect('/experiencia');
+    });
+});
 
 
 // Ruta para buscar terminales

@@ -1,0 +1,229 @@
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    line-height: 1.7;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Títulos */
+h1, h2 {
+    text-align: center;
+    color: #15616D;
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Animación sutil en hover */
+form:hover {
+    transform: scale(1.02);
+}
+
+/* Labels */
+label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+input, textarea {
+    width: 97%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    transition: border 0.3s ease-in-out, box-shadow 0.2s;
+}
+
+/* Efecto al enfocar los campos */
+input:focus, textarea:focus {
+    border-color: #15616D;
+    box-shadow: 0px 3px 10px rgba(21, 97, 109, 0.2);
+    outline: none;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+button {
+    background: #15616D;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+button:hover {
+    background: #0d4d5d;
+    transform: translateY(-2px);
+}
+
+.experiencias {
+    margin-top: 40px;
+}
+
+.experiencia {
+    background: white;
+    padding: 20px;
+    border-left: 5px solid #15616D;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.experiencia:hover {
+    transform: scale(1.02);
+}
+
+small {
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        padding: 20px;
+
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input, textarea {
+        width: 95%;
+        font-size: 14px;
+        height: 36px;
+        padding: 8px;
+    }
+
+    textarea {
+        height: 70px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .experiencia {
+        padding: 15px;
+    }
+}@media (min-width: 768px) and (max-width: 1366px) {
+    body {
+        max-width: 750px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        padding: 25px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    label {
+        font-size: 17px;
+        margin-left: 20px;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: -5px;
+    }
+
+    input, textarea {
+        margin-left: 20px;
+        width: 90%;
+        max-width: 750px; 
+        font-size: 18px;
+        height: 45px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1.5px solid #ccc;
+        transition: border 0.3s ease-in-out, box-shadow 0.2s;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #15616D;
+        box-shadow: 0px 3px 10px rgba(21, 97, 109, 0.2);
+        outline: none;
+    }
+
+    textarea {
+        height: 120px;
+        resize: vertical;
+    }
+
+    button {
+        font-size: 16px;
+        margin-left: 20px;
+        padding: 12px;
+        width: 650px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: background 0.3s ease-in-out, transform 0.2s;
+    }
+
+    button:hover {
+        background: #0d4d5d;
+        transform: translateY(-2px);
+    }
+
+    .experiencia {
+        padding: 18px;
+        border-radius: 8px;
+        background: white;
+        border-left: 5px solid #15616D;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .experiencia:hover {
+        transform: scale(1.02);
+    }
+
+    small {
+        color: #777;
+    }
+}

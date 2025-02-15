@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css-code/experiencia.css">
+</head>
+<body>
+    <h1>Comparte tu experiencia sobre el transporte público</h1>
+
+    <form action="/experiencia" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre_usuario" required>
+
+        <label for="correo">Correo (opcional):</label>
+        <input type="email" id="correo" name="correo_usuario">
+
+        <label for="experiencia">Tu experiencia:</label>
+        <textarea id="experiencia" name="experiencia" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Experiencias de otros usuarios</h2>
+    <div class="experiencias">
+        <% experiencias.forEach(exp => { %>
+            <div class="experiencia">
+                <h3><%= exp.nombre_usuario %></h3>
+                <p><%= exp.experiencia %></p>
+                <small><%= new Date(exp.fecha).toLocaleDateString() %></small>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
