@@ -4,7 +4,13 @@ body {
     margin: 0;
     padding: 0;
 }
-
+  .select-city-container h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    color: #15616D;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -22,13 +28,18 @@ body {
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .select-city-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
   
-  .select-city-container h1 {
+  .horarios-container h1 {
     font-family: 'Inter', sans-serif;
-    font-size: 32px;
-    color: #15616D;
-    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+    color: black;
     margin-bottom: 20px;
   }
   
@@ -38,7 +49,7 @@ body {
     gap: 15px;
     align-items: center;
   }
-  
+
   .select-city-form label {
     font-size: 18px;
     color: #333;
@@ -59,6 +70,7 @@ body {
   .select-city-dropdown:focus {
     border-color: #15616D;
     box-shadow: 0 3px 10px rgba(21, 97, 109, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     outline: none;
   }
   
@@ -70,39 +82,39 @@ body {
     border: none;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
     text-transform: uppercase;
   }
   
   .btn-select-city:hover {
     background-color: #0d4d5d;
-    transform: translateY(-2px);
+    transform: scale(1.02);
   }
   
   .horarios-container {
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
+    background: #fff;
   }
   
   .horario-item {
     background: #fff;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
     margin-bottom: 20px;
     text-align: left;
   }
   
   .horario-item p {
-    font-size: 17px;
+    font-size: 16px;
     margin: 8px 0;
     color: #444;
   }
   
   .horario-item p strong {
     color: black;
-    font-size: 19px;
+    font-size: 18px;
   }
   
   .btn-calificar {
