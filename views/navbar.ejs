@@ -1,18 +1,27 @@
 <link rel="stylesheet" href="css-code/navbar.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <header id="navbar">
-    <div class="navbar">
-        <div class="logo">
-            <a href="index.html">BAKU</a>
-        </div>       
-        <button class="menu-toggle" aria-label="Abrir menú">
-            ☰
-        </button>
-        <nav class="menu">
-            <a href="/sobreBaku">Nosotros</a>
-            <a href="/SJDS.html">Destinos</a>
-            <a href="/contact">Contacto</a>
-        </nav>
+  <div class="navbar">
+    <div class="logo">
+      <a href="index.html">BAKU</a>
     </div>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+    <!-- Menú de escritorio -->
+    <nav class="menu">
+      <a href="/sobreBaku">Nosotros</a>
+      <a href="/SJDS.html">Destinos</a>
+      <a href="/contact">Contacto</a>
+    </nav>
+  </div>
+  <!-- Overlay y menú móvil (solo en móvil) -->
+  <div id="menuOverlay"></div>
+  <div id="mobileMenu">
+    <a href="/sobreBaku">Nosotros</a>
+    <a href="/SJDS.html">Destinos</a>
+    <a href="/contact">Contacto</a>
+  </div>
 </header>
+<!-- Asegúrate de que el script se carga al final -->
 <script src="js/navbar.js"></script>

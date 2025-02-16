@@ -264,7 +264,7 @@ html {
 
 .about-subtitle {
     font-family: "Source Sans Pro", sans-serif;
-    color: rgb(65, 105, 94);
+    color:#15616D !important;
     margin-bottom: 10px;
     letter-spacing: 2px;
 }

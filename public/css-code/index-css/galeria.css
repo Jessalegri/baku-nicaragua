@@ -24,11 +24,10 @@ body {
 /* Subtitle */
 .subtitle {
     margin-bottom: 5px !important;
-    text-transform: uppercase;
     color: #c96b4f;
     text-align: center;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
     padding-top: 20px; 
     letter-spacing: 0.2px;
 }
@@ -170,7 +169,7 @@ a {
 .about-btn1 {
     display: inline-block;        
     padding: 15px 30px;           
-    background-color: #c96b4f;    
+    background-color: #15616D;    
     color: #fff;                  
     text-decoration: none;        
     border-radius: 5px;           
@@ -180,15 +179,13 @@ a {
     font-size: 20px;          
   }
   .about-btn1:hover {
-    background-color: #B56047;  
+    background-color: #15616D;  
     transform: scale(1.08);  
-    box-shadow: 0 5px 5px rgba(181, 96, 71, 0.4); 
 }
 
 .about-btn1:active {
     transform: scale(0.95);  
-    background-color: #A1563F; 
-    box-shadow: 0 4px 5px rgba(161, 86, 63, 0.6); 
+    background-color: #15616D; 
 }
 /* Responsive Design */
 @media screen and (max-width: 768px) {

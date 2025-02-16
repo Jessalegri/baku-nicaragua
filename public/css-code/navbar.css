@@ -1,86 +1,142 @@
-/* General Navbar Styles */
+/* Estilos generales del navbar */
 #navbar {
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 100;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    background-color: #fff;
-    font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo {
-    color: black;
-    font-size: 30px;
-    font-weight: bold;
-}
 .logo a {
-    text-decoration: none;
-    color: inherit; 
-    cursor: pointer; 
-    font-family: 'Poppins', sans-serif;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 33px;
+  text-decoration: none;
 }
 
 .menu {
-    display: flex; /* Por defecto en pantallas grandes */
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .menu a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+  font-weight: 600;
+
 }
 
 .menu a:hover {
-    text-decoration: underline;
+  border-bottom: 2px solid #15616D;
+  color: #15616D;
 }
 
-/* Mobile Menu Styles */
+/* Botón de menú (visible solo en móvil) */
 .menu-toggle {
-    display: none; /* Oculto en pantallas grandes */
-    background: none;
-    border: none;
-    color: black;
-    font-size: 30px;
-    cursor: pointer;
+  display: none;
+  color: white;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
+
+.menu-toggle:active {
+  color: black;
+}
+
+/* Menú móvil */
+#mobileMenu {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 10px 0;
+  min-height: 100px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#mobileMenu a {
+  display: block;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 1px solid #eee;
+}
+
+#mobileMenu a:last-child {
+  border-bottom: none;
+}
+
+#mobileMenu.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Overlay para menú móvil */
+#menuOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  transition: opacity 0.3s ease-in-out;
+
+}
+#menuOverlay.open {
+  display: block;
+  opacity: 1;
+}
+/* Clases para mostrar menú móvil y overlay */
+#mobileMenu.open {
+  display: block;
+}
+
+#menuOverlay.open {
+  display: block;
+}
+
+/* Responsive: en pantallas pequeñas se oculta el menú de escritorio y se muestra el toggle */
 @media (max-width: 768px) {
-    .menu {
-        display: none; /* Ocultar el menú por defecto en móviles */
-        flex-direction: column;
-        background-color: white;
-        position: relative;
-        top: 60px; /* Justo debajo del navbar */
-        right: 20px;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 200;
-    }
-
-    .menu.open {
-        display: flex; /* Mostrar el menú al hacer clic */
-    }
-
-    .menu a {
-        color: black;
-        padding: 10px 0; /* Espaciado entre los enlaces */
-        text-align: left;
-    }
-
-    .menu-toggle {
-        display: block; /* Mostrar el botón ☰ en móviles */
-    }
-    #navbar {
-        width: 100%;
-        position: relative;
-    }
+  .menu {
+    display: none;
+  }
+  .menu-toggle {
+    display: inline-block;
+  }
+  .logo a,
+  .menu a {
+    color: white;
+  }
+  .logo a{
+    font-size: 28px;
+    margin-left: -10px;
+  }
+  #navbar {
+    background-color: #15616D;
+  }
 }

@@ -53,12 +53,11 @@
   margin-left: 30px;
 }
 .preheader {
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 600;
-  text-transform: uppercase;
   color: #c96b4f;
   margin-bottom: 10px;
-  letter-spacing: 0.9px;
+  letter-spacing: 2px !important;
 }
 
 .route-title {
@@ -97,29 +96,30 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tarjetas de contribución */
 .contribution-card {
   background-color: #ffffff; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   border-radius: 8px; 
   text-align: center;
   padding: 15px;
-  transition: transform 0.3s ease;
-  
+  transition: transform 0.3s ease, background 0.3s ease, filter 0.3s ease;
 }
 
 .contribution-card:hover {
   transform: scale(1.05); 
-  background-color: #c96b4f;
-  color:white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #15616D;
 }
+.contribution-card:active {
+  transform: scale(1.05);
+  background: linear-gradient(10deg, #15616D, #15616D);
+  filter: brightness(0.8); /* Ajusta el brillo para evitar oscurecer demasiado el texto */
+}
+
 .contribution-card:hover .contribution-title,
 .contribution-card:hover .contribution-description {
   color: white; 
 }
 
-/* Títulos y descripciones */
 .contribution-title {
   font-size: 18px;
   font-weight: bold;
@@ -130,7 +130,7 @@
 .contribution-description {
   font-size: 14px;
   line-height: 1.4;
-  color: #666;
+  color: black;
 } 
 
 /* Responsive para dispositivos móviles */
@@ -172,7 +172,7 @@
   }
 
   .contribution-title {
-    font-size: 16px; /* Tamaño reducido para pantallas pequeñas */
+    font-size: 16px; 
     font-weight: bold;
   }
 

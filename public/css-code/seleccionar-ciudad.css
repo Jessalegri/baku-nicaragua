@@ -1,4 +1,3 @@
-/* Estilos generales para la página */
 body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #fff;
@@ -6,7 +5,6 @@ body {
     padding: 0;
 }
 
-/* Estilos para el contenedor principal */
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -16,164 +14,122 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.select-city-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: #333;
-    font-size: 24px;
-    letter-spacing: 1.0;
-    font-family: "Source Sans Pro", sans-serif;
-
-}
-
-form {
+  }
+  
+  .select-city-container h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    color: #15616D;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .select-city-form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
     align-items: center;
-}
-
-label {
+  }
+  
+  .select-city-form label {
     font-size: 18px;
-    margin-bottom: 10px;
-}
-
-select {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .select-city-dropdown {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 10px;
+    border-radius: 8px;
     font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .select-city-dropdown:focus {
+    border-color: #15616D;
+    box-shadow: 0 3px 10px rgba(21, 97, 109, 0.2);
+    outline: none;
+  }
+  
+  .btn-select-city {
+    background-color: #15616D;
     color: white;
-    background-color: #04AA6D;
+    padding: 15px 30px;
+    border-radius: 8px;
     border: none;
-    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #028a52;
-}
-
-/* Estilo para horarios */
-.horario-item {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    line-height: 1.5;
-    font-size: 16px;
-    color: #313131;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.horario-item p {
-    margin: 5px 0;
-}
-
-.select-city-container {
-    max-width: 600px;
-    margin: 0 auto;
+    transition: background-color 0.3s ease, transform 0.2s;
+    text-transform: uppercase;
+  }
+  
+  .btn-select-city:hover {
+    background-color: #0d4d5d;
+    transform: translateY(-2px);
+  }
+  
+  .horarios-container {
+    max-width: 900px;
+    margin: 40px auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px; 
-}
-
-.horarios-container {
-    max-width: 600px;
-    margin: 0 auto;
+  }
+  
+  .horario-item {
+    background: #fff;
     padding: 20px;
-    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .horario-item p {
+    font-size: 17px;
+    margin: 8px 0;
+    color: #444;
+  }
+  
+  .horario-item p strong {
+    color: black;
+    font-size: 19px;
+  }
+  
+  .btn-calificar {
+    background-color: #15616D;
+    color: white;
+    padding: 15px 20px;
+    border: 8px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.horarios-container h1 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 24px;
-}
-
-.horario-item {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #fff;
-}
-
-.horario-item p {
-    margin: 5px 0;
-}
-
-.btn-select-city {
-    background-color: #c96b4f;
-    color: white;  
-    border: none;  
-    border-radius: 5px; 
-    padding: 14px 25px;  
-    font-family: 'Source Sans Pro', sans-serif;
-    cursor: pointer; 
-    letter-spacing: 1px;
-    margin: 10px 0 0 20px;  
-    font-size: 18px;
-}
-
-.btn-select-city:hover {
-    background-color: #8cb4a8;
-}
-
-.btn-calificar {
-    background-color: #548578;
-    color: white;  
-    border: none;  
-    border-radius: 5px; 
-    padding: 14px 25px;  
-    font-family: 'Source Sans Pro', sans-serif;
-    cursor: pointer; 
-    letter-spacing: 1.5px;
     font-size: 16px;
-    margin-top: 5px;
-}
-
-.btn-calificar:hover {
-    background-color: #8cb4a8;
-}
-
-/* Adaptación para dispositivos móviles */
-@media (max-width: 600px) {
-    .container, .select-city-container, .horarios-container {
-        padding: 15px;
-        margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  
+  .btn-calificar:hover {
+    background-color: #0d4d5d;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .select-city-container,
+    .horarios-container {
+      margin: 20px;
+      padding: 20px;
     }
-
-    h1 {
-        font-size: 20px;
+    .select-city-dropdown {
+      width: 100%;
     }
-
-    label, select, button, .btn-select-city, .btn-calificar {
-        font-size: 14px;
-    }
-
-    select {
-        width: 100%;
-        max-width: 100%;
-        padding: 8px;
-    }
-
-    button {
-        padding: 8px 16px;
-    }
-
-    .horario-item {
-        padding: 10px;
-    }
-}
+  }

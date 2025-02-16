@@ -1,6 +1,6 @@
 /* Footer Section */
 .footer-section {
-    background-color: #385E52;
+    background-color: #15616D;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -75,8 +75,8 @@
 .newsletter-btn {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #EFD284;
-    color: #385E52;
+    background-color: #e5652e;
+    color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -84,7 +84,7 @@
 }
 
 .newsletter-btn:hover {
-    background-color: white;
+    background-color: #e5653e;
 }
 .newsletter-paragraph {
     color: #ccc !important; 

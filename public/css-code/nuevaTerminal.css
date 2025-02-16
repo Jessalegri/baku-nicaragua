@@ -1,181 +1,124 @@
-/* Contenedor principal de la sección de Terminales */
 .terminales-section {
-    background-color: white; /* Fondo blanco */
-    display: flex; /* Flexbox para organizar en cuadrillas */
-    justify-content: flex-start; /* Alinea las cuadrillas al inicio */
-    align-items: flex-start; /* Alinea las cuadrillas al inicio verticalmente */
-    padding: 50px 100px;
-}
-
-.terminales-left-text {
-    width: 20%;
-    display: flex;
-    margin: 0;
-    margin-right: 15%;
-    margin-left: 10%;
-    padding-right: 50px;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: left;
-    font-family: 'Poppins, sans-serif';
-    font-size: 60px;
-    color: rgb(65, 105, 94);
-    letter-spacing: 2px;
-}
-
-/* Segunda cuadrilla: Formulario */
-.terminales-form {
-    width: 35%; /* Reduce el ancho del formulario */
-    margin: 0; /* Elimina el margen a la izquierda y derecha */
-    box-sizing: border-box; /* Incluye bordes y rellenos en el cálculo del ancho */
-    padding: 15px; /* Reduce el padding dentro del formulario */
-    padding-left: 60px; /* Agrega espacio a la izquierda */
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin-right: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex; /* Flexbox para alinear contenido dentro del formulario */
-    flex-direction: column; /* Organiza los elementos en columna */
-    justify-content: center;/* Centra los elementos verticalmente dentro del formulario */
-}
-
-select {
-    width: 90%;
-    padding: 12px;
-    margin: 15px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     background-color: #fff;
-    font-size: 16px;
-    color: #333;
-}
-label {
-    font-family: "Source Sans Pro", sans-serif;
-    color: rgb(0, 0, 0); /* Color negro */
-    line-height: 2.0;
-}
-
-/* Estilo para el botón */
-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.button-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px; 
-}
-
-/* Estilo para los campos adicionales de nueva terminal */
-#nueva-terminal-container input {
-    width: 90%;
+    align-items: center;
+    padding: 50px 100px;
+    gap: 30px;
+  }
+  
+  .terminales-form {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .terminales-form:hover {
+    transform: scale(1.02);
+  }
+  
+  .terminales-form label {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 12px;
+    display: block;
+  }
+  
+  .terminales-form select,
+  #nueva-terminal-container input {
+    width: 100%;
     padding: 12px;
-    margin: 15px 0;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
-}
-
-#terminales-container img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Estilo para el botón */
-#add-terminal {
-    background-color: #007BFF;
+    font-size: 18px;      
+    font-weight: normal;   
+    color: #444;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .terminales-form select:focus,
+  #nueva-terminal-container input:focus {
+    border-color: #15616D;
+    box-shadow: 0 3px 10px rgba(21, 97, 109, 0.2);
+    outline: none;
+  }
+  
+  #nueva-terminal-container {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  button {
+    width: 100%;
+    background-color: #15616D;
     color: white;
-    padding: 12px 20px;
+    padding: 16px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-#add-terminal:hover {
-    background-color: #0056b3;
-}
-
-/* Responsive para dispositivos móviles (hasta 768px) */
-@media (max-width: 768px) {
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  button:hover {
+    background-color: #0d4d5d;
+    transform: translateY(-2px);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button-container button:first-of-type {
+    margin-bottom: 40px;
+  }
+  @media (max-width: 768px) {
     .terminales-section {
-        padding: 20px; /* Reducir el padding en pantallas pequeñas */
-        flex-direction: column; /* Las cuadrillas se apilan */
-        justify-content: center; /* Centra las cuadrillas */
-        align-items: center; /* Alinea las cuadrillas al centro */
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .terminales-left-text {
-        display: none; /* Ocultar el título en dispositivos móviles */
-    }
-
+    
     .terminales-form {
-        margin-left: 10px;
-        width: 100%; /* El formulario ocupa todo el ancho disponible */
-        padding-left: 20px; /* Reducir el padding izquierdo */
+      width: 90%;
+      max-width: none;
+      padding: 20px;
     }
-
-    select, button {
-        width: 100%; /* Los campos ocupan todo el ancho disponible */
+    
+    select, button, input {
+      width: 100%;
     }
-}
-
-/* Responsive para iPad Mini y iPad Air (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
     .terminales-section {
-        padding: 20px;
-        flex-direction: column; /* Las cuadrillas se apilan verticalmente */
-        justify-content: center; /* Centra las cuadrillas */
-        align-items: center; /* Alinea las cuadrillas al centro */
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .terminales-left-text {
-        display: none; /* Ocultar el título en este tamaño */
-    }
-
+    
     .terminales-form {
-        width: 90%; /* Ajustar el ancho del formulario para que sea más pequeño */
-        max-width: 600px; /* Limitar el ancho máximo para que no sea demasiado grande */
-        margin: 0 auto; /* Centrar el formulario horizontalmente */
-        padding-left: 20px;
-        padding-right: 20px;
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
     }
-
-    select, button {
-        width: 100%; /* Hacer que los campos ocupen todo el ancho disponible */
-    }
-}
-/* Responsive para pantallas grandes (mayores a 1024px, como iPad Pro) */
-@media (min-width: 1024px) {
-    .terminales-section {
-        padding: 50px 100px;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .terminales-left-text {
-        margin-left: 5%;
-        font-size: 50px; /* El título vuelve a su tamaño original en pantallas grandes */
-        width: 25%;
-        margin-bottom: 40px;
-    }
-
-    .terminales-form {
-        width: 45%;
-        padding-left: 70px;
-    }
-}
+  }
+  

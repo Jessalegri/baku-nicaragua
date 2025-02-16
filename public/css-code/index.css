@@ -2,6 +2,9 @@ body {
     margin: 0;
     padding: 0;
 }
+body.index #navbar {
+    background-color: transparent !important;
+  }
 header {
     width: 100%;
     position: fixed; 
@@ -9,11 +12,6 @@ header {
     left: 0;
     z-index: 100;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-.menu a,
-    .logo {
-    color: white;
-    transition: color 0.3s ease;
 }
 body.scrolled header {
     background-color: white; 
@@ -135,7 +133,7 @@ body.scrolled .logo {
 .boton-busqueda {
     padding: 12px 40px;
     font-size: 16px;
-    background-color: #f67c68;
+    background-color: #e5652e;
     color: white;
     border: none;
     border-radius: 5px;
@@ -145,7 +143,7 @@ body.scrolled .logo {
 }
 
 .boton-busqueda:hover {
-    background-color: #c96b4f;
+    background-color: #e5652e;
 }
 
 .main-title1 {
@@ -378,12 +376,13 @@ body.scrolled .logo {
 /* Subtitle */
 .subtitle {
     text-align: center;
-    font-size: 1.2rem;
-    color: #c96b4f;
+    font-size: 18px;
     margin-bottom: 5px;     
     padding-bottom: 10px;   
     padding-top: 20px; 
-    font-weight: 400;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    
 }
 /* Botón centrado */
 .button-container {
@@ -667,10 +666,17 @@ body.scrolled .logo {
     }
 
 @media (max-width: 768px) {
-/* Homepage - index.html*/
-    body.scrolled .menu a,
-    body.scrolled .logo {
-    color: black; 
+    .navbar .logo a,
+    .navbar .menu a {
+      color: white;
+    }
+    body.scrolled .menu-toggle {
+        color: black !important;
+      }
+    
+    body.scrolled .navbar .logo a,
+    body.scrolled .navbar .menu a {
+      color: black !important;
     }
     .header {
         flex-direction: row; 
@@ -714,6 +720,7 @@ body.scrolled .logo {
       .menu-toggle:active{
         color: black;
       }
+
       #menuOverlay {
         display: none;
         position: fixed;
