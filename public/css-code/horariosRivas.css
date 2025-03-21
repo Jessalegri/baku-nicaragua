@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #15616D;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  
+  .horarios-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .horario-item {
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #15616D;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .horario-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .route {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .origin, .destination {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .arrow {
+    font-size: 1.2rem;
+    color: #15616D;
+  }
+  
+  .details {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .label {
+    font-weight: 500;
+    color: #15616D;
+  }
+  
+  .no-horarios {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #888;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  .back-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #15616D;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .back-btn:hover {
+    background-color: #0f4a54;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .horario-item {
+      padding: 15px;
+    }
+  
+    .route {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .arrow {
+      display: none;
+    }
+  
+    .back-btn {
+      padding: 10px 20px;
+    }
+  }

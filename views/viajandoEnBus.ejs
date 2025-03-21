@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo llegar a San Juan del Sur en bus desde Granada y Ometepe - Baku</title>
+  <meta name="description" content="Descubre cómo llegar a San Juan del Sur en bus desde Granada o la Isla de Ometepe. Horarios, rutas y consejos de transporte público en Nicaragua con Baku.">
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css-code/footer.css">
+  <style>
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      color: #333; 
+      background: #f5f5f5; 
+    }
+    /* Navbar */
+    .navbar { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 20px 40px; 
+      background: #fff; 
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    }
+    .logo a { 
+      font-family: 'Montserrat', sans-serif; 
+      font-size: 1.8rem; 
+      font-weight: 700; 
+      color: #1a73e8; 
+      text-decoration: none; 
+    }
+    .menu-toggle { 
+      display: none; 
+      font-size: 1.5rem; 
+      background: none; 
+      border: none; 
+      cursor: pointer; 
+    }
+    .menu { 
+      display: flex; 
+      gap: 20px; 
+    }
+    .menu a { 
+      font-family: 'Poppins', sans-serif; 
+      font-size: 1.1rem; 
+      color: #333; 
+      text-decoration: none; 
+      transition: color 0.3s; 
+    }
+    .menu a:hover { color: #1a73e8; }
+    
+    /* Homepage Hero */
+    .homepage-hero { 
+      position: relative; 
+      height: 500px; 
+      background: url('css-code/imagenes/sanJuanDelSur.jpeg') no-repeat center/cover; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      color: #fff; 
+    }
+    .hero-title { 
+      font-family: 'Montserrat', sans-serif; 
+      font-size: 3.5rem; 
+      font-weight: 700; 
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
+      margin: 0; 
+    }
+    .homepage-wave { 
+      position: absolute; 
+      bottom: 0; 
+      width: 100%; 
+    }
+    .homepage-wave svg { 
+      width: 100%; 
+      height: 150px; 
+    }
+    
+    /* Sección de transporte */
+    .travel-section { 
+      max-width: 1200px; 
+      margin: 60px auto; 
+      padding: 50px; 
+      background: #fff; 
+      border-radius: 20px; 
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); 
+    }
+    .main-title { 
+      font-family: 'Montserrat', sans-serif; 
+      font-size: 3rem; 
+      font-weight: 700; 
+      color: #1a73e8; 
+      text-align: center; 
+      margin-bottom: 20px; 
+    }
+    .subtitle { 
+      font-size: 1.4rem; 
+      font-weight: 300; 
+      color: #666; 
+      text-align: center; 
+      margin-bottom: 40px; 
+    }
+    .route-container { 
+      background: #f9f9f9; 
+      padding: 40px; 
+      border-radius: 15px; 
+      border-left: 6px solid #1a73e8; 
+    }
+    .route-title { 
+      font-family: 'Montserrat', sans-serif; 
+      font-size: 2.2rem; 
+      font-weight: 600; 
+      color: #333; 
+      margin: 30px 0 15px; 
+    }
+    .route-description { 
+      font-size: 1.2rem; 
+      line-height: 1.8; 
+      color: #444; 
+      margin-bottom: 25px; 
+    }
+    .route-list { 
+      list-style: none; 
+      padding: 0; 
+      margin: 0 0 25px; 
+    }
+    .route-list li { 
+      position: relative; 
+      padding-left: 30px; 
+      margin-bottom: 20px; 
+      font-size: 1.2rem; 
+      line-height: 1.7; 
+    }
+    .route-list li:before { 
+      content: "➤"; 
+      color: #1a73e8; 
+      font-size: 1.3rem; 
+      position: absolute; 
+      left: 0; 
+      top: 5px; 
+    }
+    .route-list li strong { 
+      color: #1a73e8; 
+      font-weight: 500; 
+    }
+    .tip { 
+      background: #e8f0fe; 
+      padding: 20px; 
+      border-radius: 10px; 
+      font-style: italic; 
+      color: #1a73e8; 
+      margin: 25px 0; 
+      border-left: 4px solid #135ab5; 
+    }
+    .route-images { 
+      display: flex; 
+      justify-content: center; 
+      gap: 30px; 
+      margin-bottom: 40px; 
+    }
+    .route-images img { 
+      width: 400px; 
+      height: 300px; 
+      object-fit: cover; 
+      border-radius: 15px; 
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    }
+    .cta-btn { 
+      display: inline-block; 
+      padding: 14px 30px; 
+      background: #1a73e8; 
+      color: #fff; 
+      text-decoration: none; 
+      border-radius: 10px; 
+      font-weight: 500; 
+      font-size: 1.2rem; 
+      transition: background 0.3s ease; 
+    }
+    .cta-btn:hover { 
+      background: #135ab5; 
+    }
+    @media (max-width: 768px) {
+      .navbar { padding: 15px 20px; }
+      .hero-title { font-size: 2.5rem; }
+      .homepage-hero { height: 400px; }
+      .main-title { font-size: 2.2rem; }
+      .route-title { font-size: 1.8rem; }
+      .travel-section { padding: 30px 15px; margin: 20px; }
+      .route-container { padding: 25px; }
+      .route-description, .route-list li { font-size: 1rem; }
+      .route-images { flex-direction: column; align-items: center; }
+      .route-images img { width: 320px; height: 240px; }
+      .menu-toggle { display: block; }
+      .menu { display: none; flex-direction: column; position: absolute; top: 60px; right: 20px; background: #fff; padding: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+      .menu.active { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="navbar">
+    <div class="navbar">
+      <div class="logo">
+        <a href="/index.html">BAKU</a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+      <nav class="menu">
+        <a href="/sobreBaku">Nosotros</a>
+        <a href="/terminales">Terminales</a>
+        <a href="/contact">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Homepage Hero -->
+  <div class="homepage-hero">
+    <h2 class="hero-title">Descubre Cómo Llegar a San Juan del Sur en Bus</h2>
+    <div class="homepage-wave">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#ffff" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,208C384,213,480,235,576,234.7C672,235,768,213,864,218.7C960,224,1056,256,1152,266.7C1248,277,1344,267,1392,261.3L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Sección de Transporte -->
+  <section class="travel-section">
+    <h1 class="main-title">Cómo llegar a San Juan del Sur en bus desde Granada y Ometepe</h1>
+    <p class="subtitle">Guía completa de transporte público para viajar a San Juan del Sur, Nicaragua</p>
+
+    <div class="route-container">
+      <p class="route-description">Muchas personas viajan a San Juan del Sur desde Granada o la Isla de Ometepe, dos destinos icónicos en Nicaragua. Aquí te explicamos cómo llegar en bus desde estos lugares con horarios, rutas y consejos prácticos para que tu viaje sea fácil y económico. Con <a href="/">Baku Nicaragua</a>, planifica tu aventura en transporte público sin complicaciones.</p>
+
+      <!-- Desde Granada -->
+      <h2 class="route-title">Desde Granada a San Juan del Sur en bus</h2>
+      <p class="route-description">Granada, famosa por su belleza colonial, está a unas 2.5-3 horas de San Juan del Sur. Sigue estos pasos:</p>
+      <ul class="route-list">
+        <li><strong>Paso 1: Bus de Granada a Rivas</strong><br>Ve a la terminal de buses en Granada (cerca del mercado municipal). Los buses a Rivas salen cada 30-60 minutos desde las 5:00 a.m. hasta las 6:00 p.m. Cuesta C$50-C$70 y tarda 1.5 horas.</li>
+        <li><strong>Paso 2: Bus de Rivas a San Juan del Sur</strong><br>En la terminal de Rivas, toma un bus a San Juan del Sur (cada 30 minutos, 6:00 a.m. - 6:00 p.m.). Dura 45 minutos y cuesta C$30-C$40.</li>
+        <li><strong>Tiempo total:</strong> 2.5-3 horas | <strong>Costo:</strong> C$80-C$110</li>
+      </ul>
+      <p class="tip"><strong>Consejo:</strong> Llega temprano a la terminal de Granada para evitar buses llenos. Consulta <a href="/agregarHorario">horarios actualizados</a> en Baku.</p>
+      <div class="route-images">
+        <img src="css-code/imagenes/busGranada.webp" alt="Bus de transporte público en Granada rumbo a San Juan del Sur" loading="lazy">
+        <img src="css-code/imagenes/VolcanEnOmetepe.jpg" alt="Ferry desde la Isla de Ometepe hacia San Juan del Sur" loading="lazy">
+      </div>
+
+      <!-- Desde Ometepe -->
+      <h2 class="route-title">Desde la Isla de Ometepe a San Juan del Sur en bus</h2>
+      <p class="route-description">Ometepe, con sus impresionantes volcanes, está a 3.5-4.5 horas de San Juan del Sur combinando ferry y bus. Aquí te detallamos:</p>
+      <ul class="route-list">
+        <li><strong>Paso 1: Ferry de Ometepe a San Jorge</strong><br>En Moyogalpa, toma un ferry a San Jorge. Horarios de salida: 05:30, 06:00, 06:30, 06:45, 07:00, 09:00, 10:00, 11:00, 11:30, 12:30, 13:00, 14:00, 15:00, 16:00, 17:30. Tarda 70 minutos.</li>        <li><strong>Paso 3: Bus de Rivas a San Juan del Sur</strong><br>En Rivas, sube a un bus a San Juan del Sur (45 minutos, C$30-C$40).</li>
+        <li><strong>Tiempo total:</strong> 3.5-4.5 horas | <strong>Costo:</strong> C$100-C$140</li>
+      </ul>
+      <p class="tip"><strong>Consejo:</strong> Asegúrate de coordinar el ferry con los buses en Rivas. Revisa <a href="/terminales">terminales</a> en Baku.</p>
+      <!-- Consejos adicionales -->
+      <h3>Consejos para viajar a San Juan del Sur en bus</h3>
+      <ul class="route-list">
+        <li>Lleva efectivo en córdobas; los buses no aceptan tarjetas.</li>
+        <li>Los horarios pueden cambiar, verifica en <a href="/agregarHorario">Baku</a>.</li>
+        <li>Para grupos, un taxi desde Rivas cuesta C$300-C$400 (negocia).</li>
+      </ul>
+      <a href="/san-juan-del-sur" class="cta-btn">Explora San Juan del Sur</a>
+    </div>
+  </section>
+
+  <!-- Footer (usando footer.css existente) -->
+  <footer class="footer-section">
+    <div class="footer-column logo-section">
+      <h1 class="footer-logo">Baku Nicaragua</h1>
+      <p class="footer-slogan">Descubre Nicaragua de manera auténtica: una guía de transporte público para cada aventura.</p>
+    </div>
+    <div class="footer-column">
+      <h2>Páginas</h2>
+      <ul class="footer-list">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/sobreBaku">Nosotros</a></li>
+        <li><a href="/agregarHorario">Agregar horario</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

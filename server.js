@@ -152,6 +152,34 @@ const agregarTerminal = (nombreTerminal, ciudadId, callback) => {
         }
     });
 };
+// Ruta para horarios específicos de Rivas a San Juan del Sur
+app.get('/horarios-rivas-sjds', (req, res) => {
+    const query = `
+      SELECT 
+        c_origen.nombre_ciudad AS ciudad_origen,
+        c_destino.nombre_ciudad AS ciudad_destino,
+        t_origen.nombre_terminal AS terminal_origen,
+        t_destino.nombre_terminal AS terminal_destino,
+        DATE_FORMAT(h.hora_salida, '%h:%i %p') AS hora_salida,
+        DATE_FORMAT(h.duracion_viaje, '%H:%i') AS duracion_viaje
+      FROM horarios_de_buses h
+      JOIN Terminales t_origen ON h.terminal_origen_id = t_origen.terminal_id
+      JOIN Terminales t_destino ON h.terminal_destino_id = t_destino.terminal_id
+      JOIN Ciudades c_origen ON t_origen.ciudad_id = c_origen.ciudad_id
+      JOIN Ciudades c_destino ON t_destino.ciudad_id = c_destino.ciudad_id
+      WHERE c_origen.nombre_ciudad = 'Rivas' AND c_destino.nombre_ciudad = 'San Juan del Sur'
+      ORDER BY (CASE WHEN HOUR(h.hora_salida) < 12 THEN 0 ELSE 1 END), h.hora_salida ASC
+    `;
+  
+    pool.query(query, (error, results) => {
+      if (error) {
+        console.error('Error al buscar horarios de Rivas a San Juan del Sur:', error);
+        return res.status(500).send('Error al buscar horarios');
+      }
+      // Renderizar una vista con los resultados
+      res.render('horarios-rivas-sjds', { title: 'Horarios de Rivas a San Juan del Sur', horarios: results });
+    });
+  });
 // Contactos
 app.post('/contacto', (req, res) => {
     const { nombre, email, mensaje } = req.body;
@@ -165,6 +193,37 @@ app.post('/contacto', (req, res) => {
         }
     });
 });
+app.get('/viajandoPorGranada', (req, res) => {
+    res.render('viajandoPorGranada');
+  });
+  
+// Nueva ruta de sjds
+app.get('/san-juan-del-sur-guide', (req, res) => {
+    res.render('sanJuanGuide');
+  });
+// Horarios de managua-sjds
+app.get('/horarios-managua-sjds', (req, res) => {
+    const title = "Horarios de buses de Managua a San Juan del Sur";
+    const horarios = [
+      { terminal_origen: "Managua (Mercado Huembes)", terminal_destino: "San Juan del Sur", hora_salida: "10:00 AM", duracion_viaje: "3h" },
+      { terminal_origen: "Managua (Mercado Huembes)", terminal_destino: "San Juan del Sur", hora_salida: "1:30 PM", duracion_viaje: "3h" },
+      { terminal_origen: "Managua (Mercado Huembes)", terminal_destino: "San Juan del Sur", hora_salida: "4:00 PM", duracion_viaje: "3h" }
+    ];
+    res.render('horariosManaguaSJDS', { title, horarios });
+  });
+// Horarios de Managua a Granada
+app.get('/horarios-managua-granada', (req, res) => {
+    const title = "Horarios de buses de Managua a Granada";
+    const horarios = [
+        { terminal_origen: "Managua (UCA)", terminal_destino: "Granada", hora_salida: "05:00 AM - 09:00 PM (cada 20 min)", duracion_viaje: "1 hora 20 min" },
+        { terminal_origen: "Managua (Mercado Huembes)", terminal_destino: "Granada", hora_salida: "05:25 AM - 09:00 PM (cada 30 min)", duracion_viaje: "1 hora 20 min" },
+        { terminal_origen: "Managua (UCA)", terminal_destino: "Granada", hora_salida: "Sábados: 05:30 AM - 08:00 PM", duracion_viaje: "1 hora 20 min" },
+        { terminal_origen: "Managua (Mercado Huembes)", terminal_destino: "Granada", hora_salida: "Domingos: 06:10 AM - 08:00 PM (cada 30 min)", duracion_viaje: "1 hora 20 min" }
+    ];
+    res.render('horarios-managua-granada', { title, horarios });
+});
+
+
 // Trabajando en: TERMINALES:
 app.get('/nueva-terminal', (req, res) => {
     // Obtener todas las ciudades
@@ -482,6 +541,9 @@ app.get('/seleccionar-ciudad', (req, res) => {
         res.render('seleccionar-ciudad', { title: 'Seleccionar Ciudad', ciudades: results });
     });
 });
+app.get('/viajandoEnBus', (req, res) => {
+    res.render('viajandoEnBus');
+  });
 
 // Ruta para mostrar los horarios de la ciudad seleccionada
 app.get('/ver-horarios/:ciudadId', (req, res) => {
@@ -591,6 +653,11 @@ app.post('/subscribe', (req, res) => {
 
 app.get('/suscripcion', (req, res) => {
     res.render('suscripcion'); // Renderiza el archivo suscripcion.ejs
+});
+
+// Ruta para mostrar la página de León
+app.get('/viajandoPorLeon', (req, res) => {
+    res.render('viajandoPorLeon');
 });
 
 
