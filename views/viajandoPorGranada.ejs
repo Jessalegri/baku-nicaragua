@@ -125,10 +125,12 @@
   </header>
 
   <div class="homepage-hero-granada">
-    <h2 class="hero-title">Granada: Guía de la Ciudad Colonial con Volcanes e Isletas</h2>
+    <img src="/css-code/imagenes/calleLaCalzadaGranada.webp" alt="Calle La Calzada en Granada" class="hero-image">
+    <h2 class="hero-title">Guía de la Ciudad Colonial con Volcanes e Isletas</h2>
     <div class="homepage-wave">
       <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path fill="#ffffff" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,208C384,213,480,235,576,234.7C672,235,768,213,864,218.7C960,224,1056,256,1152,266.7C1248,277,1344,267,1392,261.3L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>      </svg>
+        <path fill="#ffffff" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,208C384,213,480,235,576,234.7C672,235,768,213,864,218.7C960,224,1056,256,1152,266.7C1248,277,1344,267,1392,261.3L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
     </div>
   </div>
   <div class="content-wrapper">
@@ -158,7 +160,7 @@
   
       <!-- Sección SJDS - Granada -->
       <div class="route-section">
-        <h2 class="route-title" id="como-llegar-granada"><strong>De San Juan del Sur a Granada</strong></h2>
+        <h2 class="route-title"><strong>De San Juan del Sur a Granada</strong></h2>
         <p class="route-description">San Juan del Sur, famosa por sus playas y ambiente relajado, está a unas 2.5-3 horas de Granada. Sigue estos pasos:</p>
         <ul class="route-list">
           <li>
@@ -332,7 +334,7 @@
             <img src="css-code/imagenes/kayakEnLagunaDeApoyo.webp" alt="Persona nadando en las aguas cristalinas de la Laguna de Apoyo" loading="lazy">
           </div>
         </div>
-        <div class="activities-section">
+        <div class="activities-section" id="restaurantes-granada">
           <h3 class="activity-title">Los Mejores Restaurantes en Granada: Sabores y Rincones para Disfrutar</h3>
           <p class="activity-description">Granada no solo brilla por sus calles coloniales y su lago; también tiene una escena gastronómica que vale la pena explorar. Estos son nuestros restaurantes favoritos para comer rico y disfrutar del encanto de la ciudad.</p>
           
@@ -371,10 +373,10 @@
         <div class="sidebar-block temas-block">
           <h2 class="blog-title">Temas</h2>
           <ul class="blog-list">
-            <li><a href="#como-llegar-granada">¿Cómo llegarde San Juan del Sur a Granada?</a></li>            
+            <li><a href="#como-llegar-granada">¿Cómo llegar a Granada en bus?</a></li>            
             <li><a href="#que-hacer-granada">¿Qué hacer en Granada?</a></li>           
-            <li><a href="#">Los mejores restaurantes de Granada</a></li>
-            <li><a href="#">¿Dónde hospedarse en Granada?</a></li>
+            <li><a href="#restaurantes-granada">Los mejores restaurantes de Granada</a></li>
+            <li><a href="index.html">Encuentra horarios para otros departamentos</a></li>
           </ul>
         </div>
         
@@ -426,62 +428,84 @@
     </div>
   <%- include('footer') %>
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Navbar scrolled
-  const navbar = document.getElementById("navbar");
-  if (navbar) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-  }
-
-  // Toggle-arrow para secciones colapsables
-  const collapsibleSections = document.querySelectorAll(".route-section.collapsible");
-  collapsibleSections.forEach((section) => {
-    const title = section.querySelector(".route-title");
-    const arrow = section.querySelector(".toggle-arrow");
-    const content = section.querySelector(".collapsible-content");
-
-    if (title && arrow && content) {
-      title.addEventListener("click", () => {
-        section.classList.toggle("active");
-        if (section.classList.contains("active")) {
-          title.setAttribute("aria-expanded", "true");
+    // navbar code
+      document.addEventListener("DOMContentLoaded", () => {
+      const navbar = document.getElementById("navbar"); // Ahora reconocerá el header
+    
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
         } else {
-          title.setAttribute("aria-expanded", "false");
+          navbar.classList.remove("scrolled");
         }
       });
-    } else {
-      console.warn("Elementos necesarios no encontrados en una sección colapsable:", { title, arrow, content });
-    }
-  });
-
-  // Sidebar-right sticky
-  const sidebar = document.querySelector(".sidebar-right");
-  const content = document.querySelector(".main-content");
-  if (sidebar && content) {
-    const stopPosition = content.offsetHeight + content.offsetTop - sidebar.offsetHeight;
-    window.addEventListener("scroll", () => {
-      if (window.scrollY >= stopPosition) {
-        sidebar.classList.add("stop");
-      } else {
-        sidebar.classList.remove("stop");
-      }
     });
-  }
-
-  // Toggle menu
-  function toggleMenu() {
-    const menu = document.querySelector('.menu');
-    const toggle = document.querySelector('.menu-toggle');
-    if (menu && toggle) {
+    
+        // toggle-arrow
+        document.addEventListener("DOMContentLoaded", function () {
+      const collapsibleSections = document.querySelectorAll(".route-section.collapsible");
+    
+      collapsibleSections.forEach((section) => {
+        const title = section.querySelector(".route-title");
+        const arrow = section.querySelector(".toggle-arrow");
+        const content = section.querySelector(".collapsible-content");
+    
+        if (title && arrow && content) {
+          title.addEventListener("click", () => {
+            section.classList.toggle("active"); // Añadimos la clase al elemento padre .collapsible
+            if (section.classList.contains("active")) {
+              title.setAttribute("aria-expanded", "true");
+            } else {
+              title.setAttribute("aria-expanded", "false");
+            }
+          });
+        } else {
+          console.warn("Elementos necesarios no encontrados en una sección colapsable:", { title, arrow, content });
+        }
+      });
+    });
+        // Final de toggle-arrow
+    document.addEventListener("DOMContentLoaded", function () {
+      const sidebar = document.querySelector(".sidebar-right");
+      const content = document.querySelector(".main-content");
+      const stopPosition = content.offsetHeight + content.offsetTop - sidebar.offsetHeight;
+    
+      window.addEventListener("scroll", function () {
+        if (window.scrollY >= stopPosition) {
+          sidebar.classList.add("stop");
+        } else {
+          sidebar.classList.remove("stop");
+        }
+      });
+    });
+    // Inicio de navbar
+    function toggleMenu() {
+      var menu = document.getElementById("mobileMenu");
+      if (window.getComputedStyle(menu).display === "block") {
+          menu.style.display = "none";
+      } else {
+          menu.style.display = "block";
+      }
+    }
+    
+    
+    // Final de navbar
+    function toggleMenu() {
+      var menu = document.getElementById("mobileMenu");
+      if (window.getComputedStyle(menu).display === "block") {
+          menu.style.display = "none";
+      } else {
+          menu.style.display = "block";
+      }
+    }
+    
+    // ✅ Unificando la función toggleMenu para evitar duplicación
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      const toggle = document.querySelector('.menu-toggle');
       menu.classList.toggle('active');
       toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
-
+    
       if (menu.classList.contains('active')) {
         document.addEventListener('click', function closeMenu(e) {
           if (!menu.contains(e.target) && !e.target.closest('.menu-toggle')) {
@@ -492,96 +516,117 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     }
-  }
-
-  const menuToggle = document.querySelector('.menu-toggle');
-  if (menuToggle) {
-    menuToggle.addEventListener('click', toggleMenu);
-  }
-
-  // Sidebar-right con efecto de desvanecimiento
-  const sidebarRight = document.querySelector(".sidebar-right");
-  if (sidebarRight) {
-    const lastBlock = sidebarRight.lastElementChild;
-    const allBlocks = Array.from(sidebarRight.children);
-    const secondBlock = allBlocks.length > 1 ? allBlocks[1] : null;
-    const footer = document.querySelector("footer");
-    let lastScrollY = window.scrollY;
-    let initialPosition = lastBlock.offsetTop;
-
-    lastBlock.style.transition = "opacity 0.4s ease-in-out, transform 0.4s ease-in-out";
-
-    const placeholder = document.createElement("div");
-    placeholder.style.width = `${lastBlock.offsetWidth}px`;
-    placeholder.style.height = `${lastBlock.offsetHeight}px`;
-    sidebarRight.insertBefore(placeholder, lastBlock.nextSibling);
-
-    function updateSidebarVisibility() {
-      const lastBlockRect = lastBlock.getBoundingClientRect();
-      const sidebarRect = sidebarRight.getBoundingClientRect();
-      const footerRect = footer.getBoundingClientRect();
-      const secondBlockRect = secondBlock ? secondBlock.getBoundingClientRect() : null;
-      const scrollingUp = window.scrollY < lastScrollY;
-      const scrollingDown = window.scrollY > lastScrollY;
-
-      const lastBlockWidth = lastBlock.offsetWidth;
-
-      if (window.scrollY > initialPosition && footerRect.top > window.innerHeight) {
-        lastBlock.style.position = "fixed";
-        lastBlock.style.bottom = "20px";
-        lastBlock.style.width = `${lastBlockWidth}px`;
-        placeholder.style.display = "block";
-      } else if (footerRect.top <= window.innerHeight) {
-        lastBlock.style.position = "absolute";
-        lastBlock.style.bottom = "0";
-        lastBlock.style.width = "100%";
-        placeholder.style.display = "none";
-      } else {
-        lastBlock.style.position = "relative";
-        lastBlock.style.bottom = "auto";
-        lastBlock.style.width = "auto";
-        placeholder.style.display = "none";
-      }
-
-      if (scrollingUp && secondBlockRect) {
-        const distanceToSecondBlock = lastBlockRect.top - secondBlockRect.bottom;
-        const fadeStart = 50;
-
-        if (distanceToSecondBlock <= fadeStart) {
-          let opacityValue = Math.max(0, distanceToSecondBlock / fadeStart);
-          lastBlock.style.opacity = opacityValue.toFixed(2);
-          lastBlock.style.transform = `translateY(${(1 - opacityValue) * 10}px)`;
-
-          if (opacityValue === 0) {
-            lastBlock.style.pointerEvents = "none";
-          } else {
-            lastBlock.style.pointerEvents = "auto";
-          }
-        } else {
-          lastBlock.style.opacity = "1";
-          lastBlock.style.transform = "translateY(0)";
-        }
-      }
-
-      if (scrollingDown) {
-        lastBlock.style.opacity = "1";
-        lastBlock.style.transform = "translateY(0)";
-        lastBlock.style.pointerEvents = "auto";
-      }
-
-      lastScrollY = window.scrollY;
-    }
-
-    window.addEventListener("scroll", updateSidebarVisibility, { passive: true });
-    window.addEventListener("resize", () => {
-      updateSidebarVisibility();
+    // ✅ Manteniendo navbar scrolled
+    document.addEventListener("DOMContentLoaded", function () {
+      const sidebarRight = document.querySelector(".sidebar-right");
+      const lastBlock = sidebarRight.lastElementChild;
+      const allBlocks = Array.from(sidebarRight.children);
+      const secondBlock = allBlocks.length > 1 ? allBlocks[1] : null;
+      const footer = document.querySelector("footer");
+      let lastScrollY = window.scrollY;
+      let initialPosition = lastBlock.offsetTop;
+    
+      lastBlock.style.transition = "opacity 0.4s ease-in-out, transform 0.4s ease-in-out";
+    
+      // ✅ Crear un placeholder para evitar el movimiento del contenido
+      const placeholder = document.createElement("div");
       placeholder.style.width = `${lastBlock.offsetWidth}px`;
       placeholder.style.height = `${lastBlock.offsetHeight}px`;
+      sidebarRight.insertBefore(placeholder, lastBlock.nextSibling);
+    
+      function updateSidebarVisibility() {
+        const lastBlockRect = lastBlock.getBoundingClientRect();
+        const sidebarRect = sidebarRight.getBoundingClientRect();
+        const footerRect = footer.getBoundingClientRect();
+        const secondBlockRect = secondBlock ? secondBlock.getBoundingClientRect() : null;
+        const scrollingUp = window.scrollY < lastScrollY;
+        const scrollingDown = window.scrollY > lastScrollY;
+    
+        const lastBlockWidth = lastBlock.offsetWidth;
+    
+        // ✅ Mantener el último bloque fijo mientras el footer no esté visible
+        if (window.scrollY > initialPosition && footerRect.top > window.innerHeight) {
+          lastBlock.style.position = "fixed";
+          lastBlock.style.bottom = "20px";
+          lastBlock.style.width = `${lastBlockWidth}px`;
+          placeholder.style.display = "block";
+        } else if (footerRect.top <= window.innerHeight) {
+          // Si el footer es visible, colocarlo de manera absoluta
+          lastBlock.style.position = "absolute";
+          lastBlock.style.bottom = "0";
+          lastBlock.style.width = "100%";
+          placeholder.style.display = "none";
+        } else {
+          // Si estamos por encima de la posición inicial, devolverlo a su estado normal
+          lastBlock.style.position = "relative";
+          lastBlock.style.bottom = "auto";
+          lastBlock.style.width = "auto";
+          placeholder.style.display = "none";
+        }
+    
+        // ✅ Desvanecer el bloque al acercarse al segundo bloque
+        if (scrollingUp && secondBlockRect) {
+          const distanceToSecondBlock = lastBlockRect.top - secondBlockRect.bottom;
+          const fadeStart = 50;
+    
+          if (distanceToSecondBlock <= fadeStart) {
+            let opacityValue = Math.max(0, distanceToSecondBlock / fadeStart);
+            lastBlock.style.opacity = opacityValue.toFixed(2);
+            lastBlock.style.transform = `translateY(${(1 - opacityValue) * 10}px)`;
+    
+            if (opacityValue === 0) {
+              lastBlock.style.pointerEvents = "none";
+            } else {
+              lastBlock.style.pointerEvents = "auto";
+            }
+          } else {
+            lastBlock.style.opacity = "1";
+            lastBlock.style.transform = "translateY(0)";
+          }
+        }
+    
+        // ✅ Si el usuario baja, aseguramos que vuelva a aparecer suavemente
+        if (scrollingDown) {
+          lastBlock.style.opacity = "1";
+          lastBlock.style.transform = "translateY(0)";
+          lastBlock.style.pointerEvents = "auto";
+        }
+    
+        lastScrollY = window.scrollY;
+      }
+    
+      window.addEventListener("scroll", updateSidebarVisibility, { passive: true });
+      window.addEventListener("resize", updateSidebarVisibility);
+    
+      // ✅ Ajustar placeholder al redimensionar
+      window.addEventListener("resize", () => {
+        placeholder.style.width = `${lastBlock.offsetWidth}px`;
+        placeholder.style.height = `${lastBlock.offsetHeight}px`;
+      });
+    
+      updateSidebarVisibility(); // ✅ Ejecutar al cargar la página
     });
-
-    updateSidebarVisibility();
-  }
-});
-</script>
+    // Codigo scroll para menu sidebar-right
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+    
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+    
+          if (targetElement) {
+            const navbarHeight = document.getElementById("navbar") ? document.getElementById("navbar").offsetHeight : 0;
+            const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+    
+            window.scrollTo({
+              top: offsetTop,
+              behavior: "smooth"
+            });
+          }
+        });
+      });
+    });
+    </script>
 </body>
 </html>

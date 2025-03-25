@@ -143,7 +143,7 @@
           </div>
         
           <!-- Sección Desde Managua sin borde -->
-          <div class="route-section">
+          <div class="route-section" id="como-llegar-leon">
             <h2 class="route-title"><strong>De Managua a León</strong></h2>
             <p class="route-description">
               León está aproximadamente a 1.5-2 horas de Managua, dependiendo del tráfico y el tipo de bus que elijas. La ruta está bien conectada por transporte público y hay salidas frecuentes desde la Terminal UCA.
@@ -260,7 +260,7 @@
               </p>
             </div>
           </div>
-          <div class="about-section">
+          <div class="about-section" id="que-hacer-leon">
             <h2 class="section-title">¿Qué hacer en León?</h2>
             <p class="section-description">León, una vibrante ciudad en el occidente de Nicaragua, es un destino que combina historia, cultura y aventura al pie de sus imponentes volcanes. Conocida por su majestuosa Catedral de León, sus calles llenas de arte revolucionario y su ambiente bohemio, esta joya colonial te invita a explorar cada rincón. Desde caminatas a volcanes activos hasta noches animadas en sus bares, León tiene algo para todos los viajeros. ¿Quieres saber qué aventuras te esperan, dónde probar comida típica o qué lugares visitar? ¡En Baku Nicaragua te lo contamos todo a continuación!</p>
             <div class="route-images">
@@ -316,7 +316,7 @@
           <p class="activity-description">Llegar desde León es bastante sencillo y tienes varias opciones para elegir. Una de las más populares es tomar un autobús desde el mercado de Sutiaba, en el lado oeste de la ciudad; los buses pasan con regularidad y te dejan en el centro de Las Peñitas tras un trayecto de unos 30 minutos. Si buscas más comodidad, un taxi desde cualquier punto de León, como el centro o cerca de tu alojamiento, te lleva directo; solo acuerda el trayecto con el conductor antes de partir. También hay shuttles que algunos hostales y operadores turísticos ofrecen, perfectos si prefieres un traslado sin complicaciones. Una vez allí, todo está cerca: la playa, los bares y los senderos para explorar.</p>
           <p class="tip custom-tip"><strong>Consejo:</strong> Llega temprano para disfrutar de la playa antes de que el sol pegue fuerte y quédate hasta el atardecer; un paseo por la reserva al amanecer te regala vistas y sonidos que valen la pena.</p>
         </div>
-        <div class="activities-section">
+        <div class="activities-section" id="restaurantes-leon">
           <h3 class="activity-title">Los Mejores Restaurantes en León: Sabores que No Te Puedes Perder</h3>
           <p class="activity-description">Tras explorar las calles y volcanes de León, nada mejor que disfrutar de su escena gastronómica. Aquí te compartimos nuestras recomendaciones de restaurantes para deleitar tu paladar con lo mejor de la ciudad.</p>
           
@@ -353,11 +353,10 @@
             <div class="sidebar-block temas-block">
               <h2 class="blog-title">Temas</h2>
               <ul class="blog-list">
-                <li><a href="#">¿Cómo llegar a San Juan del Sur?</a></li>
-                <li><a href="#">¿Qué hacer en San Juan del Sur?</a></li>
-                <li><a href="#">Los mejores restaurantes de San Juan del Sur</a></li>
-                <li><a href="#">¿Dónde hospedarse en San Juan del Sur?</a></li>
-                <li><a href="#">Nuestros lugares favoritos para hospedarse en San Juan del Sur</a></li>
+                <li><a href="#como-llegar-leon">¿Cómo llegar a León en bus?</a></li>            
+                <li><a href="#que-hacer-leon">¿Qué hacer en León?</a></li>           
+                <li><a href="#restaurantes-leon">Los mejores restaurantes de León</a></li>
+                <li><a href="index.html">Encuentra horarios para otros departamentos</a></li>
               </ul>
             </div>
             
@@ -410,166 +409,206 @@
           </aside>
     </div>
 <%- include('footer') %>
-  <script>
-// navbar code
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.getElementById("navbar"); // Ahora reconocerá el header
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
-});
-// toggle-arrow
-document.addEventListener("DOMContentLoaded", function () {
-  const collapsibleSections = document.querySelectorAll(".route-section.collapsible");
-
-  collapsibleSections.forEach((section) => {
-    const title = section.querySelector(".route-title");
-    const arrow = section.querySelector(".toggle-arrow");
-    const content = section.querySelector(".collapsible-content");
-
-    if (title && arrow && content) {
-      title.addEventListener("click", () => {
-        section.classList.toggle("active"); // Añadimos la clase al elemento padre .collapsible
-        if (section.classList.contains("active")) {
-          title.setAttribute("aria-expanded", "true");
-        } else {
-          title.setAttribute("aria-expanded", "false");
-        }
-      });
-    } else {
-      console.warn("Elementos necesarios no encontrados en una sección colapsable:", { title, arrow, content });
-    }
-  });
-});
-// Final de toggle-arrow
-document.addEventListener("DOMContentLoaded", function () {
-  const sidebar = document.querySelector(".sidebar-right");
-  const content = document.querySelector(".main-content");
-  const stopPosition = content.offsetHeight + content.offsetTop - sidebar.offsetHeight;
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY >= stopPosition) {
-      sidebar.classList.add("stop");
-    } else {
-      sidebar.classList.remove("stop");
-    }
-  });
-});
-
-// ✅ Unificando la función toggleMenu para evitar duplicación
-function toggleMenu() {
-  const menu = document.querySelector('.menu');
-  const toggle = document.querySelector('.menu-toggle');
-  menu.classList.toggle('active');
-  toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
-
-  if (menu.classList.contains('active')) {
-    document.addEventListener('click', function closeMenu(e) {
-      if (!menu.contains(e.target) && !e.target.closest('.menu-toggle')) {
-        menu.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.removeEventListener('click', closeMenu);
+<script>
+  // navbar code
+    document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar"); // Ahora reconocerá el header
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
       }
     });
-  }
-}
-// ✅ Manteniendo navbar scrolled
-document.addEventListener("DOMContentLoaded", function () {
-  const sidebarRight = document.querySelector(".sidebar-right");
-  const lastBlock = sidebarRight.lastElementChild;
-  const allBlocks = Array.from(sidebarRight.children);
-  const secondBlock = allBlocks.length > 1 ? allBlocks[1] : null;
-  const footer = document.querySelector("footer");
-  let lastScrollY = window.scrollY;
-  let initialPosition = lastBlock.offsetTop;
-
-  lastBlock.style.transition = "opacity 0.4s ease-in-out, transform 0.4s ease-in-out";
-
-  // ✅ Crear un placeholder para evitar el movimiento del contenido
-  const placeholder = document.createElement("div");
-  placeholder.style.width = `${lastBlock.offsetWidth}px`;
-  placeholder.style.height = `${lastBlock.offsetHeight}px`;
-  sidebarRight.insertBefore(placeholder, lastBlock.nextSibling);
-
-  function updateSidebarVisibility() {
-    const lastBlockRect = lastBlock.getBoundingClientRect();
-    const sidebarRect = sidebarRight.getBoundingClientRect();
-    const footerRect = footer.getBoundingClientRect();
-    const secondBlockRect = secondBlock ? secondBlock.getBoundingClientRect() : null;
-    const scrollingUp = window.scrollY < lastScrollY;
-    const scrollingDown = window.scrollY > lastScrollY;
-
-    const lastBlockWidth = lastBlock.offsetWidth;
-
-    // ✅ Mantener el último bloque fijo mientras el footer no esté visible
-    if (window.scrollY > initialPosition && footerRect.top > window.innerHeight) {
-      lastBlock.style.position = "fixed";
-      lastBlock.style.bottom = "20px";
-      lastBlock.style.width = `${lastBlockWidth}px`;
-      placeholder.style.display = "block";
-    } else if (footerRect.top <= window.innerHeight) {
-      // Si el footer es visible, colocarlo de manera absoluta
-      lastBlock.style.position = "absolute";
-      lastBlock.style.bottom = "0";
-      lastBlock.style.width = "100%";
-      placeholder.style.display = "none";
-    } else {
-      // Si estamos por encima de la posición inicial, devolverlo a su estado normal
-      lastBlock.style.position = "relative";
-      lastBlock.style.bottom = "auto";
-      lastBlock.style.width = "auto";
-      placeholder.style.display = "none";
-    }
-
-    // ✅ Desvanecer el bloque al acercarse al segundo bloque
-    if (scrollingUp && secondBlockRect) {
-      const distanceToSecondBlock = lastBlockRect.top - secondBlockRect.bottom;
-      const fadeStart = 50;
-
-      if (distanceToSecondBlock <= fadeStart) {
-        let opacityValue = Math.max(0, distanceToSecondBlock / fadeStart);
-        lastBlock.style.opacity = opacityValue.toFixed(2);
-        lastBlock.style.transform = `translateY(${(1 - opacityValue) * 10}px)`;
-
-        if (opacityValue === 0) {
-          lastBlock.style.pointerEvents = "none";
-        } else {
-          lastBlock.style.pointerEvents = "auto";
-        }
+  });
+  
+      // toggle-arrow
+      document.addEventListener("DOMContentLoaded", function () {
+    const collapsibleSections = document.querySelectorAll(".route-section.collapsible");
+  
+    collapsibleSections.forEach((section) => {
+      const title = section.querySelector(".route-title");
+      const arrow = section.querySelector(".toggle-arrow");
+      const content = section.querySelector(".collapsible-content");
+  
+      if (title && arrow && content) {
+        title.addEventListener("click", () => {
+          section.classList.toggle("active"); // Añadimos la clase al elemento padre .collapsible
+          if (section.classList.contains("active")) {
+            title.setAttribute("aria-expanded", "true");
+          } else {
+            title.setAttribute("aria-expanded", "false");
+          }
+        });
       } else {
-        lastBlock.style.opacity = "1";
-        lastBlock.style.transform = "translateY(0)";
+        console.warn("Elementos necesarios no encontrados en una sección colapsable:", { title, arrow, content });
       }
+    });
+  });
+      // Final de toggle-arrow
+  document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.querySelector(".sidebar-right");
+    const content = document.querySelector(".main-content");
+    const stopPosition = content.offsetHeight + content.offsetTop - sidebar.offsetHeight;
+  
+    window.addEventListener("scroll", function () {
+      if (window.scrollY >= stopPosition) {
+        sidebar.classList.add("stop");
+      } else {
+        sidebar.classList.remove("stop");
+      }
+    });
+  });
+  // Inicio de navbar
+  function toggleMenu() {
+    var menu = document.getElementById("mobileMenu");
+    if (window.getComputedStyle(menu).display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
     }
-
-    // ✅ Si el usuario baja, aseguramos que vuelva a aparecer suavemente
-    if (scrollingDown) {
-      lastBlock.style.opacity = "1";
-      lastBlock.style.transform = "translateY(0)";
-      lastBlock.style.pointerEvents = "auto";
-    }
-
-    lastScrollY = window.scrollY;
   }
-
-  window.addEventListener("scroll", updateSidebarVisibility, { passive: true });
-  window.addEventListener("resize", updateSidebarVisibility);
-
-  // ✅ Ajustar placeholder al redimensionar
-  window.addEventListener("resize", () => {
+  
+  
+  // Final de navbar
+  function toggleMenu() {
+    var menu = document.getElementById("mobileMenu");
+    if (window.getComputedStyle(menu).display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+  }
+  
+  // ✅ Unificando la función toggleMenu para evitar duplicación
+  function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    const toggle = document.querySelector('.menu-toggle');
+    menu.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
+  
+    if (menu.classList.contains('active')) {
+      document.addEventListener('click', function closeMenu(e) {
+        if (!menu.contains(e.target) && !e.target.closest('.menu-toggle')) {
+          menu.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.removeEventListener('click', closeMenu);
+        }
+      });
+    }
+  }
+  // ✅ Manteniendo navbar scrolled
+  document.addEventListener("DOMContentLoaded", function () {
+    const sidebarRight = document.querySelector(".sidebar-right");
+    const lastBlock = sidebarRight.lastElementChild;
+    const allBlocks = Array.from(sidebarRight.children);
+    const secondBlock = allBlocks.length > 1 ? allBlocks[1] : null;
+    const footer = document.querySelector("footer");
+    let lastScrollY = window.scrollY;
+    let initialPosition = lastBlock.offsetTop;
+  
+    lastBlock.style.transition = "opacity 0.4s ease-in-out, transform 0.4s ease-in-out";
+  
+    // ✅ Crear un placeholder para evitar el movimiento del contenido
+    const placeholder = document.createElement("div");
     placeholder.style.width = `${lastBlock.offsetWidth}px`;
     placeholder.style.height = `${lastBlock.offsetHeight}px`;
+    sidebarRight.insertBefore(placeholder, lastBlock.nextSibling);
+  
+    function updateSidebarVisibility() {
+      const lastBlockRect = lastBlock.getBoundingClientRect();
+      const sidebarRect = sidebarRight.getBoundingClientRect();
+      const footerRect = footer.getBoundingClientRect();
+      const secondBlockRect = secondBlock ? secondBlock.getBoundingClientRect() : null;
+      const scrollingUp = window.scrollY < lastScrollY;
+      const scrollingDown = window.scrollY > lastScrollY;
+  
+      const lastBlockWidth = lastBlock.offsetWidth;
+  
+      // ✅ Mantener el último bloque fijo mientras el footer no esté visible
+      if (window.scrollY > initialPosition && footerRect.top > window.innerHeight) {
+        lastBlock.style.position = "fixed";
+        lastBlock.style.bottom = "20px";
+        lastBlock.style.width = `${lastBlockWidth}px`;
+        placeholder.style.display = "block";
+      } else if (footerRect.top <= window.innerHeight) {
+        // Si el footer es visible, colocarlo de manera absoluta
+        lastBlock.style.position = "absolute";
+        lastBlock.style.bottom = "0";
+        lastBlock.style.width = "100%";
+        placeholder.style.display = "none";
+      } else {
+        // Si estamos por encima de la posición inicial, devolverlo a su estado normal
+        lastBlock.style.position = "relative";
+        lastBlock.style.bottom = "auto";
+        lastBlock.style.width = "auto";
+        placeholder.style.display = "none";
+      }
+  
+      // ✅ Desvanecer el bloque al acercarse al segundo bloque
+      if (scrollingUp && secondBlockRect) {
+        const distanceToSecondBlock = lastBlockRect.top - secondBlockRect.bottom;
+        const fadeStart = 50;
+  
+        if (distanceToSecondBlock <= fadeStart) {
+          let opacityValue = Math.max(0, distanceToSecondBlock / fadeStart);
+          lastBlock.style.opacity = opacityValue.toFixed(2);
+          lastBlock.style.transform = `translateY(${(1 - opacityValue) * 10}px)`;
+  
+          if (opacityValue === 0) {
+            lastBlock.style.pointerEvents = "none";
+          } else {
+            lastBlock.style.pointerEvents = "auto";
+          }
+        } else {
+          lastBlock.style.opacity = "1";
+          lastBlock.style.transform = "translateY(0)";
+        }
+      }
+  
+      // ✅ Si el usuario baja, aseguramos que vuelva a aparecer suavemente
+      if (scrollingDown) {
+        lastBlock.style.opacity = "1";
+        lastBlock.style.transform = "translateY(0)";
+        lastBlock.style.pointerEvents = "auto";
+      }
+  
+      lastScrollY = window.scrollY;
+    }
+  
+    window.addEventListener("scroll", updateSidebarVisibility, { passive: true });
+    window.addEventListener("resize", updateSidebarVisibility);
+  
+    // ✅ Ajustar placeholder al redimensionar
+    window.addEventListener("resize", () => {
+      placeholder.style.width = `${lastBlock.offsetWidth}px`;
+      placeholder.style.height = `${lastBlock.offsetHeight}px`;
+    });
+  
+    updateSidebarVisibility(); // ✅ Ejecutar al cargar la página
   });
-
-  updateSidebarVisibility(); // ✅ Ejecutar al cargar la página
-});
-
-
-  </script>  
+  // Codigo scroll para menu sidebar-right
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+  
+        const targetId = this.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+  
+        if (targetElement) {
+          const navbarHeight = document.getElementById("navbar") ? document.getElementById("navbar").offsetHeight : 0;
+          const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+  
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  });
+  </script>
 </body>
 </html>
