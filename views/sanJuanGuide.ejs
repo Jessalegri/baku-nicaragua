@@ -18,6 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/css-code/imagenes/vistaEspectacularMaderas.webp" fetchpriority="high" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Poppins:wght@600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css-code/footer.css">
@@ -86,14 +87,27 @@
   </nav>
 
   <div class="homepage-hero-sjds">
-    <img src="/css-code/imagenes/vistaEspectacularMaderas.webp" alt="Vista espectacular de Maderas" class="hero-image">
+    <img 
+      src="/css-code/imagenes/vistaEspectacularMaderas-800px.webp"
+      srcset="
+        /css-code/imagenes/vistaEspectacularMaderas-400px.webp 400w,
+        /css-code/imagenes/vistaEspectacularMaderas-800px.webp 800w,
+        /css-code/imagenes/vistaEspectacularMaderas-1200px.webp 1200w"
+      sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
+      alt="Vista espectacular de Maderas"
+      class="hero-image"
+      fetchpriority="high"
+      width="1200" height="800">
+    
     <h2 class="hero-title">Itinerario en San Juan del Sur: Transporte, Aventuras y Consejos Prácticos</h2>
+    
     <div class="homepage-wave">
       <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
         <path fill="#ffffff" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,208C384,213,480,235,576,234.7C672,235,768,213,864,218.7C960,224,1056,256,1152,266.7C1248,277,1344,267,1392,261.3L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
     </div>
   </div>
+  
   <div class="content-wrapper">
     <section class="main-content">
       <h1 class="main-title">Cómo llegar a San Juan del Sur en bus desde Granada y Ometepe</h1>
@@ -259,7 +273,6 @@
         </div>
       </section>
   
-      <!-- Contenido Derecha (25%) - Solo una instancia -->
       <aside class="sidebar-right">
         <!-- Primer bloque: Temas -->
         <div class="sidebar-block temas-block">
