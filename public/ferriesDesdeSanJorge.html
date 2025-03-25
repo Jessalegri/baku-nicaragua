@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horarios de Ferries a la Isla de Ometepe - Baku Nicaragua</title>
+  <meta name="description" content="Consulta los horarios de ferries desde San Jorge a Moyogalpa y San José del Sur, y desde Moyogalpa a San Jorge. Guía de transporte por Baku Nicaragua.">
+  <meta name="keywords" content="horarios ferry Ometepe, San Jorge a Moyogalpa, ferry Isla de Ometepe, transporte Nicaragua">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .title {
+      font-size: 2rem;
+      color: #15616D;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      color: #15616D;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    
+    .horarios-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .horario-item {
+      background-color: #fafafa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-left: 4px solid #15616D;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .horario-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    .route {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .origin, .destination {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    
+    .arrow {
+      font-size: 1.2rem;
+      color: #15616D;
+    }
+    
+    .details {
+      font-size: 0.95rem;
+      color: #666;
+    }
+    
+    .label {
+      font-weight: 500;
+      color: #15616D;
+    }
+    
+    .back-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #15616D;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    
+    .back-btn:hover {
+      background-color: #0f4a54;
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 15px;
+      }
+    
+      .title {
+        font-size: 1.5rem;
+      }
+    
+      .subtitle {
+        font-size: 1.2rem;
+      }
+    
+      .horario-item {
+        padding: 15px;
+      }
+    
+      .route {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .arrow {
+        display: none;
+      }
+    
+      .back-btn {
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Horarios de Ferries a la Isla de Ometepe</h1>
+    
+    <!-- Horarios de San Jorge a Moyogalpa y San José del Sur -->
+    <h2 class="subtitle">Barcos saliendo de San Jorge</h2>
+    <p>El viaje dura 70 minutos en promedio a Moyogalpa y 90 minutos a San José del Sur.</p>
+    <ul class="horarios-list">
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 07:00am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Che Guevara
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 07:45am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 1
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 08:30am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 3
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 09:00am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Cacique Nicarao
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 10:30am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 3
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 11:00am | <span class="label">Costo:</span> C$45 | <span class="label">Barco:</span> Lancha Estrella Del Sur
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 12:00pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 1
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 12:30pm | <span class="label">Costo:</span> C$35 | <span class="label">Barco:</span> Lancha Santa Martha
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 13:30pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Cacique Nicarao
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 14:30pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 3
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 15:30pm | <span class="label">Costo:</span> C$45 | <span class="label">Barco:</span> Lancha Estrella Del Sur
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 16:00pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Che Guevara
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 17:00pm | <span class="label">Costo:</span> C$35 | <span class="label">Barco:</span> Lancha Santa Martha
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">San Jorge</span> <span class="arrow">➔</span> <span class="destination">Moyogalpa</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 17:45pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 3
+        </div>
+      </li>
+    </ul>
+
+    <!-- Horarios de Moyogalpa a San Jorge -->
+    <h2 class="subtitle">Barcos saliendo de Moyogalpa, Isla de Ometepe</h2>
+    <p>El viaje dura 70 minutos en promedio a San Jorge.</p>
+    <ul class="horarios-list">
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 05:30am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Cacique Nicarao
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 06:00am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 3
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 06:30am | <span class="label">Costo:</span> C$35 | <span class="label">Barco:</span> Lancha Santa Martha
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 06:45am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 1
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 07:00am | <span class="label">Costo:</span> C$45 | <span class="label">Barco:</span> Lancha Estrella Del Sur
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 09:00am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 3
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 10:00am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 1
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 11:00am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Che Guevara
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 11:30am | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Cacique Nicarao
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 12:30pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 3
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 13:00pm | <span class="label">Costo:</span> C$45 | <span class="label">Barco:</span> Lancha Estrella Del Sur
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 14:00pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 1
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 15:00pm | <span class="label">Costo:</span> C$35 | <span class="label">Barco:</span> Lancha Santa Martha
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 16:00pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Ometepe 3
+        </div>
+      </li>
+      <li class="horario-item">
+        <div class="route">
+          <span class="origin">Moyogalpa</span> <span class="arrow">➔</span> <span class="destination">San Jorge</span>
+        </div>
+        <div class="details">
+          <span class="label">Hora:</span> 17:30pm | <span class="label">Costo:</span> C$50 | <span class="label">Barco:</span> Ferry Che Guevara
+        </div>
+      </li>
+    </ul>
+
+    <a href="/islaDeOmetepe" class="back-btn">Volver a la Guía</a>
+  </div>
+</body>
+</html>

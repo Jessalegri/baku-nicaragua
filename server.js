@@ -201,6 +201,10 @@ app.get('/viajandoPorGranada', (req, res) => {
 app.get('/san-juan-del-sur-guide', (req, res) => {
     res.render('sanJuanGuide');
   });
+// Ruta para Isla de Ometepe - Departamento de viajes
+app.get('/islaDeOmetepe', (req, res) => {
+    res.render('islaDeOmetepe', { title: "Isla de Ometepe: Aventura entre volcanes y aguas dulces" });
+});
 // Horarios de managua-sjds
 app.get('/horarios-managua-sjds', (req, res) => {
     const title = "Horarios de buses de Managua a San Juan del Sur";

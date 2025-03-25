@@ -114,9 +114,23 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('/css-code/imagenes/campanarioIglesiaLaMercedHomepage.webp');
+    background-image: url('/css-code/imagenes/volcanCerroNegro.webp');
     background-size: cover;
+    background-position: center 40%;
   }
+  .homepage-hero-isla {
+    width: 100%;
+    height: 92vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/css-code/imagenes/VolcanEnOmetepe.webp');
+    background-size: cover;
+    background-position: center 60%;
+  }  
+
   .homepage-hero::before {
     content: "";
     position: absolute;
@@ -127,7 +141,36 @@ html, body {
     background: rgba(0, 0, 0, 0.3);
     z-index: 1;
   }
-
+  .homepage-hero-leon::before {
+    content: "";
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .homepage-hero-isla::before {
+    content: "";
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  .homepage-hero-granada::before {
+    content: "";
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
   .hero-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 62px;
@@ -289,7 +332,7 @@ html, body {
   }
   /* Tip para ultimo elemento de granada*/
   .tip.no-bottom-space + .route-images {
-    margin-top: 20px; /* Ajusta según lo necesites */
+    margin-top: 20px; 
   }
   .tip a {
     text-decoration: none;
@@ -475,19 +518,18 @@ html, body {
     aspect-ratio: 1 / 1;
     border-radius: 4px;
     display: block;
-    margin: 0 auto 10px; /* Margen inferior reducido */
+    margin: 0 auto 10px; 
   }
   
-  /* Lista de enlaces del tercer bloque */
   .sidebar-block:nth-child(3) .blog-list {
-    padding: 0; /* Sin padding adicional */
-    margin: 0; /* Sin márgenes adicionales */
+    padding: 0; 
+    margin: 0; 
   }
   
   .sidebar-block:nth-child(3) .blog-list li {
     margin-bottom: 15px;
-    padding: 10px; /* Padding interno más ajustado */
-    list-style: none; /* Sin viñetas */
+    padding: 10px; 
+    list-style: none;
   }
   
   .sidebar-block:nth-child(3) .blog-list a {
@@ -507,14 +549,19 @@ html, body {
   .sidebar-block:nth-child(3).is-fixed {
     position: fixed;
     bottom: 20px;
-    width: inherit; /* Usaremos JavaScript para establecer el ancho exacto */
+    width: inherit;
     z-index: 1000;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.11); /* Sombra consistente */
-    background-color: #f9f9f9; /* Fondo consistente */
-    border: 1px solid #ddd; /* Borde consistente */
-    border-radius: 8px; /* Bordes redondeados consistentes */
-    padding: 16px; /* Padding consistente */
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.11);
+    background-color: #f9f9f9;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 16px; 
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+  /* Secciones de Ometepe*/
+  .ferries {
+    color: #15616D;
+    font-weight: 600;
   }
   /* FINAL */
   #horas {
@@ -633,7 +680,7 @@ html, body {
     color: #15616D;
     font-weight: bold;
     text-decoration: underline;
-    text-decoration-color: #15616D; /* Subrayado permanente en #15616D */
+    text-decoration-color: #15616D; 
     transition: color 0.3s ease;
   }
 
@@ -706,25 +753,41 @@ html, body {
       margin: 0 auto 10px; 
   }
 /* Ajuste para los enlaces con imágenes */
-.sidebar-block:nth-child(3) .blog-list li {
-  margin-bottom: 20px; 
-}
-.sidebar-block:nth-child(3) .blog-list a {
-  color: #15616D; 
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px; 
-  display: block; 
-  text-align: center; 
-}
-.sidebar-block:nth-child(3) .blog-list a:hover {
-  color: #C96B4F;
-  text-decoration: underline;
-}
-.blog-link-text {
-  display: block; 
-}
+    .sidebar-block:nth-child(3) .blog-list li {
+      margin-bottom: 20px; 
+    }
+  .sidebar-block:nth-child(3) .blog-list a {
+    color: #15616D; 
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; 
+    display: block; 
+    text-align: center; 
+  }
+  .sidebar-block:nth-child(3) .blog-list a:hover {
+    color: #C96B4F;
+    text-decoration: underline;
+  }
+  .blog-link-text {
+    display: block; 
+  }
   .sidebar-block:nth-child(3) {
     display: none;
   }  
+  .about-section .section-title {
+    font-size: 28px; 
+  }
+/*  Homepage: Seccion de departamentos - Guide */
+  .homepage-hero{
+    height: 80vh;
+  }
+  .hero-title {
+    font-size: 38px;
+    max-width: 85%;
+    text-align: left;
+  }
+/* Seccion: Restaurantes */
+  .restaurant-list li {
+    text-align: justify;
+  }
 }
