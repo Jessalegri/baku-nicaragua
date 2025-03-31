@@ -165,6 +165,13 @@ body.scrolled .logo {
     z-index: 2;
     position: relative;
 }
+/*Estilos para anuncios*/
+.ad-container {
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    overflow: hidden;
+} 
     
 /* Menu desplegable en formulario - index.html */
 .dropdown-options {
@@ -764,6 +771,10 @@ body.scrolled .logo {
         position: absolute;
         bottom: -2px;
     }
+/*Estilos para anuncios*/
+.ad-container {
+    margin: 10px auto; 
+}
 /* Galery */
     .gallery-item img {
         height: 200px !important; 
